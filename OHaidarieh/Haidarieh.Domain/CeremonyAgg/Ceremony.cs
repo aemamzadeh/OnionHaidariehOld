@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Haidarieh.Domain.CeremonyAgg
 {
-    public class Ceremony:EntityBase
+    public class Sponsor:EntityBase
     {
         public string Title { get; private set; }
         public DateTime CeremonyDate { get; private set; }
@@ -18,11 +18,11 @@ namespace Haidarieh.Domain.CeremonyAgg
 
 
 
-        public Ceremony(string title,DateTime ceremonyDate)
+        public Sponsor(string title,DateTime ceremonyDate)
         {
             Title = title;
-            Status = true;
             CeremonyDate = ceremonyDate;
+            Status = true;
             CeremonyGuests = new List<CeremonyGuest>();
         }
 
@@ -31,7 +31,6 @@ namespace Haidarieh.Domain.CeremonyAgg
             Title = title;
             Status = status;
             CeremonyDate = ceremonyDate;
-            CeremonyGuests = new List<CeremonyGuest>();
         }
 
     }

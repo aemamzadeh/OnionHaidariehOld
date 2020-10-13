@@ -1,0 +1,36 @@
+﻿Restoring packages for D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\Haidarieh.Infrastructure.EFCore.csproj...
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.tools/index.json
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.tools/index.json 604ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.tools/3.1.8/microsoft.entityframeworkcore.tools.3.1.8.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.tools/3.1.8/microsoft.entityframeworkcore.tools.3.1.8.nupkg 110ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/index.json
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/index.json 298ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/3.1.8/microsoft.entityframeworkcore.design.3.1.8.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.design/3.1.8/microsoft.entityframeworkcore.design.3.1.8.nupkg 142ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.csharp/index.json
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.csharp/index.json 234ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg 195ms
+Installing Microsoft.CSharp 4.7.0.
+Installing Microsoft.EntityFrameworkCore.Design 3.1.8.
+Installing Microsoft.EntityFrameworkCore.Tools 3.1.8.
+Installing NuGet package Microsoft.EntityFrameworkCore.Tools 3.1.8.
+Committing restore...
+Generating MSBuild file D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Haidarieh.Infrastructure.EFCore.csproj.nuget.g.props.
+Writing assets file to disk. Path: D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\project.assets.json
+Successfully uninstalled 'Microsoft.CSharp 4.5.0' from Haidarieh.Infrastructure.EFCore
+Successfully installed 'Microsoft.CSharp 4.7.0' to Haidarieh.Infrastructure.EFCore
+Successfully installed 'Microsoft.EntityFrameworkCore.Design 3.1.8' to Haidarieh.Infrastructure.EFCore
+Successfully installed 'Microsoft.EntityFrameworkCore.Tools 3.1.8' to Haidarieh.Infrastructure.EFCore
+Executing script file 'C:\Users\WIN10\.nuget\packages\microsoft.entityframeworkcore.tools\3.1.8\tools\init.ps1'...
+Executing nuget actions took 4.65 sec
+Time Elapsed: 00:00:10.9368148
+========== Finished ==========
+
+Time Elapsed: 00:00:00.2818686
+========== Finished ==========
+
+NuGet package restore failed. Please see Error List window for detailed warnings and errors.
+Time Elapsed: 00:00:08.6527367
+========== Finished ==========
+

@@ -1,0 +1,50 @@
+﻿using Haidarieh.Application;
+using Haidarieh.Application.Contracts.Ceremony;
+using Haidarieh.Application.Contracts.CeremonyGuest;
+using Haidarieh.Application.Contracts.Guest;
+using Haidarieh.Application.Contracts.Member;
+using Haidarieh.Application.Contracts.Multimedia;
+using Haidarieh.Application.Contracts.Sponsor;
+using Haidarieh.Domain.CeremonyAgg;
+using Haidarieh.Domain.CeremonyGuestAgg;
+using Haidarieh.Domain.GuestAgg;
+using Haidarieh.Domain.MemberAgg;
+using Haidarieh.Domain.MultimediaAgg;
+using Haidarieh.Domain.SponsorAgg;
+using Haidarieh.Infrastructure.EFCore;
+using Haidarieh.Infrastructure.EFCore.Repository;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Haidarieh.Configuration
+{
+    public class HaidariehBootstrapper
+    {
+        public static void Configure(IServiceCollection services, string connectionString)
+        {
+            services.AddTransient<ICeremonyApplication, CeremonyApplication>();
+            services.AddTransient<ICeremonyRepository, CeremonyRepository>();
+            
+            services.AddTransient<ICeremonyGuestApplication, CeremonyGuestApplication>();
+            services.AddTransient<ICeremonyGuestRepository, CeremonyGuestRepository>();
+            
+            services.AddTransient<IGuestApplication, GuestApplication>();
+            services.AddTransient<IGuestRepository, GuestRepository>();
+            
+            services.AddTransient<IMemberApplication, MemberApplication>();
+            services.AddTransient<IMemberRepository, MemberRepository>();
+            
+            services.AddTransient<ISponsorApplication, SponsorApplication>();
+            services.AddTransient<ISponsorRepository, SponsorRepository>();
+            
+            services.AddTransient<IMultimediaApplication, MultimediaApplication>();
+            services.AddTransient<IMultimediaRepository, MultimediaRepository>();
+
+
+            services.AddDbContext<HContext>(x => x.UseSqlServer(connectionString));
+        }
+    }
+}

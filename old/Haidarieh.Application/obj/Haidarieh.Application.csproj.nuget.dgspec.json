@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Application\\Haidarieh.Application.csproj": {}
+  },
+  "projects": {
+    "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Application\\Haidarieh.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Application\\Haidarieh.Application.csproj",
+        "projectName": "Haidarieh.Application",
+        "projectPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Application\\Haidarieh.Application.csproj",
+        "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
+        "outputPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Application.Contracts\\Haidarieh.Application.Contracts.csproj": {
+                "projectPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Application.Contracts\\Haidarieh.Application.Contracts.csproj"
+              },
+              "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Domain\\Haidarieh.Domain.csproj": {
+                "projectPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Domain\\Haidarieh.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

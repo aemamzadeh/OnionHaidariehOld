@@ -1,13 +1,14 @@
-﻿using System;
+﻿using _0_Framework.Domain;
+using Haidarieh.Application.Contracts.CeremonyGuest;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Haidarieh.Domain.CeremonyGuestAgg
 {
-    public interface ICeremonyGuestRepository
+    public interface ICeremonyGuestRepository : IRepository<long, CeremonyGuest>
     {
-        void Create(CeremonyGuest entity);
-        CeremonyGuest Get(long Id);
-        List<CeremonyGuest> GetAll();
+        EditCeremonyGuest GetDetail(long Id);
+        List<CeremonyGuestViewModel> Search(CeremonyGuestSearchModel searchModel);
     }
 }

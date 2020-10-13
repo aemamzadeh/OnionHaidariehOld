@@ -1,13 +1,14 @@
-﻿using System;
+﻿using _0_Framework.Domain;
+using Haidarieh.Application.Contracts.Guest;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Haidarieh.Domain.GuestAgg
 {
-    public interface IGuestRepository
+    public interface IGuestRepository : IRepository<long, Guest>
     {
-        void Create(Guest entity);
-        Guest Get(long Id);
-        List<Guest> GetAll();
+        EditGuest GetDetail(long Id);
+        List<GuestViewModel> Search(GuestSearchModel searchModel);
     }
 }

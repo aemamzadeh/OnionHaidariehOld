@@ -1,14 +1,15 @@
-﻿using Haidarieh.Domain.CeremonyAgg;
+﻿using _0_Framework.Domain;
+using Haidarieh.Application.Contracts.Sponsor;
+using Haidarieh.Domain.CeremonyAgg;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Haidarieh.Domain.SponsorAgg
 {
-    public interface ISponsorRepository
+    public interface ISponsorRepository : IRepository<long, Sponsor>
     {
-        void Create(Sponsor entity);
-        Sponsor Get(long Id);
-        List<Sponsor> GetAll();
+        EditSponsor GetDetail(long Id);
+        List<SponsorViewModel> Search(SponsorSearchModel searchModel);
     }
 }

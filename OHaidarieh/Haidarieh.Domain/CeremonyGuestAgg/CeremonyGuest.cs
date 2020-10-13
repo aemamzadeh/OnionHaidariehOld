@@ -12,6 +12,7 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
     public class CeremonyGuest : EntityBase
     {
         public long GuestId { get; private set; }
+        public long CeremonyId { get; private set; }
         public DateTime CeremonyDate { get; private set; }
         public float Satisfication { get; private set; }
         public bool IsLive { get; private set; }
@@ -24,14 +25,15 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
         public string MetaDescription { get; private set; }
         public string Slug { get; private set; }
         public Guest Guest { get;  set; }
-        public Ceremony Ceremony { get;  set; }
+        public Sponsor Ceremony { get;  set; }
         public List<Multimedia> Multimedias { get;  set; }
 
-        public CeremonyGuest(long guestId, DateTime ceremonyDate, float satisfication, bool isLive, 
+        public CeremonyGuest(long guestId, long ceremonyId, DateTime ceremonyDate, float satisfication, bool isLive, 
             string bannerFile, string image, string imageAlt, string imageTitle, string keywords, 
             string metaDescription, string slug)
         {
             GuestId = guestId;
+            CeremonyId = ceremonyId;
             CeremonyDate = ceremonyDate;
             Satisfication = satisfication;
             IsLive = isLive;
