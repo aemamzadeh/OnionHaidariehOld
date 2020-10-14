@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Haidarieh.Infrastructure.EFCore.Repository
 {
-    public class CeremonyRepository : RepositoryBase<long,Sponsor>, ICeremonyRepository
+    public class CeremonyRepository : RepositoryBase<long,Ceremony>, ICeremonyRepository
     {
         private readonly HContext _hContext;
 

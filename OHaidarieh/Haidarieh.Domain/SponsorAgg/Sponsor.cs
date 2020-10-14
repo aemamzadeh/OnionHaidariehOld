@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Haidarieh.Domain.CeremonyAgg
+namespace Haidarieh.Domain.SponsorAgg
 {
     public class Sponsor: EntityBase
     {

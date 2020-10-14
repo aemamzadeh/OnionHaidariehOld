@@ -25,7 +25,7 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
         public string MetaDescription { get; private set; }
         public string Slug { get; private set; }
         public Guest Guest { get;  set; }
-        public Sponsor Ceremony { get;  set; }
+        public Ceremony Ceremony { get;  set; }
         public List<Multimedia> Multimedias { get;  set; }
 
         public CeremonyGuest(long guestId, long ceremonyId, DateTime ceremonyDate, float satisfication, bool isLive, 

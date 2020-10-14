@@ -1,7 +1,7 @@
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Application\obj\Debug\netcoreapp2.1\Haidarieh.Application.csprojAssemblyReference.cache
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Application\obj\Debug\netcoreapp2.1\Haidarieh.Application.csproj.CoreCompileInputs.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Application\obj\Debug\netcoreapp2.1\Haidarieh.Application.AssemblyInfoInputs.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Application\obj\Debug\netcoreapp2.1\Haidarieh.Application.AssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Application\obj\Debug\netcoreapp2.1\Haidarieh.Application.csproj.CoreCompileInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Application\obj\Debug\netcoreapp2.1\Haidarieh.Application.csprojAssemblyReference.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Application\bin\Debug\netcoreapp2.1\Haidarieh.Application.deps.json
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Application\bin\Debug\netcoreapp2.1\Haidarieh.Application.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Application\bin\Debug\netcoreapp2.1\Haidarieh.Application.pdb

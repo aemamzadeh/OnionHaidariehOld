@@ -1,6 +1,5 @@
 ﻿using _0_Framework.Domain;
 using Haidarieh.Application.Contracts.Sponsor;
-using Haidarieh.Domain.CeremonyAgg;
 using System;
 using System.Collections.Generic;
 using System.Text;

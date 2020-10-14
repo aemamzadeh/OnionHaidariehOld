@@ -1,5 +1,4 @@
-﻿
-using _0_Framework.Domain;
+﻿using _0_Framework.Domain;
 using Haidarieh.Application.Contracts.Ceremony;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Text;
 
 namespace Haidarieh.Domain.CeremonyAgg
 {
-    public interface ICeremonyRepository : IRepository<long,Sponsor>
+    public interface ICeremonyRepository : IRepository<long,Ceremony>
     {
 
         EditCeremony GetDetail(long id);

@@ -1,6 +1,4 @@
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\bin\Debug\netcoreapp3.1\Haidarieh.Configuration.deps.json
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\bin\Debug\netcoreapp3.1\Haidarieh.Configuration.dll
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp3.1\Haidarieh.Configuration.csprojAssemblyReference.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp3.1\Haidarieh.Configuration.AssemblyInfoInputs.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp3.1\Haidarieh.Configuration.AssemblyInfo.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp3.1\Haidarieh.Configuration.csproj.CoreCompileInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp3.1\Haidarieh.Configuration.csprojAssemblyReference.cache

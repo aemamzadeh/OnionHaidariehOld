@@ -1,4 +1,4 @@
-﻿using Haidarieh.Domain.CeremonyAgg;
+﻿using Haidarieh.Domain.SponsorAgg;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

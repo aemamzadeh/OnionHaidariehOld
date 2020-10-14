@@ -35,17 +35,23 @@ namespace Haidarieh.Application
         {
             var operation = new OperationResult();
             operation.IsSuccedded = false;
-            throw new NotImplementedException();
+            var editItem = _ceremonyGuestRepository.Get(command.Id);
+            if (editItem == null)
+                return operation.Failed("رکوردی وجود ندارد.");
+            if (_ceremonyGuestRepository.Exist(x => x.CeremonyId == command.CeremonyId && x.Id != command.Id))
+                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
+
+            return operation.Succedded();
         }
 
         public EditCeremonyGuest GetDetail(long Id)
         {
-            throw new NotImplementedException();
+            return _ceremonyGuestRepository.GetDetail(Id);
         }
 
         public List<CeremonyGuestViewModel> Search(CeremonyGuestSearchModel searchModel)
         {
-            throw new NotImplementedException();
+            return _ceremonyGuestRepository.Search(searchModel);
         }
     }
 }

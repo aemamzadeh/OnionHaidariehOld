@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Haidarieh.Infrastructure.EFCore.Mapping
 {
-    public class CeremonyMapping : IEntityTypeConfiguration<Sponsor>
+    public class CeremonyMapping : IEntityTypeConfiguration<Ceremony>
     {
-        public void Configure(EntityTypeBuilder<Sponsor> builder)
+        public void Configure(EntityTypeBuilder<Ceremony> builder)
         {
             builder.ToTable("Tbl_Ceremony");
             builder.HasKey(x => x.Id);

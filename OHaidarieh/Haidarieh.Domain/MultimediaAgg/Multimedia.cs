@@ -26,5 +26,14 @@ namespace Haidarieh.Domain.MultimediaAgg
             Status = true;
 
         }
+        public void Edit(string title, string fileAddress, string fileTitle, string fileAlt)
+        {
+            Title = title;
+            FileAddress = fileAddress;
+            FileTitle = fileTitle;
+            Status = true;
+            FileAlt = fileAlt;
+
+        }
     }
 }

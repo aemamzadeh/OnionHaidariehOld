@@ -3,6 +3,7 @@ using Haidarieh.Domain.CeremonyGuestAgg;
 using Haidarieh.Domain.GuestAgg;
 using Haidarieh.Domain.MemberAgg;
 using Haidarieh.Domain.MultimediaAgg;
+using Haidarieh.Domain.SponsorAgg;
 using Haidarieh.Infrastructure.EFCore.Mapping;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +12,7 @@ namespace Haidarieh.Infrastructure.EFCore
 {
     public class HContext:DbContext
     {
-        public DbSet<Sponsor> Ceremonies { get; set; }
+        public DbSet<Ceremony> Ceremonies { get; set; }
         public DbSet<Guest> Guests { get; set; }
         public DbSet<CeremonyGuest> CeremonyGuests { get; set; }
         public DbSet<Multimedia> Multimedias { get; set; }

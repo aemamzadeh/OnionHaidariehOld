@@ -21,7 +21,7 @@ namespace Haidarieh.Application
             if (_ceremonyRepository.Exist(x=>x.Title==command.Title))
                 return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
 
-            var ceremony = new Sponsor(command.Title, command.CeremonyDate);
+            var ceremony = new Ceremony(command.Title, command.CeremonyDate);
             _ceremonyRepository.Create(ceremony);
             _ceremonyRepository.SaveChanges();
             return operation.Succedded();
@@ -30,6 +30,7 @@ namespace Haidarieh.Application
         public OperationResult Edit(EditCeremony command)
         {
             var operation = new OperationResult();
+            operation.IsSuccedded = false;
             var editItem=_ceremonyRepository.Get(command.Id);
             if (editItem == null)
                 return operation.Failed("رکورد وجود ندارد");
