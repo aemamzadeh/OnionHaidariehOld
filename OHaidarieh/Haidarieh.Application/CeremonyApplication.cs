@@ -38,7 +38,7 @@ namespace Haidarieh.Application
             if(_ceremonyRepository.Exist(x=>x.Title==command.Title && x.Id!=command.Id))
                 return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
 
-            editItem.Edit(command.Title, command.Status, command.CeremonyDate);
+            editItem.Edit(command.Title, command.CeremonyDate);
             _ceremonyRepository.SaveChanges();
 
             return operation.Succedded();

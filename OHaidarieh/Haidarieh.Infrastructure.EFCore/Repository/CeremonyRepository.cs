@@ -25,7 +25,6 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 Title = x.Title,
                 CeremonyDate = x.CeremonyDate,
-                Status=x.Status
             }).FirstOrDefault(x => x.Id == id);
         }
 

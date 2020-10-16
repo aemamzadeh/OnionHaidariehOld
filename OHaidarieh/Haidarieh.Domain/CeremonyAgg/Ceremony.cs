@@ -26,10 +26,9 @@ namespace Haidarieh.Domain.CeremonyAgg
             CeremonyGuests = new List<CeremonyGuest>();
         }
 
-        public void Edit(string title, bool status, DateTime ceremonyDate)
+        public void Edit(string title, DateTime ceremonyDate)
         {
             Title = title;
-            Status = status;
             CeremonyDate = ceremonyDate;
         }
 
