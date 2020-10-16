@@ -8462,7 +8462,8 @@
     ".NETCoreApp,Version=v3.1": [
       "Haidarieh.Configuration >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.9",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
+      "System.Collections >= 4.3.0"
     ]
   },
   "packageFolders": {
@@ -8519,6 +8520,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.4, )"
+          },
+          "System.Collections": {
+            "target": "Package",
+            "version": "[4.3.0, )"
           }
         },
         "imports": [

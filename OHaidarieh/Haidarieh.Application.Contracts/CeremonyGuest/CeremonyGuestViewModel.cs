@@ -4,6 +4,7 @@ namespace Haidarieh.Application.Contracts.CeremonyGuest
 {
     public class CeremonyGuestViewModel
     {
+        public long Id { get; set; }
         public long GuestId { get; set; }
         public long CeremonyId { get; set; }
         public DateTime CeremonyDate { get; set; }
