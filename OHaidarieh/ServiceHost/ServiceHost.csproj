@@ -18,10 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Pages\Members\" />
     <Folder Include="Areas\Admin\Pages\CeremonyGuests\" />
-    <Folder Include="Areas\Admin\Pages\Multimedias\" />
-    <Folder Include="Areas\Admin\Pages\Guests\" />
   </ItemGroup>
 
 </Project>

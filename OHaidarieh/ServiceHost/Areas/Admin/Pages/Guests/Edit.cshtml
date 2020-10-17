@@ -1,0 +1,75 @@
+﻿@model Haidarieh.Application.Contracts.Guest.EditGuest
+@{
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">ویرایش میهمان</h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="Edit"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh"
+      enctype="multipart/form-data">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="FullName" class="control-label">نام و نام خانوادگی</label>
+                    <input type="text" class="form-control" asp-for="FullName" onchange="makeSlug('Name', 'Slug')">
+                    <span asp-validation-for="FullName" class="error"></span>
+                </div>
+            </div><div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="GuestType" class="control-label">نوع میهمان</label>
+                    <input type="text" class="form-control" asp-for="GuestType">
+                    <span asp-validation-for="GuestType" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Tel" class="control-label">تلفن</label>
+                    <input type="text" class="form-control" asp-for="Tel">
+                    <span asp-validation-for="Tel" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label">عکس</label>
+                    <input type="text" class="form-control" asp-for="Image">
+                    @*accept="image/*"*@
+                    <span asp-validation-for="Image" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ImageTitle" class="control-label">عنوان عکس</label>
+                    <textarea class="form-control autogrow" asp-for="ImageTitle" onchange="fillField('ImageTitle', 'ImageAlt')"
+                              style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                    <span asp-validation-for="ImageTitle" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ImageAlt" class="control-label">توضیح عکس در گوگل</label>
+                    <input type="text" class="form-control" asp-for="ImageAlt">
+                    <span asp-validation-for="ImageAlt" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Coordinator" class="control-label">هماهنگ کننده</label>
+                    <input type="text" class="form-control" asp-for="Coordinator">
+                    <span asp-validation-for="Coordinator" class="error"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+        <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
+    </div>
+</form>
