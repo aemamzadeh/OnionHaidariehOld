@@ -24,7 +24,7 @@ namespace ServiceHost.Areas.Admin.Pages.Members
         {
             Members = _memberApplication.Search(searchModel);
         }
-        public IActionResult OnGetCreate(CreateMember command)
+        public IActionResult OnGetCreate()
         {
             return Partial("./Create", new CreateMember());
         }

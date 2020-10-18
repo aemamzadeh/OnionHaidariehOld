@@ -23,6 +23,7 @@ namespace Haidarieh.Application
                 return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
             var member = new Member(command.FullName, command.Mobile);
             _memberRepository.Create(member);
+            _memberRepository.SaveChanges();
             return operation.Succedded();
         }
 

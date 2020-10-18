@@ -28,6 +28,7 @@ namespace Haidarieh.Application
                        command.MetaDescription, command.Slug);
 
             _ceremonyGuestRepository.Create(ceremonyGuest);
+            _ceremonyGuestRepository.SaveChanges();
             return operation.Succedded();
         }
 
@@ -40,6 +41,7 @@ namespace Haidarieh.Application
                 return operation.Failed("رکوردی وجود ندارد.");
             if (_ceremonyGuestRepository.Exist(x => x.CeremonyId == command.CeremonyId && x.Id != command.Id))
                 return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
+            _ceremonyGuestRepository.SaveChanges();
 
             return operation.Succedded();
         }

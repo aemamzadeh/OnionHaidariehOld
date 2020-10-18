@@ -22,7 +22,7 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
         {
             Multimedias=_multimediaApplication.Search(searchModel);
         }
-        public IActionResult OnGetCreate(CreateMultimedia command)
+        public IActionResult OnGetCreate()
         {
             return Partial("./Create", new CreateMultimedia());
         }

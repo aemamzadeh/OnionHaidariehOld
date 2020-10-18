@@ -170,3 +170,15 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Sponsors\Index.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\ServiceHost.csproj.CoreCompileInputs.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\ServiceHost.MvcApplicationPartsAssemblyInfo.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\CeremonyGuests\Create.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\CeremonyGuests\Edit.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\CeremonyGuests\Index.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Guests\Create.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Guests\Edit.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Guests\Index.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Members\Create.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Members\Edit.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Members\Index.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Multimedias\Create.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Multimedias\Edit.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Multimedias\Index.cshtml.g.cs

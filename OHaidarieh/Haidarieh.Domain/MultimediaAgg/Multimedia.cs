@@ -17,22 +17,24 @@ namespace Haidarieh.Domain.MultimediaAgg
         public long CeremonyGuestId { get; private set; }
         public CeremonyGuest CeremonyGuest { get; private set; }
 
-        public Multimedia(string title, string fileAddress, string fileTitle, string fileAlt)
+        public Multimedia(string title, string fileAddress, string fileTitle, string fileAlt,long ceremonyGuestId)
         {
             Title = title;
             FileAddress = fileAddress;
             FileTitle = fileTitle;
             FileAlt = fileAlt;
+            CeremonyGuestId = ceremonyGuestId;
             Status = true;
 
         }
-        public void Edit(string title, string fileAddress, string fileTitle, string fileAlt)
+        public void Edit(string title, string fileAddress, string fileTitle, string fileAlt, long ceremonyGuestId)
         {
             Title = title;
             FileAddress = fileAddress;
             FileTitle = fileTitle;
-            Status = true;
             FileAlt = fileAlt;
+            CeremonyGuestId = ceremonyGuestId;
+            Status = true;
 
         }
     }

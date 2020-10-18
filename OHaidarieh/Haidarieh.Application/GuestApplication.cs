@@ -23,6 +23,7 @@ namespace Haidarieh.Application
             var guest = new Guest(command.FullName, command.Tel, command.Image, command.ImageAlt,
                 command.ImageTitle, command.GuestType, command.Coordinator);
             _guestRepository.Create(guest);
+            _guestRepository.SaveChanges();
             return operation.Succedded();
         }
 

@@ -13,8 +13,10 @@ namespace Haidarieh.Infrastructure.EFCore.Mapping
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Title).HasMaxLength(255).IsRequired();
             builder.Property(x => x.FileAddress).IsRequired();
+            builder.Property(x => x.FileTitle);
+            builder.Property(x => x.FileAlt);
             builder.Property(x => x.CeremonyGuestId).IsRequired();
-            builder.Property(x => x.Status);
+            builder.Property(x => x.Status).IsRequired();
 
             builder.HasOne(x => x.CeremonyGuest).WithMany(x => x.Multimedias).HasForeignKey(x => x.CeremonyGuestId);
         }

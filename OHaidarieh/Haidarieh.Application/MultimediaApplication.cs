@@ -20,7 +20,7 @@ namespace Haidarieh.Application
             var operation= new OperationResult();
             if(_multimediaRepository.Exist(x=>x.Title==command.Title))
                 return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
-            var multimedia = new Multimedia(command.Title, command.FileAddress, command.FileTitle, command.FileAlt);
+            var multimedia = new Multimedia(command.Title, command.FileAddress, command.FileTitle, command.FileAlt,command.CeremonyGuestId);
             _multimediaRepository.Create(multimedia);
             _multimediaRepository.SaveChanges();
             return operation.Succedded();
@@ -35,7 +35,7 @@ namespace Haidarieh.Application
                 return operation.Failed("رکورد وجود ندارد.");
             if(_multimediaRepository.Exist(x=>x.Title==x.Title && x.Id!=command.Id))
                 return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
-            editItem.Edit(command.Title, command.FileAddress, command.FileTitle, command.FileAlt);
+            editItem.Edit(command.Title, command.FileAddress, command.FileTitle, command.FileAlt,command.CeremonyGuestId);
             _multimediaRepository.SaveChanges();
             return operation.Succedded();
         }
