@@ -31,13 +31,18 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
 
         public void OnGet(CeremonyGuestSearchModel searchModel)
         {
-            Ceremonies = new SelectList(_ceremonyApplication.GetCeremonies(),"Id","Title");
             CeremonyGuests = _ceremonyGuestApplication.Search(searchModel);
+            Ceremonies = new SelectList(_ceremonyApplication.GetCeremonies(),"Id","Title");
             Guests = new SelectList(_guestApplication.GetGuests(), "Id", "FullName");
         }
         public IActionResult OnGetCreate()
         {
-            return Partial("./Create", new CreateCeremonyGuest());
+            var command = new CreateCeremonyGuest
+            {
+                CeremoniesM = _ceremonyApplication.GetCeremonies(),
+                GuestsM = _guestApplication.GetGuests()
+            };
+            return Partial("./Create", command);
         }
         public JsonResult OnPostCreate(CreateCeremonyGuest command)
         {
@@ -47,6 +52,8 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
         public IActionResult OnGetEdit(long id)
         {
             var ceremonyGuest = _ceremonyGuestApplication.GetDetail(id);
+            ceremonyGuest.GuestsM = _guestApplication.GetGuests();
+            ceremonyGuest.CeremoniesM = _ceremonyApplication.GetCeremonies();
             return Partial("./Edit", ceremonyGuest);
         }
         public JsonResult OnPostEdit(EditCeremonyGuest command)

@@ -24,7 +24,9 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="CeremonyGuestId" class="control-label">مراسم</label>
-                        <input type="text" class="form-control" asp-for="CeremonyGuestId">
+                        <select type="text" class="form-control" asp-for="CeremonyGuestId" asp-items='new SelectList(Model.CeremonyGuests,"Id","Ceremony")'>
+                            <option value="0">انتخاب مراسم</option>
+                        </select>
                         <span asp-validation-for="CeremonyGuestId" class="error"></span>
                     </div>
                 </div>

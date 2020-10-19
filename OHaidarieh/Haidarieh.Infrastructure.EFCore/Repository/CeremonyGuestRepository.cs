@@ -35,8 +35,9 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
 
         public EditCeremonyGuest GetDetail(long Id)
         {
-            return _hContext.CeremonyGuests.Select(x => new EditCeremonyGuest()
+            return _hContext.CeremonyGuests.Select(x => new EditCeremonyGuest
             {
+                Id=x.Id,
                 GuestId = x.GuestId,
                 CeremonyId = x.CeremonyId,
                 CeremonyDate = x.CeremonyDate,
@@ -49,7 +50,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Keywords=x.Keywords,
                 MetaDescription=x.MetaDescription,
                 Slug=x.Slug
-            }).FirstOrDefault(x => x.Id == Id);
+            }).AsEnumerable().FirstOrDefault(x => x.Id == Id);
         }
 
         public List<CeremonyGuestViewModel> Search(CeremonyGuestSearchModel searchModel)
@@ -57,6 +58,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             var query = _hContext.CeremonyGuests.Include(x=>x.Guest).Include(x=>x.Ceremony)
                 .Select(x => new CeremonyGuestViewModel
             {
+                Id=x.Id,
                 Guest = x.Guest.FullName,
                 Ceremony = x.Ceremony.Title,
                 GuestId=x.GuestId,

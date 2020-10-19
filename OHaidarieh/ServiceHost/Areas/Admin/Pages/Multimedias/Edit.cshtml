@@ -23,8 +23,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="CeremonyGuestId" class="control-label">تلفن</label>
-                        <input type="text" class="form-control" asp-for="CeremonyGuestId">
+                        <label asp-for="CeremonyGuestId" class="control-label">مراسم</label>
+                        <select type="text" class="form-control" asp-for="CeremonyGuestId" asp-items='new SelectList(Model.CeremonyGuests,"Id","Ceremony")'>
+                            <option value="0">انتخاب مراسم</option>
+                        </select>
                         <span asp-validation-for="CeremonyGuestId" class="error"></span>
                     </div>
                 </div>
@@ -53,10 +55,11 @@
                         <span asp-validation-for="FileAlt" class="error"></span>
                     </div>
                 </div>
-
             </div>
-        </div>
+            <input type="hidden" asp-for="Id" value="@Model.Id">
 
+        </div>
+</div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
             <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>

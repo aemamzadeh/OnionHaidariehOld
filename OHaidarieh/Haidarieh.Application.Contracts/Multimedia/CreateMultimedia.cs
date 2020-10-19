@@ -1,4 +1,6 @@
 ﻿using _0_Framework.Application;
+using Haidarieh.Application.Contracts.CeremonyGuest;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Haidarieh.Application.Contracts.Multimedia
@@ -15,5 +17,6 @@ namespace Haidarieh.Application.Contracts.Multimedia
         public string FileAlt { get;  set; }
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public long CeremonyGuestId { get;  set; }
+        public List<CeremonyGuestViewModel> CeremonyGuests { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace Haidarieh.Application
         {
             var operation = new OperationResult();
 
-            if (_ceremonyGuestRepository.Exist(x=>x.GuestId==command.GuestId))
+            if (_ceremonyGuestRepository.Exist(x=>x.GuestId==command.GuestId && x.CeremonyId == command.CeremonyId))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
@@ -42,6 +42,9 @@ namespace Haidarieh.Application
                 return operation.Failed(ApplicationMessages.RecordNotFound);
             if (_ceremonyGuestRepository.Exist(x => x.CeremonyId == command.CeremonyId && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
+            editItem.Edit(command.GuestId, command.CeremonyId, command.CeremonyDate, command.Satisfication,
+                command.IsLive, command.BannerFile, command.Image, command.ImageAlt, command.ImageTitle, command.Keywords,
+                       command.MetaDescription, command.Slug);
             _ceremonyGuestRepository.SaveChanges();
 
             return operation.Succedded();

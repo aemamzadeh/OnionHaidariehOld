@@ -47,11 +47,12 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
             Status = true;
             Multimedias = new List<Multimedia>();
         }
-        public void Edit(long guestId, DateTime ceremonyDate, float satisfication, bool isLive,
+        public void Edit(long guestId, long ceremonyId, DateTime ceremonyDate, float satisfication, bool isLive,
             string bannerFile, string image, string imageAlt, string imageTitle, string keywords,
             string metaDescription, string slug)
         {
             GuestId = guestId;
+            CeremonyId = ceremonyId;
             CeremonyDate = ceremonyDate;
             Satisfication = satisfication;
             IsLive = isLive;
