@@ -19,9 +19,10 @@ namespace Haidarieh.Application
         {
             var operation = new OperationResult();
             if (_sponsorRepository.Exist(x => x.Name == command.Name))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
-            var sponsor = new Sponsor(command.Name, command.Tel, command.Image, command.ImageAlt, command.ImageTitle, command.IsVisible, command.Bio);
+            var sponsor = new Sponsor(command.Name, command.Tel, command.Image, command.ImageAlt, 
+                command.ImageTitle, command.IsVisible, command.Bio);
             _sponsorRepository.Create(sponsor);
             _sponsorRepository.SaveChanges();
             return operation.Succedded();
@@ -33,9 +34,9 @@ namespace Haidarieh.Application
             operation.IsSuccedded = false;
             var editItem = _sponsorRepository.Get(command.Id);
             if (editItem == null)
-                return operation.Failed("رکورد وجود ندارد.");
+                return operation.Failed(ApplicationMessages.RecordNotFound);
             if (_sponsorRepository.Exist(x => x.Name == x.Name && x.Id != command.Id))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
             editItem.Edit(command.Name, command.Tel, command.Image, command.ImageAlt, command.ImageTitle, command.IsVisible, command.Bio);
             _sponsorRepository.SaveChanges();
             return operation.Succedded();

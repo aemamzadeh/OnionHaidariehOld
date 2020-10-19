@@ -19,8 +19,8 @@ namespace Haidarieh.Application
         {
             var operation = new OperationResult();
             if (_ceremonyRepository.Exist(x=>x.Title==command.Title))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
-
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
+ 
             var ceremony = new Ceremony(command.Title, command.CeremonyDate);
             _ceremonyRepository.Create(ceremony);
             _ceremonyRepository.SaveChanges();
@@ -33,16 +33,21 @@ namespace Haidarieh.Application
             operation.IsSuccedded = false;
             var editItem=_ceremonyRepository.Get(command.Id);
             if (editItem == null)
-                return operation.Failed("رکورد وجود ندارد");
+                return operation.Failed(ApplicationMessages.RecordNotFound);
 
             if(_ceremonyRepository.Exist(x=>x.Title==command.Title && x.Id!=command.Id))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             editItem.Edit(command.Title, command.CeremonyDate);
             _ceremonyRepository.SaveChanges();
 
             return operation.Succedded();
 
+        }
+
+        public List<CeremonyViewModel> GetCeremonies()
+        {
+            return _ceremonyRepository.GetCeremonies();
         }
 
         public EditCeremony GetDetail(long Id)

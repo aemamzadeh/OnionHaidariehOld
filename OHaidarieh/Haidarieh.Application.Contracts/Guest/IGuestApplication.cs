@@ -11,5 +11,6 @@ namespace Haidarieh.Application.Contracts.Guest
         OperationResult Edit(EditGuest command);
         List<GuestViewModel> Search(GuestSearchModel searchModel);
         EditGuest GetDetail(long Id);
+        List<GuestViewModel> GetGuests();
     }
 }

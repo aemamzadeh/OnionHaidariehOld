@@ -30,6 +30,19 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             }).FirstOrDefault(x => x.Id == id);
         }
 
+        public List<GuestViewModel> GetGuests()
+        {
+            return _hContext.Guests.Select(x => new GuestViewModel
+            {
+                Id=x.Id,
+                GuestType=x.GuestType,
+                FullName=x.FullName,
+                Image=x.Image,
+                Tel=x.Tel,
+                Coordinator=x.Coordinator
+            }).ToList();
+        }
+
         public List<GuestViewModel> Search(GuestSearchModel searchModel)
         {
             var query = _hContext.Guests.Select(x => new GuestViewModel

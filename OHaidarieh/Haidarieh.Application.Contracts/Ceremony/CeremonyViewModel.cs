@@ -6,6 +6,6 @@ namespace Haidarieh.Application.Contracts.Ceremony
     {
         public long Id { get; set; }
         public string Title { get; set; }
-        public DateTime CeremonyDate { get; set; }
+        public string CeremonyDate { get; set; }
     }
 }

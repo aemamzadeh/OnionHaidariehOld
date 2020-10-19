@@ -25,7 +25,16 @@
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.CeremonyId"></label>
-                        <input class="form-control" asp-for="SearchModel.CeremonyId" placeholder="نام مراسم">
+                        <select class="form-control" asp-for="SearchModel.CeremonyId" asp-items="Model.Ceremonies">
+                            <option value="0">انتخاب مراسم</option>
+                        </select>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.GuestId"></label>
+                        <select class="form-control" asp-for="SearchModel.GuestId" asp-items="Model.Guests">
+                            <option value="0">انتخاب میهمان</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
                     <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">مشاهده همه</a>
@@ -51,7 +60,7 @@
                                     <th>عکس</th>
                                     <th>تاریخ برگزاری</th>
                                     <th>مراسم عنوان</th>
-                                    <th>میهمانان</th>
+                                    <th>میهمان</th>
                                     <th>وضعیت پخش</th>
                                     <th>میزان رضایتمندی</th>
                                     <th>عملیات</th>
@@ -66,8 +75,8 @@
                                         <img src="@item.Image" style="width: 70px; height: 70px" />
                                     </td>
                                     <td>@item.CeremonyDate</td>
-                                    <td>@item.CeremonyId</td>
-                                    <td>@item.GuestId</td>
+                                    <td>@item.Ceremony</td>
+                                    <td>@item.Guest</td>
                                     <td>@item.IsLive</td>
                                     <td>@item.Satisfication</td>
 

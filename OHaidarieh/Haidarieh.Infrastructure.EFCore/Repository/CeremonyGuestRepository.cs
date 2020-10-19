@@ -1,6 +1,7 @@
 ﻿using _0_Framework.Infrastructure;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Domain.CeremonyGuestAgg;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,21 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
         public CeremonyGuestRepository(HContext hContext):base(hContext)
         {
             _hContext = hContext;
+        }
+
+        public List<CeremonyGuestViewModel> GetCeremonyGuests()
+        {
+            return _hContext.CeremonyGuests.Select(x => new CeremonyGuestViewModel
+            {
+                Id=x.Id,
+                GuestId=x.GuestId,
+                CeremonyId=x.CeremonyId,
+                Ceremony=x.Ceremony.Title,
+                CeremonyDate=x.CeremonyDate.ToString(),
+                Image=x.Image,
+                IsLive=x.IsLive,
+                Satisfication=x.Satisfication
+            }).ToList();
         }
 
         public EditCeremonyGuest GetDetail(long Id)
@@ -38,15 +54,25 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
 
         public List<CeremonyGuestViewModel> Search(CeremonyGuestSearchModel searchModel)
         {
-            return _hContext.CeremonyGuests.Select(x => new CeremonyGuestViewModel()
+            var query = _hContext.CeremonyGuests.Include(x=>x.Guest).Include(x=>x.Ceremony)
+                .Select(x => new CeremonyGuestViewModel
             {
-                GuestId = x.GuestId,
-                CeremonyId = x.CeremonyId,
-                CeremonyDate = x.CeremonyDate,
+                Guest = x.Guest.FullName,
+                Ceremony = x.Ceremony.Title,
+                GuestId=x.GuestId,
+                CeremonyId=x.CeremonyId,
+                CeremonyDate = x.CeremonyDate.ToString(),
                 Satisfication = x.Satisfication,
                 IsLive = x.IsLive,
                 Image = x.Image
-            }).ToList();
+            }).AsEnumerable();
+            if (searchModel.GuestId!=0)
+                query = query.Where(x => x.GuestId==searchModel.GuestId);
+
+            if (searchModel.CeremonyId != 0)
+                query = query.Where(x => x.CeremonyId == searchModel.CeremonyId);
+
+            return query.OrderByDescending(x => x.Id).ToList();
         }
     }
 }

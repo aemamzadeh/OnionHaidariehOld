@@ -21,11 +21,12 @@ namespace Haidarieh.Application
             var operation = new OperationResult();
 
             if (_ceremonyGuestRepository.Exist(x=>x.GuestId==command.GuestId))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
+            var slug = command.Slug.Slugify();
             var ceremonyGuest = new CeremonyGuest(command.GuestId,command.CeremonyId, command.CeremonyDate, command.Satisfication,
                 command.IsLive, command.BannerFile, command.Image, command.ImageAlt, command.ImageTitle, command.Keywords,
-                       command.MetaDescription, command.Slug);
+                       command.MetaDescription, slug);
 
             _ceremonyGuestRepository.Create(ceremonyGuest);
             _ceremonyGuestRepository.SaveChanges();
@@ -38,12 +39,17 @@ namespace Haidarieh.Application
             operation.IsSuccedded = false;
             var editItem = _ceremonyGuestRepository.Get(command.Id);
             if (editItem == null)
-                return operation.Failed("رکوردی وجود ندارد.");
+                return operation.Failed(ApplicationMessages.RecordNotFound);
             if (_ceremonyGuestRepository.Exist(x => x.CeremonyId == command.CeremonyId && x.Id != command.Id))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
             _ceremonyGuestRepository.SaveChanges();
 
             return operation.Succedded();
+        }
+
+        public List<CeremonyGuestViewModel> GetCeremonyGuests()
+        {
+            return _ceremonyGuestRepository.GetCeremonyGuests();
         }
 
         public EditCeremonyGuest GetDetail(long Id)

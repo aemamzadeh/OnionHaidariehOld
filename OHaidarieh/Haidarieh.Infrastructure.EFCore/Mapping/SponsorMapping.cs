@@ -14,6 +14,8 @@ namespace Haidarieh.Infrastructure.EFCore.Mapping
             builder.Property(x => x.Name).IsRequired();
             builder.Property(x => x.Tel);
             builder.Property(x => x.Image);
+            builder.Property(x => x.ImageAlt);
+            builder.Property(x => x.ImageTitle);
             builder.Property(x => x.IsVisible);
             builder.Property(x => x.Status);
             builder.Property(x => x.Bio);

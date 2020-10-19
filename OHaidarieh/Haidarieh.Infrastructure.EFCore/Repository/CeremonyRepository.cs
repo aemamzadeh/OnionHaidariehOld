@@ -18,6 +18,15 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             _hContext = hContext;
         }
 
+        public List<CeremonyViewModel> GetCeremonies()
+        {
+            return _hContext.Ceremonies.Select(x => new CeremonyViewModel
+            {
+                Id = x.Id,
+                Title=x.Title
+            }).ToList();
+        }
+
         public EditCeremony GetDetail(long id)
         {
             return _hContext.Ceremonies.Select(x => new EditCeremony()
@@ -34,8 +43,8 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate = x.CeremonyDate
-            });
+                CeremonyDate = x.CeremonyDate.ToString()
+            }) ;
 
             if (!string.IsNullOrWhiteSpace(searchModel.Title))
                 query = query.Where(x => x.Title.Contains(searchModel.Title));

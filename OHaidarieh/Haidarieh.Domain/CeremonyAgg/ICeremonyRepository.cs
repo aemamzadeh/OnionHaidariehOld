@@ -9,7 +9,7 @@ namespace Haidarieh.Domain.CeremonyAgg
 {
     public interface ICeremonyRepository : IRepository<long,Ceremony>
     {
-
+        List<CeremonyViewModel> GetCeremonies();
         EditCeremony GetDetail(long id);
         List<CeremonyViewModel> Search(CeremonySearchModel searchModel);
     }

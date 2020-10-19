@@ -20,7 +20,7 @@ namespace Haidarieh.Application
         {
             var operation = new OperationResult();
             if(_memberRepository.Exist(x=>x.Mobile==command.Mobile))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
             var member = new Member(command.FullName, command.Mobile);
             _memberRepository.Create(member);
             _memberRepository.SaveChanges();
@@ -33,9 +33,9 @@ namespace Haidarieh.Application
             operation.IsSuccedded = false;
             var editItem = _memberRepository.Get(command.Id);
             if (editItem == null)
-                return operation.Failed("رکورد وجود ندارد.");
+                return operation.Failed(ApplicationMessages.RecordNotFound);
             if(_memberRepository.Exist(x=>x.Mobile==command.Mobile && x.Id!=command.Id))
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد مجدد تلاش نمایید.");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
             editItem.Edit(command.FullName, command.Mobile);
             _memberRepository.SaveChanges();
             return operation.Succedded();
