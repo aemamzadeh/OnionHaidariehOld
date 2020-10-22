@@ -18,3 +18,5 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp3.1\Haidarieh.Configuration.csproj.CopyComplete
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp3.1\Haidarieh.Configuration.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp3.1\Haidarieh.Configuration.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\bin\Debug\netcoreapp3.1\01_HaidariehQuery.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\bin\Debug\netcoreapp3.1\01_HaidariehQuery.pdb

@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\01_HaidariehQuery\01_HaidariehQuery.csproj" />
     <ProjectReference Include="..\Haidarieh.Application\Haidarieh.Application.csproj" />
     <ProjectReference Include="..\Haidarieh.Infrastructure.EFCore\Haidarieh.Infrastructure.EFCore.csproj" />
   </ItemGroup>

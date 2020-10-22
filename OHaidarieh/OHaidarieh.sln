@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Haidarieh.Configuration", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{8E854C48-1600-4D97-9A17-27D99BEB3A7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_HaidariehQuery", "01_HaidariehQuery\01_HaidariehQuery.csproj", "{ABD4E225-AC6C-4BEB-8CC6-B36D8C941309}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{8E854C48-1600-4D97-9A17-27D99BEB3A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E854C48-1600-4D97-9A17-27D99BEB3A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E854C48-1600-4D97-9A17-27D99BEB3A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD4E225-AC6C-4BEB-8CC6-B36D8C941309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD4E225-AC6C-4BEB-8CC6-B36D8C941309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD4E225-AC6C-4BEB-8CC6-B36D8C941309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD4E225-AC6C-4BEB-8CC6-B36D8C941309}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

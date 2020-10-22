@@ -1,4 +1,8 @@
-﻿using Haidarieh.Application;
+﻿using _01_HaidariehQuery.Contracts.CeremonyGuests;
+using _01_HaidariehQuery.Contracts.Members;
+using _01_HaidariehQuery.Contracts.Sponsers;
+using _01_HaidariehQuery.Query;
+using Haidarieh.Application;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Guest;
@@ -15,9 +19,7 @@ using Haidarieh.Infrastructure.EFCore;
 using Haidarieh.Infrastructure.EFCore.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Haidarieh.Configuration
 {
@@ -42,6 +44,14 @@ namespace Haidarieh.Configuration
             
             services.AddTransient<IMultimediaApplication, MultimediaApplication>();
             services.AddTransient<IMultimediaRepository, MultimediaRepository>();
+
+            services.AddTransient<ICeremonyGuestQuery, CeremonyGuestQuery>();
+            //services.AddTransient<ICeremonyQuery, CeremonyQuery>();
+            //services.AddTransient<IGuestQuery, GuestQuery>();
+            services.AddTransient<IMemberQuery, MemberQuery>();
+            //services.AddTransient<IMultimediaQuery, MultimediaQuery>();
+            services.AddTransient<ISponsorQuery, SponsorQuery>();
+
 
 
             services.AddDbContext<HContext>(x => x.UseSqlServer(connectionString));

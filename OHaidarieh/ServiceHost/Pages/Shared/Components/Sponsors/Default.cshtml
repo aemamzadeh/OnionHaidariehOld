@@ -1,0 +1,29 @@
+﻿@model List<_01_HaidariehQuery.Contracts.Sponsers.SponsorQueryModel>
+
+<div class="gap white-layer opc9">
+    <div class="fixed-bg ptrn-bg" style="background-image: url(assets/images/pattern-bg.jpg);"></div>
+    <div class="container">
+        <div class="sec-title2 text-center">
+            <div class="sec-title-inner2">
+                <span>آخرین دیدگاه های</span>
+                <h3>اهدا کنندگان</h3>
+            </div>
+        </div>
+        <div class="testi-wrap style2 text-center">
+            <div class="testi-car owl-carousel">
+                @foreach (var item in Model)
+                {
+                    <div class="testi-itm">
+                        <i><img src=@item.Image></i>
+                        <div class="testi-info">
+                            <h4>@item.Name</h4>
+                            <p class="digahz">@item.Bio </p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+

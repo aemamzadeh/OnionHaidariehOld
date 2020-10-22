@@ -1,50 +1,54 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ServiceHost</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="icon" href="~theme/assets/images/favicon2.png" sizes="32x32" type="image/png">
+    <title>@ViewData["Title"] - حیدریه نجف اشرف -طهران</title>
+
+    <link rel="stylesheet" href="~/theme/assets/css/icons.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/fancybox.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/jquery.circliful.css">
+    <link rel="stylesheet" href="~/theme/assets/css/style.css">
+    <link rel="stylesheet" href="~/theme/assets/css/rtl.css">
+    <link rel="stylesheet" href="~/theme/assets/css/shabnam.css">
+    <link rel="stylesheet" href="~/theme/assets/css/responsive.css">
+
+    <!-- Color Scheme -->
+    <link rel="stylesheet" href="~/theme/assets/css/colors/color3.css" /><!-- Color -->
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">ServiceHost</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+<body class="clearfix">
+    <main>
+        <div class="pageloader-wrap clearfix">
+            <div class="loader">
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__ball"></div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        </div><!-- Pageloader Wrap -->
+        <partial name="Header" />
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - ServiceHost - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+        @RenderBody()
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+        <partial name="Footer" />
 
-    @RenderSection("Scripts", required: false)
+    </main>
+        <script src="~/theme/assets/js/jquery.min.js"></script>
+        <script src="~/theme/assets/js/bootstrap.min.js"></script>
+        <script src="~/theme/assets/js/downCount.js"></script>
+        <script src="~/theme/assets/js/fancybox.min.js"></script>
+        <script src="~/theme/assets/js/isotope.pkgd.min.js"></script>
+        <script src="~/theme/assets/js/perfectscrollbar.min.js"></script>
+        <script src="~/theme/assets/js/owl.carousel.min.js"></script>
+        <script src="~/theme/assets/js/jquery.circliful.min.js"></script>
+        <script src="~/theme/assets/js/custom-scripts.js"></script>
 </body>
 </html>

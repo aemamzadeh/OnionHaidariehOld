@@ -2261,6 +2261,17 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "01_HaidariehQuery/1.0.0": {
+        "dependencies": {
+          "Haidarieh.Infrastructure.EFCore": "1.0.0"
+        },
+        "runtime": {
+          "01_HaidariehQuery.dll": {}
+        },
+        "compile": {
+          "01_HaidariehQuery.dll": {}
+        }
+      },
       "0_Framework/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.9"
@@ -2299,6 +2310,7 @@
       },
       "Haidarieh.Configuration/1.0.0": {
         "dependencies": {
+          "01_HaidariehQuery": "1.0.0",
           "Haidarieh.Application": "1.0.0",
           "Haidarieh.Infrastructure.EFCore": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9"
@@ -5090,6 +5102,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "01_HaidariehQuery/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "0_Framework/1.0.0": {
       "type": "project",

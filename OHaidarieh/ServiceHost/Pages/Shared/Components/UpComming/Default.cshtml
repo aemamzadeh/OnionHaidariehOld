@@ -1,0 +1,35 @@
+﻿@model List<_01_HaidariehQuery.Contracts.CeremonyGuests.CeremonyGuestQueryModel>
+
+<div class="gap thm-layer opc95">
+    <div class="fixed-bg ptrn-bg" style="background-image: url(assets/images/pattern-bg.jpg);"></div>
+    <div class="container">
+        <div class="sec-title2 text-center">
+            <div class="sec-title-inner2">
+                <span>مراسم</span>
+                <h3>مراسم پیش رو</h3>
+            </div>
+        </div>
+        <div class="team-wrap text-center remove-ext3">
+            <div class="row">
+                @foreach (var ceremony in Model)
+                {
+                    <div class="col-md-3 col-sm-6 col-lg-3 fadeIn" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="team-box2">
+                            <img class="rounded-pill mx-auto d-block" src=@ceremony.Image alt="Image">
+                            <div class="team-info2">
+                                <h4><a asp-controller="CeremonyGuest" asp-action="Index">@ceremony.Ceremony</a> </h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
+                                <div class="team-scl">
+                                    <a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a href="index.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                    <a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div><!-- Team Wrap -->
+    </div>
+</div>

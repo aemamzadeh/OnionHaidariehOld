@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_01_HaidariehQuery</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Haidarieh.Infrastructure.EFCore\Haidarieh.Infrastructure.EFCore.csproj" />
+  </ItemGroup>
+
+</Project>
