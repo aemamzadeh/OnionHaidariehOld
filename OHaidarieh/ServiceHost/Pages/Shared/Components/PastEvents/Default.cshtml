@@ -18,7 +18,9 @@
                                 <div class="col-md-4 col-sm-4 col-lg-4">
                                     <div class="evnt-box">
                                         <div class="evnt-thmb">
-                                            <a href="index.html#" title="@item.ImageTitle"><img src="@item.Image" alt="@item.ImageAlt"></a>
+                                            <a asp-page="/MultimediaDetail/Detail" asp-route-Id=@item.Id>
+                                                <img src="@item.Image" title="@item.ImageTitle"><img  alt="@item.ImageAlt">
+                                            </a>
                                         </div>
                                         <div class="evnt-info">
                                             <h4>@item.Ceremony</h4>

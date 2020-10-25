@@ -1,0 +1,54 @@
+﻿@page
+@model MultimediaDetail.DetailModel
+@{
+    Layout = "_Layout2";
+    ViewData["title"] = "فایلهای چندرسانه ای مراسم";
+}
+
+<div class="gap remove-gap">
+    <div class="page-title-wrap">
+        <h2>فایلهای چندرسانه ای </h2>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <div class="sec-title">
+                    <div class="sec-title2 text-center">
+                        <h3>مراسم<span> @Model.multimedia.CeremonyGuest </span></h3>
+                        <h5><span> @Model.multimedia.CeremonyDate.ToShortDateString() </span></h5>
+
+                    </div>
+                </div>
+                <div class="evnt-wrap remove-ext5">
+                    <div class="row mrg20">
+                        @foreach (var item in Model.multimedias)
+                        {
+                            <div class="col-md-4 col-sm-4 col-lg-4">
+                                <div class="evnt-box">
+                                    <img src="@item.FileAddress" title="@item.FileTitle" alt="@item.FileAlt">
+                                    @*<div class="evnt-info">
+                                            <h4>@item.Ceremony</h4>
+                                            <ul class="pst-mta">
+                                                <li class="thm-clr">@item.CeremonyDate</li>
+                                                <li class="thm-clr">12:00 صبح تا 2:00 ظهر</li>
+                                            </ul>
+                                            <p>شهر اصلی - بخش جدید - مسجد تازه ساخت</p>
+                                        </div>*@
+                                </div>
+                            </div>
+
+                        }
+
+                    </div>
+                </div><!-- Events Wrap -->
+            </div>
+            @* </div> *@
+        </div><!-- Events & Prayer Wrap -->
+    </div>
+</div>
+
+
+
+
+

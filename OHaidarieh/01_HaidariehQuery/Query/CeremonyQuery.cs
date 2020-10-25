@@ -1,6 +1,8 @@
 ﻿using _01_HaidariehQuery.Contracts.Ceremonies;
 using _01_HaidariehQuery.Contracts.CeremonyGuests;
+using _01_HaidariehQuery.Contracts.Multimedias;
 using Haidarieh.Domain.CeremonyGuestAgg;
+using Haidarieh.Domain.MultimediaAgg;
 using Haidarieh.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -24,40 +26,12 @@ namespace _01_HaidariehQuery.Query
         {
             return _hContext.Ceremonies.Where(x => x.Status == true).Select(x => new CeremonyQueryModel
             {
-                Id=x.Id,
-                Title=x.Title,
-                CeremonyDate=x.CeremonyDate,
-                Status=x.Status
-            }).ToList();
-        }
-
-        public List<CeremonyQueryModel> GetCeremoniesWithCeremonyGuests()
-        {
-            return _hContext.Ceremonies.Include(x => x.CeremonyGuests).ThenInclude(x=>x.Ceremony).Where(x=>x.Status==true).Select(x => new CeremonyQueryModel 
-            {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyGuests=MapCeremonyGuests(x.CeremonyGuests)
+                CeremonyDate = x.CeremonyDate,
+                Status = x.Status
             }).ToList();
         }
 
-        private List<CeremonyGuestQueryModel> MapCeremonyGuests(List<CeremonyGuest> ceremonyGuests)
-        {
-            return _hContext.CeremonyGuests.Where(x => x.Status == true).Select(x=>new CeremonyGuestQueryModel
-            {
-                Id=x.Id,
-                Ceremony=x.Ceremony.Title,
-                CeremonyDate=x.CeremonyDate,
-                Image=x.Image,
-                ImageAlt=x.ImageAlt,
-                ImageTitle=x.ImageTitle,
-                IsLive=x.IsLive,
-                Keywords=x.Keywords,
-                MetaDescription=x.MetaDescription,
-                Slug=x.Slug,
-                Status=x.Status
-
-            }).OrderByDescending(x=>x.Id).ToList();
-        }
-    }
+    }   
 }

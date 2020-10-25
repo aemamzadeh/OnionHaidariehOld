@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _01_HaidariehQuery.Contracts.Multimedias;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,5 +22,6 @@ namespace _01_HaidariehQuery.Contracts.CeremonyGuests
         public string Slug { get;  set; }
         public string Guest { get; set; }
         public string Ceremony { get; set; }
+        public List<MultimediaQueryModel> Multimedias { get; set; }
     }
 }

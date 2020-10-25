@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _01_HaidariehQuery.Contracts.Multimedias;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,6 +10,8 @@ namespace _01_HaidariehQuery.Contracts.CeremonyGuests
         List<CeremonyGuestQueryModel> GetComing();
         List<CeremonyGuestQueryModel> GetPast();
         List<CeremonyGuestQueryModel> GetAll();
+        List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias();
+
 
     }
 }

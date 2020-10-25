@@ -1,5 +1,6 @@
 ﻿using _01_HaidariehQuery.Contracts.CeremonyGuests;
 using _01_HaidariehQuery.Contracts.Members;
+using _01_HaidariehQuery.Contracts.Multimedias;
 using _01_HaidariehQuery.Contracts.Sponsers;
 using _01_HaidariehQuery.Query;
 using Haidarieh.Application;
@@ -49,7 +50,7 @@ namespace Haidarieh.Configuration
             //services.AddTransient<ICeremonyQuery, CeremonyQuery>();
             //services.AddTransient<IGuestQuery, GuestQuery>();
             services.AddTransient<IMemberQuery, MemberQuery>();
-            //services.AddTransient<IMultimediaQuery, MultimediaQuery>();
+            services.AddTransient<IMultimediaQuery, MultimediaQuery>();
             services.AddTransient<ISponsorQuery, SponsorQuery>();
 
 

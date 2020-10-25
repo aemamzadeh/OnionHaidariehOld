@@ -4,7 +4,8 @@ using System.Text;
 
 namespace _01_HaidariehQuery.Contracts.Multimedias
 {
-    interface IMultimediaQuery
+    public interface IMultimediaQuery
     {
+        List<MultimediaQueryModel> GetDetail(long Id);
     }
 }
