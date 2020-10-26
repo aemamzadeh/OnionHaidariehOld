@@ -1,4 +1,5 @@
-﻿using _01_HaidariehQuery.Contracts.Multimedias;
+﻿using _01_HaidariehQuery.Contracts.CeremonyGuests;
+using _01_HaidariehQuery.Contracts.Multimedias;
 using Haidarieh.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,21 +18,23 @@ namespace _01_HaidariehQuery.Query
         {
             _hContext = hContext;
         }
-        public List<MultimediaQueryModel> GetDetail(long Id)
-        {
-            return _hContext.Multimedias.Where(x=>x.CeremonyGuestId==Id).Select(x => new MultimediaQueryModel
-            {
-                Id=x.Id,
-                Title=x.Title,
-                CeremonyGuest=x.CeremonyGuest.Ceremony.Title,
-                CeremonyGuestId=x.CeremonyGuestId,
-                CeremonyDate=x.CeremonyGuest.CeremonyDate,
-                FileAddress=x.FileAddress,
-                FileAlt=x.FileAlt,
-                FileTitle=x.FileTitle,
-                Status=x.Status
 
-            }).ToList();
-        }
+        //public List<MultimediaQueryModel> GetDetail(string Id)
+        //{
+        //    return _hContext.Multimedias.Where(x=>x.CeremonyGuest.Slug==Id).Select(x => new MultimediaQueryModel
+        //    {
+        //        Id=x.Id,
+        //        Title=x.Title,
+        //        CeremonyGuest=x.CeremonyGuest.Ceremony.Title,
+        //        CeremonyGuestId=x.CeremonyGuestId,
+        //        CeremonyDate=x.CeremonyGuest.CeremonyDate,
+        //        FileAddress=x.FileAddress,
+        //        FileAlt=x.FileAlt,
+        //        FileTitle=x.FileTitle,
+        //        Slug=x.CeremonyGuest.Slug,
+        //        Status=x.Status
+
+        //    }).ToList();
+        //}
     }
 }

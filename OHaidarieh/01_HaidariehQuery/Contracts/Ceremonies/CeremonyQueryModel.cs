@@ -11,5 +11,6 @@ namespace _01_HaidariehQuery.Contracts.Ceremonies
         public string Title { get; set; }
         public DateTime CeremonyDate { get; set; }
         public bool Status { get; set; }
+        public List<CeremonyGuestQueryModel> CeremonyGuests { get; set; }
     }
 }

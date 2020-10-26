@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using _01_HaidariehQuery.Contracts.Multimedias;
-using Haidarieh.Infrastructure.EFCore;
-using Microsoft.AspNetCore.Mvc;
+using _01_HaidariehQuery.Contracts.CeremonyGuests;
+using _0_Framework.Application;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 
@@ -13,20 +8,18 @@ namespace ServiceHost.Pages.MultimediaDetail
     public class DetailModel : PageModel
     {
 
-        private readonly IMultimediaQuery _multimediaQuery;
-        public List<MultimediaQueryModel> multimedias { get; set; }
-        public MultimediaQueryModel multimedia { get; set; }
+        private readonly ICeremonyGuestQuery _ceremonyGuestQuery;
+
+        public CeremonyGuestQueryModel ceremonyGuest { get; set; }
 
 
-
-        public DetailModel(IMultimediaQuery multimediaQuery)
+        public DetailModel(ICeremonyGuestQuery ceremonyGuestQuery)
         {
-            _multimediaQuery = multimediaQuery;
+            _ceremonyGuestQuery = ceremonyGuestQuery;
         }
-        public void OnGet(long Id)
+        public void OnGet(string Id)
         {
-            multimedias = _multimediaQuery.GetDetail(Id);
-            multimedia = _multimediaQuery.GetDetail(Id).First();
+            ceremonyGuest=_ceremonyGuestQuery.GetCeremonyGuestWithMultimedias(Id);
         }
     }
 

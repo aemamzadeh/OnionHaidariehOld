@@ -1,4 +1,5 @@
-﻿using _01_HaidariehQuery.Contracts.CeremonyGuests;
+﻿using _0_Framework.Application;
+using _01_HaidariehQuery.Contracts.CeremonyGuests;
 using _01_HaidariehQuery.Contracts.Multimedias;
 using Haidarieh.Domain.MultimediaAgg;
 using Haidarieh.Infrastructure.EFCore;
@@ -30,11 +31,12 @@ namespace _01_HaidariehQuery.Query
             {
                 Id=x.Id,
                 Ceremony = x.Ceremony.Title,
-                CeremonyDate = x.CeremonyDate,
+                CeremonyDateFa = x.CeremonyDate.ToFarsi(),
                 Image = x.Image,
                 IsLive = x.IsLive,
                 Guest = x.Guest.FullName,
-                BannerFile = x.BannerFile
+                BannerFile = x.BannerFile,
+                Slug=x.Slug
             }).ToList();
         }
         public List<CeremonyGuestQueryModel> GetPast()
@@ -46,11 +48,12 @@ namespace _01_HaidariehQuery.Query
                                                 {
                                                     Id = x.Id,
                                                     Ceremony = x.Ceremony.Title,
-                                                    CeremonyDate = x.CeremonyDate,
+                                                    CeremonyDateFa = x.CeremonyDate.ToFarsi(),
                                                     Image = x.Image,
                                                     IsLive = x.IsLive,
                                                     Guest = x.Guest.FullName,
-                                                    BannerFile = x.BannerFile
+                                                    BannerFile = x.BannerFile,
+                                                    Slug = x.Slug
                                                 }).ToList();
         }
         public List<CeremonyGuestQueryModel> GetAll()
@@ -59,46 +62,65 @@ namespace _01_HaidariehQuery.Query
             {
                 Id = x.Id,
                 Ceremony = x.Ceremony.Title,
-                CeremonyDate = x.CeremonyDate,
+                CeremonyDateFa = x.CeremonyDate.ToFarsi(),
                 Image = x.Image,
                 IsLive = x.IsLive,
                 Guest = x.Guest.FullName,
-                BannerFile = x.BannerFile
+                BannerFile = x.BannerFile,
+                Slug = x.Slug
             }).ToList();
 
         }
 
         public List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias()
         {
-            return _hContext.CeremonyGuests.Include(x => x.Ceremony).Include(x => x.Multimedias).
+            return _hContext.CeremonyGuests.Include(x => x.Ceremony).
+                                            Include(x => x.Multimedias).
                                             ThenInclude(x => x.CeremonyGuest).
                                             Where(x => x.Status == true).Select(x => new CeremonyGuestQueryModel
                                             {
                                                 Id = x.Id,
                                                 Ceremony = x.Ceremony.Title,
+                                                CeremonyDateFa=x.CeremonyDate.ToFarsi(),
+                                                Guest=x.Guest.FullName,
+                                                Slug=x.Slug,
                                                 Multimedias = MapMultimedias(x.Multimedias)
                                             }).ToList();
         }
 
-        private List<MultimediaQueryModel> MapMultimedias(List<Multimedia> multimedias)
+        private static List<MultimediaQueryModel> MapMultimedias(List<Multimedia> multimedias)
         {
-            var result = new List<MultimediaQueryModel>();
-            foreach (var multimedia in multimedias)
+            
+            return multimedias.Select(x => new MultimediaQueryModel
             {
-                var item = new MultimediaQueryModel
-                {
-                    Id = multimedia.Id,
-                    CeremonyGuest = multimedia.CeremonyGuest.Ceremony.Title,
-                    CeremonyGuestId = multimedia.CeremonyGuestId,
-                    Title = multimedia.Title,
-                    FileAddress = multimedia.FileAddress,
-                    FileAlt = multimedia.FileAlt,
-                    FileTitle = multimedia.FileTitle
-                };
-                result.Add(item);
-            }
+                Id = x.Id,
+                CeremonyGuest = x.CeremonyGuest.Ceremony.Title,
+                CeremonyGuestId = x.CeremonyGuestId,
+                Title = x.Title,
+                FileAddress = x.FileAddress,
+                FileAlt = x.FileAlt,
+                FileTitle = x.FileTitle
+            }).ToList();
+        }
 
-            return result;
+
+        
+
+        public CeremonyGuestQueryModel GetCeremonyGuestWithMultimedias(string slug)
+        {
+            var ceremonyGuest= _hContext.CeremonyGuests.Include(x => x.Multimedias).
+                                            ThenInclude(x => x.CeremonyGuest).
+                                            ThenInclude(x => x.Ceremony).
+                                            Where(x => x.Status == true).Select(x => new CeremonyGuestQueryModel
+                                            {
+                                                Id = x.Id,
+                                                Ceremony = x.Ceremony.Title,
+                                                CeremonyDateFa = x.CeremonyDate.Date.ToFarsi(),
+                                                Guest = x.Guest.FullName,
+                                                Slug = x.Slug,
+                                                Multimedias = MapMultimedias(x.Multimedias)
+                                            }).FirstOrDefault(x=>x.Slug==slug);
+            return ceremonyGuest;
         }
     }
 }

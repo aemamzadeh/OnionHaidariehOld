@@ -15,14 +15,14 @@
             <div class="col-md-12 col-sm-12 col-lg-12">
                 <div class="sec-title">
                     <div class="sec-title2 text-center">
-                        <h3>مراسم<span> @Model.multimedia.CeremonyGuest </span></h3>
-                        <h5><span> @Model.multimedia.CeremonyDate.ToShortDateString() </span></h5>
+                        <h3>مراسم<span> @Model.ceremonyGuest.Ceremony</span></h3>
+                        <h5><span> @Model.ceremonyGuest.CeremonyDateFa </span></h5>
 
                     </div>
                 </div>
                 <div class="evnt-wrap remove-ext5">
                     <div class="row mrg20">
-                        @foreach (var item in Model.multimedias)
+                        @foreach (var item in Model.ceremonyGuest.Multimedias)
                         {
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <div class="evnt-box">

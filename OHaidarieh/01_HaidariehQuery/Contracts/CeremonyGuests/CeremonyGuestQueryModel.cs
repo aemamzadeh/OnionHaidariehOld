@@ -10,7 +10,8 @@ namespace _01_HaidariehQuery.Contracts.CeremonyGuests
         public long Id { get; set; }
         public long GuestId { get;  set; }
         public long CeremonyId { get;  set; }
-        public DateTime CeremonyDate { get;  set; }
+        public string CeremonyDateFa { get;  set; }
+        public DateTime CeremonyDate { get; set; }
         public bool IsLive { get;  set; }
         public string BannerFile { get;  set; }
         public bool Status { get;  set; }
