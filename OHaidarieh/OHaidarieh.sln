@@ -21,9 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Haidarieh.Infrastructure.EF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Haidarieh.Configuration", "Haidarieh.Configuration\Haidarieh.Configuration.csproj", "{3CEAB6B1-13C5-4176-911E-C7969ADC8B22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{8E854C48-1600-4D97-9A17-27D99BEB3A7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{8E854C48-1600-4D97-9A17-27D99BEB3A7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_HaidariehQuery", "01_HaidariehQuery\01_HaidariehQuery.csproj", "{ABD4E225-AC6C-4BEB-8CC6-B36D8C941309}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_HaidariehQuery", "01_HaidariehQuery\01_HaidariehQuery.csproj", "{ABD4E225-AC6C-4BEB-8CC6-B36D8C941309}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

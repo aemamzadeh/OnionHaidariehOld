@@ -1,10 +1,12 @@
-﻿using _0_Framework.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Infrastructure;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Domain.CeremonyAgg;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace Haidarieh.Infrastructure.EFCore.Repository
@@ -27,13 +29,35 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             }).ToList();
         }
 
+        public List<CeremonyOperationViewModel> GetCeremonyOperationsLog()
+        {
+            //var result = new List<CeremonyOperationViewModel>();
+            var ceremonyList = _hContext.Ceremonies.ToList();
+            foreach (var cer in ceremonyList)
+            {
+                var item = cer.CeremonyOperations.Select(x => new CeremonyOperationViewModel
+                {
+                    Id = x.Id,
+                    CeremonyId = x.CeremonyId,
+                    //Ceremony = x.Ceremony.Title,
+                    Description = x.Description,
+                    Operation = x.Operation,
+                    OperationDate = x.OperationDate.ToFarsi(),
+                    OperatorId = x.OperatorId
+                    
+                });
+                //result.Add(item);
+            }
+            return null;
+        }
+
         public EditCeremony GetDetail(long id)
         {
             return _hContext.Ceremonies.Select(x => new EditCeremony()
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate = x.CeremonyDate,
+                CeremonyDateFa = x.CeremonyDate.ToFarsi(),
             }).FirstOrDefault(x => x.Id == id);
         }
 
@@ -43,7 +67,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate = x.CeremonyDate.ToString()
+                CeremonyDate = x.CeremonyDate.ToFarsi()
             }) ;
 
             if (!string.IsNullOrWhiteSpace(searchModel.Title))
@@ -51,5 +75,6 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
 
             return query.OrderByDescending(x => x.Id).ToList();
         }
+
     }
 }

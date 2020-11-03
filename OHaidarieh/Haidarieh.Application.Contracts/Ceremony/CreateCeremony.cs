@@ -11,5 +11,7 @@ namespace Haidarieh.Application.Contracts.Ceremony
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Title { get;  set; }
         public DateTime CeremonyDate { get;  set; }
+        public string CeremonyDateFa { get; set; }
+
     }
 }

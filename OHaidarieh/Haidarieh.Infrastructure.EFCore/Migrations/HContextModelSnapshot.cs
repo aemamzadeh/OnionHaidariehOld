@@ -226,6 +226,41 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                     b.ToTable("Tbl_Sponsor");
                 });
 
+            modelBuilder.Entity("Haidarieh.Domain.CeremonyAgg.Ceremony", b =>
+                {
+                    b.OwnsMany("Haidarieh.Domain.CeremonyAgg.CeremonyOperation", "Operations", b1 =>
+                        {
+                            b1.Property<long>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("bigint")
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<long>("CeremonyId")
+                                .HasColumnType("bigint");
+
+                            b1.Property<string>("Description")
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<int>("Operation")
+                                .HasColumnType("int");
+
+                            b1.Property<DateTime>("OperationDate")
+                                .HasColumnType("datetime2");
+
+                            b1.Property<long>("OperatorId")
+                                .HasColumnType("bigint");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("CeremonyId");
+
+                            b1.ToTable("Tbl_CeremonyOperation");
+
+                            b1.WithOwner("Ceremony")
+                                .HasForeignKey("CeremonyId");
+                        });
+                });
+
             modelBuilder.Entity("Haidarieh.Domain.CeremonyGuestAgg.CeremonyGuest", b =>
                 {
                     b.HasOne("Haidarieh.Domain.CeremonyAgg.Ceremony", "Ceremony")

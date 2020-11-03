@@ -45,5 +45,10 @@ namespace ServiceHost.Areas.Admin.Pages.Ceremonies
             var result = _ceremonyApplication.Edit(command);
             return new JsonResult(result);
         }
+        public IActionResult OnGetLog()
+        {
+            var logs = _ceremonyApplication.GetCeremonyOperationsLog();
+            return Partial("OperationLog", logs);
+        }
     }
 }

@@ -36,6 +36,9 @@
     <link href="~/AdminTheme/assets/css/helper.css" rel="stylesheet" type="text/css" />
     <link href="~/AdminTheme/assets/css/style.css" rel="stylesheet" type="text/css" />
 
+    <link href="~/AdminTheme/assets/css/persian-datepicker.min.css" rel="stylesheet" type="text/css" />
+
+
     <script src="~/AdminTheme/assets/js/modernizr.min.js"></script>
 
 </head>
@@ -214,21 +217,21 @@
                         </li>
 
                         @*<li class="has_sub">
-        <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
-        <ul>
-            <li class="has_sub">
-                <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                <ul style="">
-                    <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
-                    <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
-                    <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
-            </li>
-        </ul>
-        </li>*@
+                            <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                            <ul>
+                                <li class="has_sub">
+                                    <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                    <ul style="">
+                                        <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
+                                        <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
+                                        <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
+                                </li>
+                            </ul>
+                            </li>*@
 
                     </ul>
                     <div class="clearfix"></div>
@@ -305,6 +308,8 @@
     <!-- CUSTOM JS -->
     <script src="~/AdminTheme/assets/js/jquery.app.js"></script>
 
+
+
     <!-- Dashboard -->
     <script src="js/jquery.dashboard.js"></script>
 
@@ -319,18 +324,16 @@
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
+    <script src="~/AdminTheme/assets/js/persian-date.min.js"></script>
+    <script src="~/AdminTheme/assets/js/persian-datepicker.min.js"></script>
 
-    <!-- <script type="text/javascript"> -->
-    <!-- /* ============================================== -->
-    <!-- Counter Up -->
-    <!-- =============================================== */ -->
-    <!-- jQuery(document).ready(function($) { -->
-    <!-- $('.counter').counterUp({ -->
-    <!-- delay: 100, -->
-    <!-- time: 1200 -->
-    <!-- }); -->
-    <!-- }); -->
-    <!-- </script> -->
+
+     <script> 
+         $('.persianDateInput').persianDatepicker({
+             format: 'YYYY/MM/DD',
+             autoClose: true
+         });
+     </script> 
 
 </body>
 </html>

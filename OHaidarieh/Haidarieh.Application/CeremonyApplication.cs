@@ -21,8 +21,25 @@ namespace Haidarieh.Application
             if (_ceremonyRepository.Exist(x=>x.Title==command.Title))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
  
-            var ceremony = new Ceremony(command.Title, command.CeremonyDate);
-            _ceremonyRepository.Create(ceremony);
+            var ceremony = new Ceremony(command.Title, command.CeremonyDateFa.ToGeorgianDateTime());
+            
+            _ceremonyRepository.Create(ceremony);           
+            _ceremonyRepository.SaveChanges();
+            CreateOperationLog(ceremony.Id, 1);
+            return operation.Succedded();
+
+        }
+
+        public OperationResult CreateOperationLog(long id, int operationType)
+        {
+            var operation = new OperationResult();
+
+            //var cer = new CeremonyOperation(command.Operation, command.OperatorId, command.Description, cid);
+            var ceremony = _ceremonyRepository.Get(id);
+            if (ceremony == null)
+                return operation.Failed(ApplicationMessages.RecordNotFound);
+
+            ceremony.CreateOperationLog(operationType, 7, "جدید جهت برگزاری مراسم", id);
             _ceremonyRepository.SaveChanges();
             return operation.Succedded();
         }
@@ -40,6 +57,7 @@ namespace Haidarieh.Application
 
             editItem.Edit(command.Title, command.CeremonyDate);
             _ceremonyRepository.SaveChanges();
+            CreateOperationLog(command.Id, 2);
 
             return operation.Succedded();
 
@@ -48,6 +66,11 @@ namespace Haidarieh.Application
         public List<CeremonyViewModel> GetCeremonies()
         {
             return _ceremonyRepository.GetCeremonies();
+        }
+
+        public List<CeremonyOperationViewModel> GetCeremonyOperationsLog()
+        {
+            return _ceremonyRepository.GetCeremonyOperationsLog();
         }
 
         public EditCeremony GetDetail(long Id)

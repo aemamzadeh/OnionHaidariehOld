@@ -9,9 +9,11 @@ namespace Haidarieh.Application.Contracts.Ceremony
     {
         OperationResult Create(CreateCeremony command);
         OperationResult Edit(EditCeremony command);
+        OperationResult CreateOperationLog(long Id,int OperationType);
         List<CeremonyViewModel> Search(CeremonySearchModel searchModel);
         EditCeremony GetDetail(long Id);
         List<CeremonyViewModel> GetCeremonies();
+        List<CeremonyOperationViewModel> GetCeremonyOperationsLog();
 
     }
 }

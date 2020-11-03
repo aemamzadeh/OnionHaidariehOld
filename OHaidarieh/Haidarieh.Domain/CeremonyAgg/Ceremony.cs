@@ -2,10 +2,6 @@
 using Haidarieh.Domain.CeremonyGuestAgg;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
 
 namespace Haidarieh.Domain.CeremonyAgg
 {
@@ -15,21 +11,30 @@ namespace Haidarieh.Domain.CeremonyAgg
         public DateTime CeremonyDate { get; private set; }
         public bool Status { get; private set; }
         public List<CeremonyGuest> CeremonyGuests { get; private set; }
+        public List<CeremonyOperation> CeremonyOperations { get; private set; }
 
+        public Ceremony()
+        {
+        }
 
-
-        public Ceremony(string title,DateTime ceremonyDate)
+        public Ceremony(string title, DateTime ceremonyDate)
         {
             Title = title;
             CeremonyDate = ceremonyDate;
             Status = true;
             CeremonyGuests = new List<CeremonyGuest>();
+            CeremonyOperations = new List<CeremonyOperation>();
         }
 
         public void Edit(string title, DateTime ceremonyDate)
         {
             Title = title;
             CeremonyDate = ceremonyDate;
+        }
+        public void CreateOperationLog(int operation, long operatorId, string description, long ceremonyId)
+        {
+            var operationRecord = new CeremonyOperation(operation, operatorId, description, ceremonyId);
+            CeremonyOperations.Add(operationRecord);
         }
 
     }

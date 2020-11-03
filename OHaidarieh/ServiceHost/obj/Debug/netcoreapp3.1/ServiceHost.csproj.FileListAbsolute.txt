@@ -182,13 +182,6 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Multimedias\Create.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Multimedias\Edit.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Multimedias\Index.cshtml.g.cs
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\About.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Contact.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Services.cshtml.g.cs
@@ -205,3 +198,4 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\ContactInfo.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout2.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\MultimediaDetail\Detail.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Ceremonies\OperationLog.cshtml.g.cs
