@@ -13,10 +13,6 @@ namespace Haidarieh.Domain.CeremonyAgg
         public List<CeremonyGuest> CeremonyGuests { get; private set; }
         public List<CeremonyOperation> CeremonyOperations { get; private set; }
 
-        public Ceremony()
-        {
-        }
-
         public Ceremony(string title, DateTime ceremonyDate)
         {
             Title = title;

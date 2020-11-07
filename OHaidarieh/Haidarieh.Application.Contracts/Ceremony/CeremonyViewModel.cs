@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Haidarieh.Application.Contracts.Ceremony
 {
@@ -7,5 +8,7 @@ namespace Haidarieh.Application.Contracts.Ceremony
         public long Id { get; set; }
         public string Title { get; set; }
         public string CeremonyDate { get; set; }
+        public List<CeremonyOperationViewModel> CeremonyOperations { get; set; }
+
     }
 }

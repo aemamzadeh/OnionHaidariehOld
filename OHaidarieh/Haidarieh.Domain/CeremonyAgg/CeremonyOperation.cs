@@ -12,9 +12,6 @@ namespace Haidarieh.Domain.CeremonyAgg
         public long CeremonyId { get; private set; }
         public Ceremony Ceremony { get; private set; }
 
-        protected CeremonyOperation()
-        {
-        }
 
         public CeremonyOperation(int operation, long operatorId, string description,long ceremonyId)
         {

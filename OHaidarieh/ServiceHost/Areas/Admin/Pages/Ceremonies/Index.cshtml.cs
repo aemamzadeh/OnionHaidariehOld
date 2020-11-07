@@ -47,7 +47,7 @@ namespace ServiceHost.Areas.Admin.Pages.Ceremonies
         }
         public IActionResult OnGetLog()
         {
-            var logs = _ceremonyApplication.GetCeremonyOperationsLog();
+            var logs = _ceremonyApplication.GetCeremonyWithOperationsLog();
             return Partial("OperationLog", logs);
         }
     }

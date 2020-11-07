@@ -109,8 +109,8 @@ namespace _01_HaidariehQuery.Query
         public CeremonyGuestQueryModel GetCeremonyGuestWithMultimedias(string slug)
         {
             var ceremonyGuest= _hContext.CeremonyGuests.Include(x => x.Multimedias).
-                                            ThenInclude(x => x.CeremonyGuest).
-                                            ThenInclude(x => x.Ceremony).
+                                            //ThenInclude(x => x.CeremonyGuest).
+                                            //ThenInclude(x => x.Ceremony).
                                             Where(x => x.Status == true).Select(x => new CeremonyGuestQueryModel
                                             {
                                                 Id = x.Id,

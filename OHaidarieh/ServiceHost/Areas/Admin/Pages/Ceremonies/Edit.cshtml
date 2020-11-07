@@ -24,7 +24,7 @@
             </div><div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="CeremonyDateFa" class="control-label">تاریخ برگزاری</label>
-                    <input type="text" class="form-control persianDateInput" asp-for="CeremonyDateFa">
+                    <input class="form-control persianDateInput" asp-for="CeremonyDateFa">
                     <span asp-validation-for="CeremonyDateFa" class="error"></span>
                 </div>
             </div>
@@ -36,4 +36,12 @@
         <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
     </div>
 </form>
+@*<script>
+    $('.persianDateInput').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        autoClose: true,
+        initialValue:true,
+        initialValueType: "persian"
+    });
+</script>*@
 
