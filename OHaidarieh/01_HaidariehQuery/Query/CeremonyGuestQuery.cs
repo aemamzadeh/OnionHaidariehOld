@@ -37,7 +37,7 @@ namespace _01_HaidariehQuery.Query
                 Guest = x.Guest.FullName,
                 BannerFile = x.BannerFile,
                 Slug=x.Slug
-            }).ToList();
+            }).AsNoTracking().ToList();
         }
         public List<CeremonyGuestQueryModel> GetPast()
         {
@@ -54,7 +54,7 @@ namespace _01_HaidariehQuery.Query
                                                     Guest = x.Guest.FullName,
                                                     BannerFile = x.BannerFile,
                                                     Slug = x.Slug
-                                                }).ToList();
+                                                }).AsNoTracking().ToList();
         }
         public List<CeremonyGuestQueryModel> GetAll()
         {
@@ -68,7 +68,7 @@ namespace _01_HaidariehQuery.Query
                 Guest = x.Guest.FullName,
                 BannerFile = x.BannerFile,
                 Slug = x.Slug
-            }).ToList();
+            }).AsNoTracking().ToList();
 
         }
 
@@ -85,7 +85,7 @@ namespace _01_HaidariehQuery.Query
                                                 Guest=x.Guest.FullName,
                                                 Slug=x.Slug,
                                                 Multimedias = MapMultimedias(x.Multimedias)
-                                            }).ToList();
+                                            }).AsNoTracking().ToList();
         }
 
         private static List<MultimediaQueryModel> MapMultimedias(List<Multimedia> multimedias)
@@ -109,8 +109,8 @@ namespace _01_HaidariehQuery.Query
         public CeremonyGuestQueryModel GetCeremonyGuestWithMultimedias(string slug)
         {
             var ceremonyGuest= _hContext.CeremonyGuests.Include(x => x.Multimedias).
-                                            //ThenInclude(x => x.CeremonyGuest).
-                                            //ThenInclude(x => x.Ceremony).
+                                            ThenInclude(x => x.CeremonyGuest).
+                                            ThenInclude(x => x.Ceremony).
                                             Where(x => x.Status == true).Select(x => new CeremonyGuestQueryModel
                                             {
                                                 Id = x.Id,
@@ -119,8 +119,31 @@ namespace _01_HaidariehQuery.Query
                                                 Guest = x.Guest.FullName,
                                                 Slug = x.Slug,
                                                 Multimedias = MapMultimedias(x.Multimedias)
-                                            }).FirstOrDefault(x=>x.Slug==slug);
+                                            }).AsNoTracking().FirstOrDefault(x=>x.Slug==slug);
             return ceremonyGuest;
+        }
+
+        public List<CeremonyGuestQueryModel> Search(string phrase)
+        {
+            var query = _hContext.CeremonyGuests.Include(x => x.Multimedias).
+                                ThenInclude(x => x.CeremonyGuest).
+                                ThenInclude(x => x.Ceremony).
+                                Where(x => x.Status == true).Select(x => new CeremonyGuestQueryModel
+                                {
+                                    Id = x.Id,
+                                    Ceremony = x.Ceremony.Title,
+                                    Image=x.Image,
+                                    ImageTitle=x.ImageTitle,
+                                    ImageAlt=x.ImageAlt,
+                                    CeremonyDateFa = x.CeremonyDate.Date.ToFarsi(),
+                                    Guest = x.Guest.FullName,
+                                    Slug = x.Slug,
+                                    Multimedias = MapMultimedias(x.Multimedias)
+                                }).AsNoTracking();
+            if (!string.IsNullOrWhiteSpace(phrase))
+                query=query.Where(x => x.Ceremony.Contains(phrase));
+            var result = query.OrderByDescending(x => x.Id).ToList();
+            return result;
         }
     }
 }

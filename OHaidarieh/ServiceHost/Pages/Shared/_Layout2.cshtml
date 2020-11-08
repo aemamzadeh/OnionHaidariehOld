@@ -37,12 +37,15 @@
             <div class="fixed-bg" style="background-image: url(/theme/assets/images/parallax14.jpg);"></div>
         </div>
         <!-- Page Title Wrap -->
+        @*<partial name="Header" />*@
 
-        <partial name="Header" />
+        @await Component.InvokeAsync("Menu")
 
         @RenderBody()
 
-        <partial name="Footer" />
+        @await Component.InvokeAsync("Footer")
+
+        @*<partial name="Footer" />*@
 
     </main><!-- Main Wrapper -->
 

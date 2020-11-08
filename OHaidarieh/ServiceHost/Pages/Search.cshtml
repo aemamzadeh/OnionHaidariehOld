@@ -1,0 +1,56 @@
+﻿@page
+@model SearchModel
+
+@{
+    //Layout = "_Layout2";
+    ViewData["title"] = "جستجو";
+}
+
+<div class="gap remove-gap">
+    <div class="page-title-wrap">
+        <h2>نتایج جستجو </h2>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <div class="sec-title">
+                    <div class="sec-title2 text-center">
+                        @*<h3>مراسم<span> ceremonyGuest.Ceremony</span></h3>
+                            <h5><span> @Model.ceremonyGuest.CeremonyDateFa </span></h5>
+                            <h5><span> @Model.ceremonyGuest.Guest </span></h5>*@
+                    </div>
+                </div>
+                <div class="evnt-wrap remove-ext5">
+                    <div class="row mrg20">
+                        @foreach (var item in Model.ceremonyGuest)
+                        {
+                            <div class="col-md-4 col-sm-4 col-lg-4">
+                                @*<div class="evnt-box">*@
+                                <a asp-page="/MultimediaDetail/Detail" asp-route-Id=@item.Slug>
+                                    <img src="@item.Image" title="@item.ImageTitle" alt="@item.ImageAlt">
+                                </a>
+                                <div class="evnt-info">
+                                    <h4>@item.Ceremony</h4>
+                                    <ul class="pst-mta">
+                                        <li class="thm-clr">@item.CeremonyDateFa</li>
+                                        @*<li class="thm-clr">12:00 صبح تا 2:00 ظهر</li>*@
+                                    </ul>
+                                    <p>@item.Guest</p>
+                                </div>
+                                @*</div>*@
+                            </div>
+                        }
+
+                    </div>
+                </div><!-- Events Wrap -->
+            </div>
+            @* </div> *@
+        </div><!-- Events & Prayer Wrap -->
+    </div>
+</div>
+
+
+
+
+

@@ -34,11 +34,16 @@
                 <div class="loader__ball"></div>
             </div>
         </div><!-- Pageloader Wrap -->
-        <partial name="Header" />
+        @*<partial name="Header" />*@
+
+        @await Component.InvokeAsync("Menu")
 
         @RenderBody()
 
-        <partial name="Footer" />
+        @await Component.InvokeAsync("Footer")
+
+
+        @*<partial name="Footer" />*@
 
     </main>
         <script src="~/theme/assets/js/jquery.min.js"></script>

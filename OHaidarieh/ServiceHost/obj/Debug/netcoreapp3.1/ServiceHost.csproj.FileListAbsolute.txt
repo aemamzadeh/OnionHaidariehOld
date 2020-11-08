@@ -199,3 +199,6 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout2.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\MultimediaDetail\Detail.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Pages\Ceremonies\OperationLog.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Components\Menu\Default.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Components\Footer\Default.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Search.cshtml.g.cs

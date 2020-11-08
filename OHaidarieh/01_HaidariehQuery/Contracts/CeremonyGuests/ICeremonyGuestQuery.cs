@@ -11,7 +11,8 @@ namespace _01_HaidariehQuery.Contracts.CeremonyGuests
         List<CeremonyGuestQueryModel> GetPast();
         List<CeremonyGuestQueryModel> GetAll();
         List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias();
-        public CeremonyGuestQueryModel GetCeremonyGuestWithMultimedias(string slug);
+        CeremonyGuestQueryModel GetCeremonyGuestWithMultimedias(string slug);
+        List<CeremonyGuestQueryModel> Search(string phrase);
 
 
 
