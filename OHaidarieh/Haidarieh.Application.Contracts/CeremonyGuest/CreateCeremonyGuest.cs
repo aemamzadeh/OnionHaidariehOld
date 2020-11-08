@@ -1,6 +1,7 @@
 ﻿using _0_Framework.Application;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.Guest;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,12 +13,12 @@ namespace Haidarieh.Application.Contracts.CeremonyGuest
         public long GuestId { get;  set; }
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public long CeremonyId { get;  set; }
-        public DateTime CeremonyDate { get;  set; }
+        public string CeremonyDate { get;  set; }
         public float Satisfication { get;  set; }
         public bool IsLive { get;  set; }
         public string BannerFile { get;  set; }
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        public string Image { get;  set; }
+        public IFormFile Image { get;  set; }
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string ImageAlt { get;  set; }
         [Required(ErrorMessage = ValidationMessages.IsRequired)]

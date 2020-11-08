@@ -1,9 +1,11 @@
-﻿using _0_Framework.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Infrastructure;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Domain.CeremonyGuestAgg;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -26,7 +28,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 GuestId=x.GuestId,
                 CeremonyId=x.CeremonyId,
                 Ceremony=x.Ceremony.Title,
-                CeremonyDate=x.CeremonyDate.ToString(),
+                CeremonyDate=x.CeremonyDate.ToFarsi(),
                 Image=x.Image,
                 IsLive=x.IsLive,
                 Satisfication=x.Satisfication
@@ -40,17 +42,18 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Id=x.Id,
                 GuestId = x.GuestId,
                 CeremonyId = x.CeremonyId,
-                CeremonyDate = x.CeremonyDate,
+                CeremonyDate = x.CeremonyDate.ToString(CultureInfo.InvariantCulture),
                 Satisfication=x.Satisfication,
                 IsLive=x.IsLive,
                 BannerFile=x.BannerFile,
-                Image=x.Image,
+                //Image=x.Image,
                 ImageAlt=x.ImageAlt,
                 ImageTitle=x.ImageTitle,
                 Keywords=x.Keywords,
                 MetaDescription=x.MetaDescription,
-                Slug=x.Slug
-            }).AsEnumerable().FirstOrDefault(x => x.Id == Id);
+                Slug=x.Slug,
+                
+            }).FirstOrDefault(x => x.Id == Id);
         }
 
         public List<CeremonyGuestViewModel> Search(CeremonyGuestSearchModel searchModel)
@@ -63,11 +66,11 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Ceremony = x.Ceremony.Title,
                 GuestId=x.GuestId,
                 CeremonyId=x.CeremonyId,
-                CeremonyDate = x.CeremonyDate.ToString(),
+                CeremonyDate = x.CeremonyDate.ToFarsi(),
                 Satisfication = x.Satisfication,
                 IsLive = x.IsLive,
-                Image = x.Image
-            }).AsEnumerable();
+                Image = x.Image                
+            });
             if (searchModel.GuestId!=0)
                 query = query.Where(x => x.GuestId==searchModel.GuestId);
 

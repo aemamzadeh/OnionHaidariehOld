@@ -10,10 +10,11 @@ namespace Haidarieh.Application
     public class CeremonyGuestApplication : ICeremonyGuestApplication
     {
         private readonly ICeremonyGuestRepository _ceremonyGuestRepository;
-
-        public CeremonyGuestApplication(ICeremonyGuestRepository ceremonyGuestRepository)
+        private readonly IFileUploader _fileUploader;
+        public CeremonyGuestApplication(ICeremonyGuestRepository ceremonyGuestRepository, IFileUploader fileUploader)
         {
             _ceremonyGuestRepository = ceremonyGuestRepository;
+            _fileUploader = fileUploader;
         }
 
         public OperationResult Create(CreateCeremonyGuest command)
@@ -24,8 +25,8 @@ namespace Haidarieh.Application
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
-            var ceremonyGuest = new CeremonyGuest(command.GuestId,command.CeremonyId, command.CeremonyDate, command.Satisfication,
-                command.IsLive, command.BannerFile, command.Image, command.ImageAlt, command.ImageTitle, command.Keywords,
+            var ceremonyGuest = new CeremonyGuest(command.GuestId,command.CeremonyId, command.CeremonyDate.ToGeorgianDateTime(), command.Satisfication,
+                command.IsLive, command.BannerFile, "", command.ImageAlt, command.ImageTitle, command.Keywords,
                        command.MetaDescription, slug);
 
             _ceremonyGuestRepository.Create(ceremonyGuest);
@@ -42,9 +43,15 @@ namespace Haidarieh.Application
                 return operation.Failed(ApplicationMessages.RecordNotFound);
             if (_ceremonyGuestRepository.Exist(x => x.CeremonyId == command.CeremonyId && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
-            editItem.Edit(command.GuestId, command.CeremonyId, command.CeremonyDate, command.Satisfication,
-                command.IsLive, command.BannerFile, command.Image, command.ImageAlt, command.ImageTitle, command.Keywords,
-                       command.MetaDescription, command.Slug);
+
+            var slug = command.Slug.Slugify();
+
+            var ImagePath =$"{command.Slug}";
+            var fileName = _fileUploader.Upload(command.Image,ImagePath);
+
+            editItem.Edit(command.GuestId, command.CeremonyId, command.CeremonyDate.ToGeorgianDateTime(), command.Satisfication,
+                command.IsLive, command.BannerFile, fileName, command.ImageAlt, command.ImageTitle, command.Keywords,
+                       command.MetaDescription, slug);
             _ceremonyGuestRepository.SaveChanges();
 
             return operation.Succedded();

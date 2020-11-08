@@ -37,7 +37,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="CeremonyDate" class="control-label">تاریخ برگزاری</label>
-                        <input type="text" class="form-control" asp-for="CeremonyDate">
+                        <input type="text" class="form-control persianDateInput" asp-for="CeremonyDate">
                         <span asp-validation-for="CeremonyDate" class="error"></span>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label asp-for="Image" class="control-label">عکس</label>
-                        <input type="text" class="form-control" asp-for="Image">
+                        <input type="file" class="form-control" asp-for="Image">
                         <span asp-validation-for="Image" class="error"></span>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label asp-for="Keywords" class="control-label">کلمات کلیدی</label>
-                        <input type="text" class="form-control" asp-for="Keywords">
+                        <input type="text" class="form-control" asp-for="Keywords" onchange="makeSlug('Keywords', 'Slug')">
                         <span asp-validation-for="Keywords" class="error"></span>
                     </div>
                 </div>
@@ -96,6 +96,13 @@
                         <label asp-for="MetaDescription" class="control-label">شرح</label>
                         <input type="text" class="form-control" asp-for="MetaDescription">
                         <span asp-validation-for="MetaDescription" class="error"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Slug" class="control-label">اسلاگ</label>
+                        <input type="text" class="form-control" asp-for="Slug">
+                        <span asp-validation-for="Slug" class="error"></span>
                     </div>
                 </div>
             </div>

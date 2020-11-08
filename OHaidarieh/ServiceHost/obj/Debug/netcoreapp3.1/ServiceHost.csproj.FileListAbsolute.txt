@@ -202,3 +202,5 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Components\Menu\Default.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Components\Footer\Default.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp3.1\Razor\Pages\Search.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
