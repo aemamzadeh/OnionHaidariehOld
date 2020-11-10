@@ -16,8 +16,11 @@ namespace Haidarieh.Application.Contracts.CeremonyGuest
         public string CeremonyDate { get;  set; }
         public float Satisfication { get;  set; }
         public bool IsLive { get;  set; }
-        public string BannerFile { get;  set; }
-        [Required(ErrorMessage = ValidationMessages.IsRequired)]
+        [FileExtentionLimitation(new string[] { ".jpg", ".jpeg", ".png" }, ErrorMessage = ValidationMessages.InvalidFileFormat)]
+        [MaxFileSize(1024 * 1024, ErrorMessage = ValidationMessages.MaxFileSize)]
+        public IFormFile BannerFile { get;  set; }
+        [FileExtentionLimitation(new string[] {".jpg",".jpeg",".png"}, ErrorMessage = ValidationMessages.InvalidFileFormat)]
+        [MaxFileSize(1024*1024,ErrorMessage=ValidationMessages.MaxFileSize)]
         public IFormFile Image { get;  set; }
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string ImageAlt { get;  set; }

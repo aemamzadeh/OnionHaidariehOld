@@ -37,7 +37,8 @@ namespace Haidarieh.Domain.GuestAgg
         {
             FullName = fullName;
             Tel = tel;
-            Image = image;
+            if(!string.IsNullOrWhiteSpace(image))
+                Image = image;
             ImageAlt = imageAlt;
             ImageTitle = imageTitle;
             GuestType = guestType;

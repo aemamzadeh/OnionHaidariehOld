@@ -56,8 +56,10 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
             CeremonyDate = ceremonyDate;
             Satisfication = satisfication;
             IsLive = isLive;
-            BannerFile = bannerFile;
-            Image = image;
+            if(!string.IsNullOrWhiteSpace(bannerFile))
+                BannerFile = bannerFile;
+            if(!string.IsNullOrWhiteSpace(image))
+                Image = image;
             ImageAlt = imageAlt;
             ImageTitle = imageTitle;
             Keywords = keywords;

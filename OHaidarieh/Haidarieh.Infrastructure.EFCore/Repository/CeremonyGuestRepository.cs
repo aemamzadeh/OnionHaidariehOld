@@ -45,7 +45,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 CeremonyDate = x.CeremonyDate.ToString(CultureInfo.InvariantCulture),
                 Satisfication=x.Satisfication,
                 IsLive=x.IsLive,
-                BannerFile=x.BannerFile,
+                //BannerFile=x.BannerFile,
                 //Image=x.Image,
                 ImageAlt=x.ImageAlt,
                 ImageTitle=x.ImageTitle,

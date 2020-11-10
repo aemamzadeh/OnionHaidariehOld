@@ -34,7 +34,8 @@ namespace Haidarieh.Domain.SponsorAgg
         {
             Name = name;
             Tel = tel;
-            Image = image;
+            if(!string.IsNullOrWhiteSpace(image))
+                Image = image;
             ImageAlt = imageAlt;
             ImageTitle = imageTitle;
             Status = true;

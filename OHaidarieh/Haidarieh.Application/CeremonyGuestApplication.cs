@@ -25,8 +25,14 @@ namespace Haidarieh.Application
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
+
+            var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
+            var ImagePath = $"{ImageFolderName}/{command.Slug}";
+            var imageFileName = _fileUploader.Upload(command.Image, ImagePath);
+            var bannerFileName = _fileUploader.Upload(command.BannerFile, ImagePath);
+
             var ceremonyGuest = new CeremonyGuest(command.GuestId,command.CeremonyId, command.CeremonyDate.ToGeorgianDateTime(), command.Satisfication,
-                command.IsLive, command.BannerFile, "", command.ImageAlt, command.ImageTitle, command.Keywords,
+                command.IsLive, bannerFileName, imageFileName, command.ImageAlt, command.ImageTitle, command.Keywords,
                        command.MetaDescription, slug);
 
             _ceremonyGuestRepository.Create(ceremonyGuest);
@@ -46,11 +52,13 @@ namespace Haidarieh.Application
 
             var slug = command.Slug.Slugify();
 
-            var ImagePath =$"{command.Slug}";
-            var fileName = _fileUploader.Upload(command.Image,ImagePath);
+            var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
+            var ImagePath =$"{ImageFolderName}/{command.Slug}";
+            var imageFileName = _fileUploader.Upload(command.Image,ImagePath);
+            var bannerFileName = _fileUploader.Upload(command.BannerFile, ImagePath);
 
             editItem.Edit(command.GuestId, command.CeremonyId, command.CeremonyDate.ToGeorgianDateTime(), command.Satisfication,
-                command.IsLive, command.BannerFile, fileName, command.ImageAlt, command.ImageTitle, command.Keywords,
+                command.IsLive, bannerFileName, imageFileName, command.ImageAlt, command.ImageTitle, command.Keywords,
                        command.MetaDescription, slug);
             _ceremonyGuestRepository.SaveChanges();
 

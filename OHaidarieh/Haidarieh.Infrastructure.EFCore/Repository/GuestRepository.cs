@@ -23,7 +23,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 FullName = x.FullName,
                 Tel = x.Tel,
                 GuestType = x.GuestType,
-                Image = x.Image,
+                //Image = x.Image,
                 ImageAlt = x.ImageAlt,
                 ImageTitle = x.ImageTitle,
                 Coordinator = x.Coordinator

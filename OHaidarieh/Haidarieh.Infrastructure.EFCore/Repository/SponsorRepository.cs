@@ -25,7 +25,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Tel = x.Tel,
                 Bio = x.Bio,
                 IsVisible = x.IsVisible,
-                Image = x.Image,
+                //Image = x.Image,
                 ImageAlt = x.ImageAlt,
                 ImageTitle = x.ImageTitle
             }).FirstOrDefault(x => x.Id == id);

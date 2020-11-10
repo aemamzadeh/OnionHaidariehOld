@@ -184,27 +184,37 @@ function handleAjaxCall(method, url, data) {
     }
 }
 
-//jQuery.validator.addMethod("maxFileSize",
-//    function (value, element, params) {
-//        var size = element.files[0].size;
-//        var maxSize = 3 * 1024 * 1024;
-//        if (size > maxSize)
-//            return false;
-//        else {
-//            return true;
-//        }
-//    });
-//jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+jQuery.validator.addMethod("maxFileSize",
+    function (value, element, params) {
+        var size = element.files[0].size;
+        var maxSize = 1 * 1024 * 1024;
+        if (size > maxSize)
+            return false;
+        else {
+            return true;
+        }
+    });
+jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
 
-//jQuery.validator.addMethod("maxFileSize",
+//jQuery.validator.addMethod("fileExtentionLimitation",
 //    function (value, element, params) {
-//        var size = element.files[0].size;
-//        var maxSize = 3 * 1024 * 1024;
-//        debugger;
-//        if (size > maxSize)
-//            return false;
-//        else {
-//            return true;
+//        var fileFormat = element.files[0].split('.').pop();
+//        var validFormat = ["jpg", "jpeg", "png"];
+//        var result = false;
+//        var i;
+//        for (i = 0; i < validFormat.length; i++) {
+//            if (validFormat[i].toLowerCase() === fileFormat.toLowerCase()) {
+//                result = true;
+//                break;
+//            }
 //        }
+//        debugger;
+//        return result;
 //    });
-//jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+//jQuery.validator.unobtrusive.adapters.addBool("fileExtentionLimitation");
+
+//if (fileFormat === inArray(validFormat))
+//    return true;
+//else {
+//    return false;
+//}
