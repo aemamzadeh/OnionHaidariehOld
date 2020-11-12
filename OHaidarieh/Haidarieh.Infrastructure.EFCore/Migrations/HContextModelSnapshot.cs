@@ -26,38 +26,11 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CeremonyDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tbl_Ceremony");
-                });
-
-            modelBuilder.Entity("Haidarieh.Domain.CeremonyGuestAgg.CeremonyGuest", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
                     b.Property<string>("BannerFile")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CeremonyDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<long>("CeremonyId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("GuestId")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -77,14 +50,35 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                     b.Property<string>("MetaDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("Satisfication")
-                        .HasColumnType("real");
-
                     b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tbl_Ceremony");
+                });
+
+            modelBuilder.Entity("Haidarieh.Domain.CeremonyGuestAgg.CeremonyGuest", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("CeremonyId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("GuestId")
+                        .HasColumnType("bigint");
+
+                    b.Property<float>("Satisfication")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
@@ -161,7 +155,7 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long>("CeremonyGuestId")
+                    b.Property<long>("CeremonyId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("FileAddress")
@@ -184,7 +178,7 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CeremonyGuestId");
+                    b.HasIndex("CeremonyId");
 
                     b.ToTable("Tbl_Multimedia");
                 });
@@ -228,7 +222,7 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("Haidarieh.Domain.CeremonyAgg.Ceremony", b =>
                 {
-                    b.OwnsMany("Haidarieh.Domain.CeremonyAgg.CeremonyOperation", "Operations", b1 =>
+                    b.OwnsMany("Haidarieh.Domain.CeremonyAgg.CeremonyOperation", "CeremonyOperations", b1 =>
                         {
                             b1.Property<long>("Id")
                                 .ValueGeneratedOnAdd()
@@ -278,9 +272,9 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("Haidarieh.Domain.MultimediaAgg.Multimedia", b =>
                 {
-                    b.HasOne("Haidarieh.Domain.CeremonyGuestAgg.CeremonyGuest", "CeremonyGuest")
+                    b.HasOne("Haidarieh.Domain.CeremonyAgg.Ceremony", "Ceremony")
                         .WithMany("Multimedias")
-                        .HasForeignKey("CeremonyGuestId")
+                        .HasForeignKey("CeremonyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

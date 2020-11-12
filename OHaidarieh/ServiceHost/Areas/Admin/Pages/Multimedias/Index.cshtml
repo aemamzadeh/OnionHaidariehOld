@@ -29,8 +29,8 @@
                         <input class="form-control" asp-for="SearchModel.Title" placeholder="نام فایل">
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" asp-for="SearchModel.CeremonyGuestId"></label>
-                        <select class="form-control" asp-for="SearchModel.CeremonyGuestId" asp-items="Model.CeremonyGuests">
+                        <label class="sr-only" asp-for="SearchModel.CeremonyId"></label>
+                        <select class="form-control" asp-for="SearchModel.CeremonyId" asp-items="Model.CeremonyGuests">
                             <option value="0">انتخاب مراسم</option>
                         </select>
                     </div>
@@ -70,7 +70,7 @@
                                         <img src="@item.FileAddress" style="width: 70px; height: 70px" />
                                     </td>
                                     <td>@item.Title</td>
-                                    <td>@item.CeremonyGuest</td>
+                                    <td>@item.Ceremony</td>
 
 
                                     <td>

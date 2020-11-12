@@ -1,10 +1,9 @@
-﻿@page
+﻿@page "{id}"
 @model MultimediaDetail.DetailModel
 @{
-    //Layout = "_Layout2";
+    Layout = "_Layout2";
     ViewData["title"] = "فایلهای چندرسانه ای مراسم";
 }
-
 <div class="gap remove-gap">
     <div class="page-title-wrap">
         <h2>فایلهای چندرسانه ای </h2>
@@ -15,21 +14,23 @@
             <div class="col-md-12 col-sm-12 col-lg-12">
                 <div class="sec-title">
                     <div class="sec-title2 text-center">
-                        <h3>مراسم<span> @Model.ceremonyGuest.Ceremony</span></h3>
-                        <h5><span> @Model.ceremonyGuest.CeremonyDateFa </span></h5>
-                        <h5><span> @Model.ceremonyGuest.Guest </span></h5>
-
+                        <h1>مراسم<span> @Model.ceremony.Title</span></h1>
+                        <h3><span>@Model.ceremony.CeremonyDateFa </span></h3>
+                        @foreach (var itm in Model.ceremony.CeremonyGuests)
+                        {
+                            <h3>سخنران:<span> @itm.Guest </span></h3>
+                        }
 
                     </div>
                 </div>
                 <div class="evnt-wrap remove-ext5">
                     <div class="row mrg20">
-                        @foreach (var item in Model.ceremonyGuest.Multimedias)
+                        @foreach (var item in Model.ceremony.Multimedias)
                         {
                             <div class="col-md-4 col-sm-4 col-lg-4">
                                 <div class="evnt-box">
                                     <img src="@item.FileAddress" title="@item.FileTitle" alt="@item.FileAlt">
-                                    @*<div class="evnt-info">
+                                       @*<div class="evnt-info">
                                             <h4>@item.Ceremony</h4>
                                             <ul class="pst-mta">
                                                 <li class="thm-clr">@item.CeremonyDate</li>
@@ -41,7 +42,6 @@
                             </div>
 
                         }
-
                     </div>
                 </div><!-- Events Wrap -->
             </div>

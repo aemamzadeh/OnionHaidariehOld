@@ -28,7 +28,10 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             return _hContext.Ceremonies.Select(x => new CeremonyViewModel
             {
                 Id = x.Id,
-                Title = x.Title
+                Title = x.Title,
+                CeremonyDate=x.CeremonyDate.ToFarsi(),
+                Image = x.Image,
+                IsLive = x.IsLive   
             }).ToList();
         }
 
@@ -65,10 +68,8 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 }
             }
 
-            return result;
+            return result.OrderByDescending(x=>x.Id).ToList();
         }
-
-
 
         protected static List<CeremonyOperationViewModel> GetCeremonyOperationsLog(List<CeremonyOperation> ceremonyOperations)
         {
@@ -98,17 +99,27 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDateFa=x.CeremonyDate.ToString(CultureInfo.InvariantCulture)
+                CeremonyDate=x.CeremonyDate.ToString(CultureInfo.InvariantCulture),
+                IsLive = x.IsLive,
+                ImageAlt = x.ImageAlt,
+                ImageTitle = x.ImageTitle,
+                Keywords = x.Keywords,
+                MetaDescription = x.MetaDescription,
+                Slug = x.Slug,
+                
             }).FirstOrDefault(x => x.Id == id);
         }
 
         public List<CeremonyViewModel> Search(CeremonySearchModel searchModel)
         {
-            var query = _hContext.Ceremonies.Select(x => new CeremonyViewModel
+            var query = _hContext.Ceremonies.Include(x => x.CeremonyGuests).ThenInclude(x => x.Guest).Select(x => new CeremonyViewModel
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate = x.CeremonyDate.ToFarsi()
+                CeremonyDate = x.CeremonyDate.ToFarsi(),
+                IsLive = x.IsLive,
+                Image = x.Image,
+
             });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Title))

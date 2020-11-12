@@ -7,14 +7,6 @@ namespace _01_HaidariehQuery.Contracts.CeremonyGuests
 {
     public interface ICeremonyGuestQuery
     {
-        List<CeremonyGuestQueryModel> GetComing();
-        List<CeremonyGuestQueryModel> GetPast();
-        List<CeremonyGuestQueryModel> GetAll();
-        List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias();
-        CeremonyGuestQueryModel GetCeremonyGuestWithMultimedias(string slug);
-        List<CeremonyGuestQueryModel> Search(string phrase);
-
-
-
+        List<CeremonyGuestQueryModel> GetCeremonyGuests();
     }
 }

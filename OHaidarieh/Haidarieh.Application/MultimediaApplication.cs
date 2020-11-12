@@ -20,7 +20,7 @@ namespace Haidarieh.Application
             var operation= new OperationResult();
             if(_multimediaRepository.Exist(x=>x.Title==command.Title))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
-            var multimedia = new Multimedia(command.Title, command.FileAddress, command.FileTitle, command.FileAlt,command.CeremonyGuestId);
+            var multimedia = new Multimedia(command.Title, command.FileAddress, command.FileTitle, command.FileAlt,command.CeremonyId);
             _multimediaRepository.Create(multimedia);
             _multimediaRepository.SaveChanges();
             return operation.Succedded();
@@ -35,7 +35,7 @@ namespace Haidarieh.Application
                 return operation.Failed(ApplicationMessages.RecordNotFound);
             if(_multimediaRepository.Exist(x=>x.Title==x.Title && x.Id!=command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
-            editItem.Edit(command.Title, command.FileAddress, command.FileTitle, command.FileAlt,command.CeremonyGuestId);
+            editItem.Edit(command.Title, command.FileAddress, command.FileTitle, command.FileAlt,command.CeremonyId);
             _multimediaRepository.SaveChanges();
             return operation.Succedded();
         }

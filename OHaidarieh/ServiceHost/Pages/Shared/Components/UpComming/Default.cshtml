@@ -1,7 +1,7 @@
-﻿@model List<_01_HaidariehQuery.Contracts.CeremonyGuests.CeremonyGuestQueryModel>
+﻿@model List<_01_HaidariehQuery.Contracts.Ceremonies.CeremonyQueryModel>
 
 <div class="gap thm-layer opc95">
-    <div class="fixed-bg ptrn-bg" style="background-image: url(assets/images/pattern-bg.jpg);"></div>
+    <div class="fixed-bg ptrn-bg" style="background-image: url(theme/assets/images/pattern-bg.jpg);"></div>
     <div class="container">
         <div class="sec-title2 text-center">
             <div class="sec-title-inner2">
@@ -17,7 +17,7 @@
                         <div class="team-box2">
                             <img class="rounded-pill mx-auto d-block" src=@ceremony.Image alt="Image">
                             <div class="team-info2">
-                                <h4><a asp-controller="CeremonyGuest" asp-action="Index">@ceremony.Ceremony</a> </h4>
+                                <h4><a asp-controller="Ceremony" asp-action="Index">@ceremony.Title</a> </h4>
                                 <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
                                 <div class="team-scl">
                                     <a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>

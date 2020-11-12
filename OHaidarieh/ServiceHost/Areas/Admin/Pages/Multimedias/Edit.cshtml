@@ -23,11 +23,11 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="CeremonyGuestId" class="control-label">مراسم</label>
-                        <select type="text" class="form-control" asp-for="CeremonyGuestId" asp-items='new SelectList(Model.CeremonyGuests,"Id","Ceremony")'>
+                        <label asp-for="CeremonyId" class="control-label">مراسم</label>
+                        <select type="text" class="form-control" asp-for="CeremonyId" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
                             <option value="0">انتخاب مراسم</option>
                         </select>
-                        <span asp-validation-for="CeremonyGuestId" class="error"></span>
+                        <span asp-validation-for="CeremonyId" class="error"></span>
                     </div>
                 </div>
 

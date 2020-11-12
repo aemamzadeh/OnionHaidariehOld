@@ -1,25 +1,23 @@
-using _01_HaidariehQuery.Contracts.CeremonyGuests;
-using _0_Framework.Application;
+using _01_HaidariehQuery.Contracts.Ceremonies;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
 
 namespace ServiceHost.Pages.MultimediaDetail
 {
     public class DetailModel : PageModel
     {
 
-        private readonly ICeremonyGuestQuery _ceremonyGuestQuery;
+        private readonly ICeremonyQuery _ceremonyQuery;
 
-        public CeremonyGuestQueryModel ceremonyGuest { get; set; }
+        public CeremonyQueryModel ceremony { get; set; }
 
 
-        public DetailModel(ICeremonyGuestQuery ceremonyGuestQuery)
+        public DetailModel(ICeremonyQuery ceremonyQuery)
         {
-            _ceremonyGuestQuery = ceremonyGuestQuery;
+            _ceremonyQuery = ceremonyQuery;
         }
         public void OnGet(string Id)
         {
-            ceremonyGuest=_ceremonyGuestQuery.GetCeremonyGuestWithMultimedias(Id);
+            ceremony=_ceremonyQuery.GetCeremonyWithMultimedias(Id);
         }
     }
 

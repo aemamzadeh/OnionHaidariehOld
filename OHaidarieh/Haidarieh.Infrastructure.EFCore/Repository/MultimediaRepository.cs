@@ -22,7 +22,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyGuestId = x.CeremonyGuestId,
+                CeremonyId = x.CeremonyId,
                 FileAddress = x.FileAddress,
                 FileAlt = x.FileAlt,
                 FileTitle = x.FileTitle
@@ -31,20 +31,20 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
 
         public List<MultimediaViewModel> Search(MultimediaSearchModel searchModel)
         {
-            var query = _hContext.Multimedias.Include(x=>x.CeremonyGuest).Select(x => new MultimediaViewModel
+            var query = _hContext.Multimedias.Include(x=>x.Ceremony).Select(x => new MultimediaViewModel
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyGuestId=x.CeremonyGuestId,
-                CeremonyGuest = x.CeremonyGuest.Ceremony.Title,
+                CeremonyId=x.CeremonyId,
+                Ceremony = x.Ceremony.Title,
                 FileAddress = x.FileAddress
             });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Title))
                 query = query.Where(x => x.Title.Contains(searchModel.Title));
 
-            if (searchModel.CeremonyGuestId!=0)
-                query = query.Where(x => x.CeremonyGuestId==searchModel.CeremonyGuestId);
+            if (searchModel.CeremonyId!=0)
+                query = query.Where(x => x.CeremonyId==searchModel.CeremonyId);
 
             return query.OrderByDescending(x => x.Id).ToList();
         }

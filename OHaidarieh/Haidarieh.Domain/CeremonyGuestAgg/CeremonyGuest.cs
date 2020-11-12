@@ -1,10 +1,7 @@
 ﻿using _0_Framework.Domain;
 using Haidarieh.Domain.CeremonyAgg;
 using Haidarieh.Domain.GuestAgg;
-using Haidarieh.Domain.MultimediaAgg;
-using System;
-using System.Collections.Generic;
-using System.Security.Authentication.ExtendedProtection;
+
 
 namespace Haidarieh.Domain.CeremonyGuestAgg 
 {
@@ -13,60 +10,23 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
     {
         public long GuestId { get; private set; }
         public long CeremonyId { get; private set; }
-        public DateTime CeremonyDate { get; private set; }
         public float Satisfication { get; private set; }
-        public bool IsLive { get; private set; }
-        public string BannerFile { get; private set; }
-        public bool Status { get; private set; }
-        public string Image { get; private set; }
-        public string ImageAlt { get; private set; }
-        public string ImageTitle { get; private set; }
-        public string Keywords { get; private set; }
-        public string MetaDescription { get; private set; }
-        public string Slug { get; private set; }
         public Guest Guest { get;  private set; }
         public Ceremony Ceremony { get;  private set; }
-        public List<Multimedia> Multimedias { get;  private set; }
 
-        public CeremonyGuest(long guestId, long ceremonyId, DateTime ceremonyDate, float satisfication, bool isLive, 
-            string bannerFile, string image, string imageAlt, string imageTitle, string keywords, 
-            string metaDescription, string slug)
+        public CeremonyGuest(long guestId, long ceremonyId, float satisfication)
         {
             GuestId = guestId;
             CeremonyId = ceremonyId;
-            CeremonyDate = ceremonyDate;
             Satisfication = satisfication;
-            IsLive = isLive;
-            BannerFile = bannerFile;
-            Image = image;
-            ImageAlt = imageAlt;
-            ImageTitle = imageTitle;
-            Keywords = keywords;
-            MetaDescription = metaDescription;
-            Slug = slug;
-            Status = true;
-            Multimedias = new List<Multimedia>();
+
         }
-        public void Edit(long guestId, long ceremonyId, DateTime ceremonyDate, float satisfication, bool isLive,
-            string bannerFile, string image, string imageAlt, string imageTitle, string keywords,
-            string metaDescription, string slug)
+
+        public void Edit(long guestId, long ceremonyId, float satisfication)
         {
             GuestId = guestId;
             CeremonyId = ceremonyId;
-            CeremonyDate = ceremonyDate;
             Satisfication = satisfication;
-            IsLive = isLive;
-            if(!string.IsNullOrWhiteSpace(bannerFile))
-                BannerFile = bannerFile;
-            if(!string.IsNullOrWhiteSpace(image))
-                Image = image;
-            ImageAlt = imageAlt;
-            ImageTitle = imageTitle;
-            Keywords = keywords;
-            MetaDescription = metaDescription;
-            Slug = slug;
-            Status = true;
-            Multimedias = new List<Multimedia>();
         }
     }
 }

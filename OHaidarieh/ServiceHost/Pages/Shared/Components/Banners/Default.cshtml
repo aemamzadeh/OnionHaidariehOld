@@ -1,4 +1,4 @@
-﻿@model List<_01_HaidariehQuery.Contracts.CeremonyGuests.CeremonyGuestQueryModel>
+﻿@model List<_01_HaidariehQuery.Contracts.Ceremonies.CeremonyQueryModel>
 
 <div class="gap no-gap clearfix">
     <img class="botm-shp shp-img" src="theme/assets/images/shp2-1.png" alt="shp2-1.png">
@@ -12,8 +12,8 @@
                         <div class="featured-cap">
                             <img src="theme/assets/images/resources/bsml-txt.png" alt="bsml-txt.png">
                             @*<h1><img src="theme/assets/images/resources/ayat-txt2-1.png" alt="ayat-txt2-1.png"></h1>*@
-                            <h3>@item.Ceremony</h3>
-                            <h4>@item.CeremonyDateFa</h4>
+                            <h3>@item.Title</h3>
+                            <h4 class="text-white">@item.CeremonyDateFa</h4>
 
                             @if (!System.Convert.IsDBNull(item.CeremonyDate))
                             {

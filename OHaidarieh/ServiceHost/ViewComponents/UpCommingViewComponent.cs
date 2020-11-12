@@ -1,4 +1,4 @@
-﻿using _01_HaidariehQuery.Contracts.CeremonyGuests;
+﻿using _01_HaidariehQuery.Contracts.Ceremonies;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -6,16 +6,16 @@ namespace ServiceHost.ViewComponents
 {
     public class UpCommingViewComponent:ViewComponent
     {
-        private readonly ICeremonyGuestQuery _ceremonyGuestQuery;
+        private readonly ICeremonyQuery _ceremonyQuery;
 
-        public UpCommingViewComponent(ICeremonyGuestQuery ceremonyGuestQuery)
+        public UpCommingViewComponent(ICeremonyQuery ceremonyQuery)
         {
-            _ceremonyGuestQuery = ceremonyGuestQuery;
+            _ceremonyQuery = ceremonyQuery;
         }
 
         public IViewComponentResult Invoke()
         {
-            var comingevents = _ceremonyGuestQuery.GetComing();
+            var comingevents = _ceremonyQuery.GetComing();
             return View(comingevents);
         }
 

@@ -32,7 +32,7 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
         {
             var command = new CreateMultimedia
             {
-                CeremonyGuests = _ceremonyGuestApplication.GetCeremonyGuests()
+                //CeremonyGuests = _ceremonyGuestApplication.GetCeremonyGuests()
             };
             return Partial("./Create", command);
         }
@@ -44,7 +44,7 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
         public IActionResult OnGetEdit(long id)
         {
             var multimedia = _multimediaApplication.GetDetail(id);
-            multimedia.CeremonyGuests = _ceremonyGuestApplication.GetCeremonyGuests();
+            //multimedia.CeremonyGuests = _ceremonyGuestApplication.GetCeremonyGuests();
             return Partial("./Edit", multimedia);
         }
         public JsonResult OnPostEdit(EditMultimedia command)

@@ -24,16 +24,7 @@ namespace Haidarieh.Application
             if (_ceremonyGuestRepository.Exist(x=>x.GuestId==command.GuestId && x.CeremonyId == command.CeremonyId))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
-            var slug = command.Slug.Slugify();
-
-            var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
-            var ImagePath = $"{ImageFolderName}/{command.Slug}";
-            var imageFileName = _fileUploader.Upload(command.Image, ImagePath);
-            var bannerFileName = _fileUploader.Upload(command.BannerFile, ImagePath);
-
-            var ceremonyGuest = new CeremonyGuest(command.GuestId,command.CeremonyId, command.CeremonyDate.ToGeorgianDateTime(), command.Satisfication,
-                command.IsLive, bannerFileName, imageFileName, command.ImageAlt, command.ImageTitle, command.Keywords,
-                       command.MetaDescription, slug);
+            var ceremonyGuest = new CeremonyGuest(command.GuestId,command.CeremonyId,command.Satisfication);
 
             _ceremonyGuestRepository.Create(ceremonyGuest);
             _ceremonyGuestRepository.SaveChanges();
@@ -47,19 +38,10 @@ namespace Haidarieh.Application
             var editItem = _ceremonyGuestRepository.Get(command.Id);
             if (editItem == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
-            if (_ceremonyGuestRepository.Exist(x => x.CeremonyId == command.CeremonyId && x.Id != command.Id))
+            if (_ceremonyGuestRepository.Exist(x=>x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
-            var slug = command.Slug.Slugify();
-
-            var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
-            var ImagePath =$"{ImageFolderName}/{command.Slug}";
-            var imageFileName = _fileUploader.Upload(command.Image,ImagePath);
-            var bannerFileName = _fileUploader.Upload(command.BannerFile, ImagePath);
-
-            editItem.Edit(command.GuestId, command.CeremonyId, command.CeremonyDate.ToGeorgianDateTime(), command.Satisfication,
-                command.IsLive, bannerFileName, imageFileName, command.ImageAlt, command.ImageTitle, command.Keywords,
-                       command.MetaDescription, slug);
+            editItem.Edit(command.GuestId, command.CeremonyId, command.Satisfication);
             _ceremonyGuestRepository.SaveChanges();
 
             return operation.Succedded();

@@ -2633,7 +2633,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Haidarieh.Infrastructure.EFCore": "1.0.0"
+          "Haidarieh.Infrastructure.EFCore": "1.0.0",
+          "System.Linq": "4.3.0"
         },
         "compile": {
           "bin/placeholder/01_HaidariehQuery.dll": {}

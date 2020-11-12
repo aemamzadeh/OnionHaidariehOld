@@ -1,4 +1,5 @@
-﻿using _01_HaidariehQuery.Contracts.Ceremonies;
+﻿using _0_Framework.Application;
+using _01_HaidariehQuery.Contracts.Ceremonies;
 using _01_HaidariehQuery.Contracts.CeremonyGuests;
 using _01_HaidariehQuery.Contracts.Multimedias;
 using Haidarieh.Domain.CeremonyGuestAgg;
@@ -13,7 +14,7 @@ using System.Text;
 
 namespace _01_HaidariehQuery.Query
 {
-    class CeremonyQuery : ICeremonyQuery
+    public class CeremonyQuery : ICeremonyQuery
     {
         private readonly HContext _hContext;
 
@@ -28,10 +29,211 @@ namespace _01_HaidariehQuery.Query
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate = x.CeremonyDate,
+                CeremonyDateFa = x.CeremonyDate.ToFarsi(),
                 Status = x.Status
             }).ToList();
         }
 
-    }   
-}
+            public List<CeremonyQueryModel> GetComing()
+            {
+                return _hContext.Ceremonies.Where(x=>x.Status==true && DateTime.Now.Date <= x.CeremonyDate.Date &&
+                                                    DateTime.Compare(x.CeremonyDate.AddHours(4), DateTime.Now) > 0).
+                                                    Select(x => new CeremonyQueryModel
+                                                    {
+                                                        Id = x.Id,
+                                                        Title = x.Title,
+                                                        CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                                                        CeremonyDate = x.CeremonyDate,
+                                                        Image = x.Image,
+                                                        ImageAlt=x.ImageAlt,
+                                                        ImageTitle=x.ImageTitle,
+                                                        IsLive = x.IsLive,
+                                                        BannerFile = x.BannerFile,
+                                                        Slug = x.Slug,
+                                                        Keywords=x.Keywords,
+                                                        MetaDescription=x.MetaDescription
+                                                    }).AsNoTracking().ToList();
+            }
+            public List<CeremonyQueryModel> GetPast()
+            {
+                return _hContext.Ceremonies.Include(x => x.CeremonyGuests).Where(x => x.Status == true &&
+                                                    x.CeremonyDate.Date <= DateTime.Now.Date &&
+                                                    DateTime.Compare(x.CeremonyDate.AddHours(4), DateTime.Now) < 0).
+                                                    Select(x => new CeremonyQueryModel
+                                                    {
+                                                        Id = x.Id,
+                                                        Title = x.Title,
+                                                        CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                                                        CeremonyDate = x.CeremonyDate,
+                                                        Image = x.Image,
+                                                        ImageAlt = x.ImageAlt,
+                                                        ImageTitle = x.ImageTitle,
+                                                        IsLive = x.IsLive,
+                                                        BannerFile = x.BannerFile,
+                                                        Slug = x.Slug,
+                                                        Keywords = x.Keywords,
+                                                        MetaDescription = x.MetaDescription
+                                                    }).AsNoTracking().ToList();
+            }
+            public List<CeremonyQueryModel> GetAll()
+            {
+                return _hContext.Ceremonies.Where(x => x.Status == true).Select(x => new CeremonyQueryModel
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                    CeremonyDate = x.CeremonyDate,
+                    Image = x.Image,
+                    ImageAlt = x.ImageAlt,
+                    ImageTitle = x.ImageTitle,
+                    IsLive = x.IsLive,
+                    BannerFile = x.BannerFile,
+                    Slug = x.Slug,
+                    Keywords = x.Keywords,
+                    MetaDescription = x.MetaDescription
+                }).AsNoTracking().ToList();
+
+            }
+
+            public List<CeremonyQueryModel> GetCeremonyWithMultimedias()
+            {
+                return _hContext.Ceremonies.Include(x => x.Multimedias).
+                                                Include(x => x.CeremonyGuests).
+                                                ThenInclude(x=>x.Guest).
+                                                Where(x => x.Status == true).Select(x => new CeremonyQueryModel
+                                                {
+                                                    Id = x.Id,
+                                                    Title = x.Title,
+                                                    CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                                                    CeremonyDate = x.CeremonyDate,
+                                                    Image = x.Image,
+                                                    ImageAlt = x.ImageAlt,
+                                                    ImageTitle = x.ImageTitle,
+                                                    IsLive = x.IsLive,
+                                                    BannerFile = x.BannerFile,
+                                                    Slug = x.Slug,
+                                                    Keywords = x.Keywords,
+                                                    MetaDescription = x.MetaDescription,
+                                                    CeremonyGuests=MapCeremonyGuests(x.CeremonyGuests),
+                                                    Multimedias = MapMultimedias(x.Multimedias)
+                                                    
+                                                }).AsNoTracking().ToList();
+            }
+
+            private static List<MultimediaQueryModel> MapMultimedias(List<Multimedia> multimedias)
+            {
+
+                return multimedias.Select(x => new MultimediaQueryModel
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    FileAddress = x.FileAddress,
+                    FileAlt = x.FileAlt,
+                    FileTitle = x.FileTitle
+                }).ToList();
+            }
+
+        private static List<CeremonyGuestQueryModel> MapCeremonyGuests(List<CeremonyGuest> ceremonyGuests)
+        {
+
+            return ceremonyGuests.Select(x => new CeremonyGuestQueryModel
+            {
+                Id = x.Id,
+                CeremonyId=x.CeremonyId,
+                GuestId=x.GuestId,
+                Guest=x.Guest.FullName
+            }).ToList();
+        }
+
+        public CeremonyQueryModel GetCeremonyWithMultimedias(string id)
+            {
+                var ceremonies = _hContext.Ceremonies.Include(x => x.CeremonyGuests).
+                                                ThenInclude(x => x.Guest).
+                                                Where(x => x.Status == true).Select(x => new CeremonyQueryModel
+                                                {
+                                                    Id = x.Id,
+                                                    Title = x.Title,
+                                                    CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                                                    CeremonyDate = x.CeremonyDate,
+                                                    Image = x.Image,
+                                                    ImageAlt = x.ImageAlt,
+                                                    ImageTitle = x.ImageTitle,
+                                                    IsLive = x.IsLive,
+                                                    BannerFile = x.BannerFile,
+                                                    Slug = x.Slug,
+                                                    Keywords = x.Keywords,
+                                                    MetaDescription = x.MetaDescription,
+                                                    CeremonyGuests = MapCeremonyGuests(x.CeremonyGuests),
+                                                    Multimedias = MapMultimedias(x.Multimedias)
+                                                }).AsNoTracking().FirstOrDefault(x => x.Slug == id);
+                return ceremonies;
+            }
+
+            public List<CeremonyQueryModel> Search(string phrase)
+            {
+            var query = _hContext.Ceremonies.Where(x => x.Status == true).Select(x => new CeremonyQueryModel
+                                {
+                                    Id = x.Id,
+                                    Title = x.Title,
+                                    CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                                    CeremonyDate = x.CeremonyDate,
+                                    Image = x.Image,
+                                    ImageAlt = x.ImageAlt,
+                                    ImageTitle = x.ImageTitle,
+                                    IsLive = x.IsLive,
+                                    BannerFile = x.BannerFile,
+                                    Slug = x.Slug,
+                                    Keywords = x.Keywords,
+                                    MetaDescription = x.MetaDescription,
+                                    CeremonyGuests = MapCeremonyGuests(x.CeremonyGuests),
+                                    Multimedias = MapMultimedias(x.Multimedias)
+                                }).AsNoTracking();
+            if (!string.IsNullOrWhiteSpace(phrase))
+                query = query.Where(x => x.Title.Contains(phrase));
+            var result = query.OrderByDescending(x => x.Id).ToList();
+            return result;
+            }
+
+
+
+            //---------------------
+            //public List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias2(string id)
+            //{
+            //    return _hContext.CeremonyGuests.Include(x => x.Multimedias).
+            //                                    ThenInclude(x => x.CeremonyGuest).
+            //                                    ThenInclude(x => x.Guest).
+            //                                    Where(x => x.Status == true && x.Slug == id).Select(x => new CeremonyGuestQueryModel
+            //                                    {
+            //                                        Id = x.Id,
+            //                                        //Ceremony = x.Ceremony.Title,
+            //                                        //CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+            //                                        Guest = x.Guest.FullName,
+            //                                        Slug = x.Slug,
+            //                                        Multimedias = MapMultimedias(x.Multimedias)
+            //                                    }).AsNoTracking().ToList();
+            //}
+
+            //public List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias2(long id)
+            //{
+            //    var ceremonyGuest = _hContext.CeremonyGuests.Include(x => x.Guest).
+            //                                    Include(x => x.Multimedias).
+            //                                    ThenInclude(x => x.CeremonyGuest).
+            //                                    ThenInclude(x => x.Ceremony).
+            //                                    Where(x => x.Status == true && x.CeremonyId == id).Select(x => new CeremonyGuestQueryModel
+            //                                    {
+            //                                        Id = x.Id,
+            //                                        Ceremony = x.Ceremony.Title,
+            //                                        CeremonyDateFa = x.CeremonyDate.Date.ToFarsi(),
+            //                                        Guest = x.Guest.FullName,
+            //                                        Slug = x.Slug,
+            //                                        Multimedias = MapMultimedias(x.Multimedias)
+            //                                    }).AsNoTracking().ToList();
+            //    return ceremonyGuest;
+            //}
+        }
+    }
+
+
+
+
+

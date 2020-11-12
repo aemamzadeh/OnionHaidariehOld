@@ -27,10 +27,6 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Id=x.Id,
                 GuestId=x.GuestId,
                 CeremonyId=x.CeremonyId,
-                Ceremony=x.Ceremony.Title,
-                CeremonyDate=x.CeremonyDate.ToFarsi(),
-                Image=x.Image,
-                IsLive=x.IsLive,
                 Satisfication=x.Satisfication
             }).ToList();
         }
@@ -42,17 +38,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Id=x.Id,
                 GuestId = x.GuestId,
                 CeremonyId = x.CeremonyId,
-                CeremonyDate = x.CeremonyDate.ToString(CultureInfo.InvariantCulture),
-                Satisfication=x.Satisfication,
-                IsLive=x.IsLive,
-                //BannerFile=x.BannerFile,
-                //Image=x.Image,
-                ImageAlt=x.ImageAlt,
-                ImageTitle=x.ImageTitle,
-                Keywords=x.Keywords,
-                MetaDescription=x.MetaDescription,
-                Slug=x.Slug,
-                
+                Satisfication=x.Satisfication
             }).FirstOrDefault(x => x.Id == Id);
         }
 
@@ -66,10 +52,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Ceremony = x.Ceremony.Title,
                 GuestId=x.GuestId,
                 CeremonyId=x.CeremonyId,
-                CeremonyDate = x.CeremonyDate.ToFarsi(),
-                Satisfication = x.Satisfication,
-                IsLive = x.IsLive,
-                Image = x.Image                
+                Satisfication = x.Satisfication
             });
             if (searchModel.GuestId!=0)
                 query = query.Where(x => x.GuestId==searchModel.GuestId);

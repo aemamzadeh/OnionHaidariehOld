@@ -6,6 +6,7 @@ using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Domain.CeremonyAgg;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ServiceHost.Areas.Admin.Pages.Ceremonies
 {

@@ -1088,7 +1088,8 @@
       },
       "01_HaidariehQuery/1.0.0": {
         "dependencies": {
-          "Haidarieh.Infrastructure.EFCore": "1.0.0"
+          "Haidarieh.Infrastructure.EFCore": "1.0.0",
+          "System.Linq": "4.3.0"
         },
         "runtime": {
           "01_HaidariehQuery.dll": {}

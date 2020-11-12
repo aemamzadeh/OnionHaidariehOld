@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Guest;
@@ -15,8 +12,8 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
     {
         public CeremonyGuestSearchModel SearchModel;
         public List<CeremonyGuestViewModel> CeremonyGuests;
-        public SelectList Ceremonies;
-        public SelectList Guests;
+        public SelectList CeremoniesList;
+        public SelectList GuestsList;
         private readonly ICeremonyGuestApplication _ceremonyGuestApplication;
         private readonly ICeremonyApplication _ceremonyApplication;
         private readonly IGuestApplication _guestApplication;
@@ -32,15 +29,15 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
         public void OnGet(CeremonyGuestSearchModel searchModel)
         {
             CeremonyGuests = _ceremonyGuestApplication.Search(searchModel);
-            Ceremonies = new SelectList(_ceremonyApplication.GetCeremonies(),"Id","Title");
-            Guests = new SelectList(_guestApplication.GetGuests(), "Id", "FullName");
+            CeremoniesList = new SelectList(_ceremonyApplication.GetCeremonies(),"Id","Title");
+            GuestsList = new SelectList(_guestApplication.GetGuests(), "Id", "FullName");
         }
         public IActionResult OnGetCreate()
         {
             var command = new CreateCeremonyGuest
             {
-                CeremoniesM = _ceremonyApplication.GetCeremonies(),
-                GuestsM = _guestApplication.GetGuests()
+                Ceremonies = _ceremonyApplication.GetCeremonies(),
+                Guests = _guestApplication.GetGuests()
             };
             return Partial("./Create", command);
         }
@@ -52,8 +49,8 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
         public IActionResult OnGetEdit(long id)
         {
             var ceremonyGuest = _ceremonyGuestApplication.GetDetail(id);
-            ceremonyGuest.GuestsM = _guestApplication.GetGuests();
-            ceremonyGuest.CeremoniesM = _ceremonyApplication.GetCeremonies();
+            ceremonyGuest.Guests = _guestApplication.GetGuests();
+            ceremonyGuest.Ceremonies = _ceremonyApplication.GetCeremonies();
             return Partial("./Edit", ceremonyGuest);
         }
         public JsonResult OnPostEdit(EditCeremonyGuest command)
