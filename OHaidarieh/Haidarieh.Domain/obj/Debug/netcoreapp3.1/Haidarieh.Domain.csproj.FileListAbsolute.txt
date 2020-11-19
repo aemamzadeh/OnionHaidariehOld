@@ -1,0 +1,14 @@
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\netcoreapp3.1\Haidarieh.Domain.deps.json
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\netcoreapp3.1\Haidarieh.Domain.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\netcoreapp3.1\Haidarieh.Domain.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\netcoreapp3.1\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\netcoreapp3.1\Haidarieh.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\netcoreapp3.1\0_Framework.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\netcoreapp3.1\Haidarieh.Application.Contracts.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\netcoreapp3.1\Haidarieh.Domain.csprojAssemblyReference.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\netcoreapp3.1\Haidarieh.Domain.AssemblyInfoInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\netcoreapp3.1\Haidarieh.Domain.AssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\netcoreapp3.1\Haidarieh.Domain.csproj.CoreCompileInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\netcoreapp3.1\Haidarieh.Domain.csproj.CopyComplete
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\netcoreapp3.1\Haidarieh.Domain.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\netcoreapp3.1\Haidarieh.Domain.pdb

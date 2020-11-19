@@ -17,45 +17,44 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label asp-for="Title" class="control-label">نام و نام خانوادگی</label>
-                    <input type="text" class="form-control" asp-for="Title" onchange="makeSlug('Name', 'Slug')">
-                    <span asp-validation-for="Title" class="error"></span>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="CeremonyId" class="control-label">مراسم</label>
-                        <select type="text" class="form-control" asp-for="CeremonyId" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
-                            <option value="0">انتخاب مراسم</option>
-                        </select>
-                        <span asp-validation-for="CeremonyId" class="error"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label asp-for="FileAddress" class="control-label">فایل</label>
-                        <input type="text" class="form-control" asp-for="FileAddress">
-                        <span asp-validation-for="FileAddress" class="error"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="FileTitle" class="control-label">تلفن</label>
-                        <textarea class="form-control autogrow" asp-for="FileTitle" onchange="fillField('FileTitle', 'FileAlt')"
-                                  style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
-                        <span asp-validation-for="FileTitle" class="error"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="FileAlt" class="control-label">تلفن</label>
-                        <input type="text" class="form-control" asp-for="FileAlt">
-                        <span asp-validation-for="FileAlt" class="error"></span>
-                    </div>
+                    <label asp-for="CeremonyId" class="control-label">مراسم</label>
+                    <select type="text" class="form-control" id="ddlIncidents" asp-for="CeremonyId" asp-items='new SelectList(Model.Ceremonies,"Id","Title")' onchange="fillField('selectedItem', 'Title')">
+                        <option value="0">انتخاب مراسم</option>
+                    </select>
+                    <span asp-validation-for="CeremonyId" class="error"></span>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">عنوان</label>
+                    <input type="text" class="form-control" asp-for="Title">
+                    <span asp-validation-for="Title" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="FileAddress" class="control-label">فایل</label>
+                    <input type="file" class="form-control" asp-for="FileAddress">
+                    <span asp-validation-for="FileAddress" class="error"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="FileTitle" class="control-label">عنوان فایل</label>
+                    <input type="text" class="form-control" asp-for="FileTitle" onchange="fillField('FileTitle', 'FileAlt')" />
+                    <span asp-validation-for="FileTitle" class="error"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="FileAlt" class="control-label">عنوان فایل در گوگل</label>
+                    <input type="text" class="form-control" asp-for="FileAlt">
+                    <span asp-validation-for="FileAlt" class="error"></span>
+                </div>
+            </div>
+        </div>
             <input type="hidden" asp-for="Id" value="@Model.Id">
 
         </div>

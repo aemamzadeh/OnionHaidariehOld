@@ -1,0 +1,12 @@
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.deps.json
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\ref\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.AssemblyInfoInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.AssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.csproj.CoreCompileInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ref\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\0_Framework\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.csprojAssemblyReference.cache

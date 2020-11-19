@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="icon" href="/theme/assets/images/favicon2.png" sizes="32x32" type="image/png">
-    <title>@ViewData["Title"] - حیدریه نجف اشرف -طهران</title>
+    <meta name="keywords" content="@ViewData["keywords"]" />
+    <meta name="description" content="@ViewData["metadescription"]" />
+    <link rel="icon" href="~/theme/assets/images/favicon2.png" sizes="32x32" type="image/png">
+    @if (ViewData["Title"] != null)
+    {
+        <title>@ViewData["Title"] - حیدریه نجف اشرف -طهران</title>
+    }
+    else
+    {
+        <title>حیدریه نجف اشرف -طهران</title>
+    }
 
-    <link rel="stylesheet" href="/theme/assets/css/icons.min.css">
-    <link rel="stylesheet" href="/theme/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/theme/assets/css/animate.min.css">
-    <link rel="stylesheet" href="/theme/assets/css/fancybox.min.css">
-    <link rel="stylesheet" href="/theme/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/theme/assets/css/style.css">
-    <link rel="stylesheet" href="/theme/assets/css/rtl.css">
-    <link rel="stylesheet" href="/theme/assets/css/shabnam.css">
-    <link rel="stylesheet" href="/theme/assets/css/responsive.css">
+
+    <link rel="stylesheet" href="~/theme/assets/css/icons.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/fancybox.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/theme/assets/css/style.css">
+    <link rel="stylesheet" href="~/theme/assets/css/rtl.css">
+    <link rel="stylesheet" href="~/theme/assets/css/shabnam.css">
+    <link rel="stylesheet" href="~/theme/assets/css/responsive.css">
 
     <!-- Color Scheme -->
-    <link rel="stylesheet" href="/theme/assets/css/colors/color3.css" title="color" /><!-- Color -->
+    <link rel="stylesheet" href="~/theme/assets/css/colors/color3.css" title="color" /><!-- Color -->
 </head>
 <body>
     <main>
@@ -49,17 +57,17 @@
 
     </main><!-- Main Wrapper -->
 
-    <script src="/theme/assets/js/jquery.min.js"></script>
-    <script src="/theme/assets/js/bootstrap.min.js"></script>
-    <script src="/theme/assets/js/downCount.js"></script>
-    <script src="/theme/assets/js/fancybox.min.js"></script>
-    <script src="/theme/assets/js/isotope.pkgd.min.js"></script>
-    <script src="/theme/assets/js/perfectscrollbar.min.js"></script>
-    <script src="/theme/assets/js/wow.min.js"></script>
-    <script src="/theme/assets/js/owl.carousel.min.js"></script>
+    <script src="~/theme/assets/js/jquery.min.js"></script>
+    <script src="~/theme/assets/js/bootstrap.min.js"></script>
+    <script src="~/theme/assets/js/downCount.js"></script>
+    <script src="~/theme/assets/js/fancybox.min.js"></script>
+    <script src="~/theme/assets/js/isotope.pkgd.min.js"></script>
+    <script src="~/theme/assets/js/perfectscrollbar.min.js"></script>
+    <script src="~/theme/assets/js/wow.min.js"></script>
+    <script src="~/theme/assets/js/owl.carousel.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALsm2XWtRQ5INM_ITSCwYB7rQdI9ILgy0"></script>
-    <script src="/theme/assets/js/google-map-int.js"></script>
-    <script src="/theme/assets/js/custom-scripts.js"></script>
+    <script src="~/theme/assets/js/google-map-int.js"></script>
+    <script src="~/theme/assets/js/custom-scripts.js"></script>
 
     @RenderSection("Scripts", required: false)
 

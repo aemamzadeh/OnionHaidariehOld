@@ -1,4 +1,5 @@
-﻿using _01_HaidariehQuery.Contracts.Ceremonies;
+﻿using _0_Framework.Application;
+using _01_HaidariehQuery.Contracts.Ceremonies;
 using _01_HaidariehQuery.Contracts.CeremonyGuests;
 using _01_HaidariehQuery.Contracts.Guests;
 using _01_HaidariehQuery.Contracts.Members;

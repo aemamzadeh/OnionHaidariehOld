@@ -17,20 +17,20 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label asp-for="Ceremonies" class="control-label">مراسم</label>
-                    <select type="text" class="form-control" asp-for="Ceremonies" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
+                    <label asp-for="CeremonyId" class="control-label">مراسم</label>
+                    <select class="form-control" asp-for="CeremonyId" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
                         <option value="0">انتخاب مراسم</option>
                     </select>
-                    <span asp-validation-for="Ceremonies" class="error"></span>
+                    <span asp-validation-for="CeremonyId" class="error"></span>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
-                    <label asp-for="Guests" class="control-label">میهمان</label>
-                    <select type="text" class="form-control" asp-for="Guests" asp-items='new SelectList(Model.Guests,"Id","FullName")'>
+                    <label asp-for="GuestId" class="control-label">میهمان</label>
+                    <select class="form-control" asp-for="GuestId" asp-items='new SelectList(Model.Guests,"Id","FullName")'>
                         <option value="0">انتخاب میهمان</option>
                     </select>
-                    <span asp-validation-for="Guests" class="error"></span>
+                    <span asp-validation-for="GuestId" class="error"></span>
                 </div>
             </div>
             <div class="col-md-6">

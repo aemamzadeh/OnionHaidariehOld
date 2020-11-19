@@ -31,7 +31,8 @@ namespace Haidarieh.Domain.MultimediaAgg
         public void Edit(string title, string fileAddress, string fileTitle, string fileAlt, long ceremonyId)
         {
             Title = title;
-            FileAddress = fileAddress;
+            if(!string.IsNullOrWhiteSpace(fileAddress))
+                FileAddress = fileAddress;
             FileTitle = fileTitle;
             FileAlt = fileAlt;
             CeremonyId = ceremonyId;

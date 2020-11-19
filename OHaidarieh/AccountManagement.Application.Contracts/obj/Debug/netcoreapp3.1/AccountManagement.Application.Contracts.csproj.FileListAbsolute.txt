@@ -1,0 +1,12 @@
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\bin\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.deps.json
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\bin\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\bin\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\bin\Debug\netcoreapp3.1\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\bin\Debug\netcoreapp3.1\0_Framework.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\obj\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.csprojAssemblyReference.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\obj\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.AssemblyInfoInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\obj\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.AssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\obj\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.csproj.CoreCompileInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\obj\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.csproj.CopyComplete
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\obj\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\obj\Debug\netcoreapp3.1\AccountManagement.Application.Contracts.pdb

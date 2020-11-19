@@ -23,7 +23,6 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 Title = x.Title,
                 CeremonyId = x.CeremonyId,
-                FileAddress = x.FileAddress,
                 FileAlt = x.FileAlt,
                 FileTitle = x.FileTitle
             }).FirstOrDefault(x => x.Id == id);

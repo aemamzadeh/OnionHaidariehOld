@@ -19,6 +19,7 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
             GuestId = guestId;
             CeremonyId = ceremonyId;
             Satisfication = satisfication;
+        
 
         }
 

@@ -50,6 +50,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Id=x.Id,
                 Guest = x.Guest.FullName,
                 Ceremony = x.Ceremony.Title,
+                CeremonyDate=x.Ceremony.CeremonyDate.ToFarsi(),
                 GuestId=x.GuestId,
                 CeremonyId=x.CeremonyId,
                 Satisfication = x.Satisfication

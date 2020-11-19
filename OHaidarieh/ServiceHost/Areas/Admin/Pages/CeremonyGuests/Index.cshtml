@@ -28,7 +28,7 @@
                         <select class="form-control" asp-for="SearchModel.CeremonyId" asp-items="Model.CeremoniesList">
                             <option value="0">انتخاب مراسم</option>
                         </select>
-                        
+
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.GuestId"></label>
@@ -57,7 +57,6 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>عکس</th>
                                     <th>تاریخ برگزاری</th>
                                     <th>مراسم عنوان</th>
                                     <th>میهمان</th>
@@ -68,23 +67,19 @@
                             <tbody>
                                 @foreach (var item in Model.CeremonyGuests)
                                 {
-                                <tr>
-                                    <td>@item.Id</td>
-                                    @*<td>
-                                        <img src="~/@item.Ceremony.image" style="width: 70px; height: 70px" />
-                                    </td>
-                                    <td>@item.Ceremony.CeremonyDate</td>*@
-                                    <td>@item.Ceremony</td>
-                                    <td>@item.Guest</td>
-                                    <td>@item.Satisfication</td>
-
-                                    <td>
-                                        <a class="btn btn-warning pull-right m-rl-5"
-                                           href="#showmodal=@Url.Page("./Index","Edit", new { id = item.Id })">
-                                            <i class="fa fa-edit"></i> ویرایش
-                                        </a>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.CeremonyDate</td>
+                                        <td>@item.Ceremony</td>
+                                        <td>@item.Guest</td>
+                                        <td>@item.Satisfication</td>
+                                        <td>
+                                            <a class="btn btn-warning pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index","Edit", new { id = item.Id })">
+                                                <i class="fa fa-edit"></i> ویرایش
+                                            </a>
+                                        </td>
+                                    </tr>
                                 }
                             </tbody>
                         </table>

@@ -12,10 +12,7 @@ namespace _01_HaidariehQuery.Contracts.Multimedias
         public string FileTitle { get;  set; }
         public string FileAlt { get;  set; }
         public bool Status { get;  set; }
-        public long CeremonyGuestId { get;  set; }
-        public string CeremonyGuest { get; set; }
         public DateTime CeremonyDate { get; set; }
-        public string Guest { get; set; }
         public string Slug { get; set; }
     }
 }

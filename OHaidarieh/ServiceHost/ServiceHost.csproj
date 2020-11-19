@@ -1,15 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp5.0.0-rc.2.20475.5</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Contact.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AccountManagement.Infrastructure.Configuration\AccountManagement.Configuration.csproj" />
     <ProjectReference Include="..\Haidarieh.Configuration\Haidarieh.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -19,6 +26,18 @@
 
   <ItemGroup>
     <Folder Include="Pages\Shared\Components\Multimedias\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Contact.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Contact.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Contact.cshtml" />
   </ItemGroup>
 
 </Project>

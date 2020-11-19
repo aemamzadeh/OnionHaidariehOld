@@ -11,6 +11,7 @@ namespace _01_HaidariehQuery.Contracts.Ceremonies
         public long Id { get; set; }
         public string Title { get; set; }
         public DateTime CeremonyDate { get; set; }
+        public string CeremonyTime { get; set; }
         public string CeremonyDateFa { get; set; }
         public bool IsLive { get; set; }
         public bool Status { get; set; }

@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Haidarieh.Application.Contracts.CeremonyGuest;
+using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.Multimedia;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -14,25 +11,25 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
     {
         public MultimediaSearchModel SearchModel;
         public List<MultimediaViewModel> Multimedias;
-        public SelectList CeremonyGuests;
+        public SelectList Ceremonies;
         private readonly IMultimediaApplication _multimediaApplication;
-        private readonly ICeremonyGuestApplication _ceremonyGuestApplication;
+        private readonly ICeremonyApplication _ceremonyApplication;
 
-        public IndexModel(IMultimediaApplication multimediaApplication, ICeremonyGuestApplication ceremonyGuestApplication)
+        public IndexModel(IMultimediaApplication multimediaApplication, ICeremonyApplication ceremonyApplication)
         {
             _multimediaApplication = multimediaApplication;
-            _ceremonyGuestApplication = ceremonyGuestApplication;
+            _ceremonyApplication = ceremonyApplication;
         }
         public void OnGet(MultimediaSearchModel searchModel)
         {
             Multimedias=_multimediaApplication.Search(searchModel);
-            CeremonyGuests = new SelectList(_ceremonyGuestApplication.GetCeremonyGuests(),"Id","Ceremony");
+            Ceremonies = new SelectList(_ceremonyApplication.GetCeremonies(),"Id","Title");
         }
         public IActionResult OnGetCreate()
         {
             var command = new CreateMultimedia
             {
-                //CeremonyGuests = _ceremonyGuestApplication.GetCeremonyGuests()
+                Ceremonies = _ceremonyApplication.GetCeremonies()
             };
             return Partial("./Create", command);
         }
@@ -44,7 +41,7 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
         public IActionResult OnGetEdit(long id)
         {
             var multimedia = _multimediaApplication.GetDetail(id);
-            //multimedia.CeremonyGuests = _ceremonyGuestApplication.GetCeremonyGuests();
+            multimedia.Ceremonies = _ceremonyApplication.GetCeremonies();
             return Partial("./Edit", multimedia);
         }
         public JsonResult OnPostEdit(EditMultimedia command)

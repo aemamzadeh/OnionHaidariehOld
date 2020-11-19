@@ -38,7 +38,7 @@ namespace Haidarieh.Application
             var editItem = _ceremonyGuestRepository.Get(command.Id);
             if (editItem == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
-            if (_ceremonyGuestRepository.Exist(x=>x.Id != command.Id))
+            if (_ceremonyGuestRepository.Exist(x => x.GuestId == command.GuestId && x.CeremonyId == command.CeremonyId && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             editItem.Edit(command.GuestId, command.CeremonyId, command.Satisfication);

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Haidarieh.Application;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Guest;
@@ -19,7 +20,7 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
         private readonly IGuestApplication _guestApplication;
 
 
-        public IndexModel(ICeremonyGuestApplication ceremonyGuestApplication,ICeremonyApplication ceremonyApplication, IGuestApplication guestApplication)
+        public IndexModel(ICeremonyGuestApplication ceremonyGuestApplication, ICeremonyApplication ceremonyApplication, IGuestApplication guestApplication)
         {
             _ceremonyGuestApplication = ceremonyGuestApplication;
             _ceremonyApplication = ceremonyApplication;
@@ -29,7 +30,7 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
         public void OnGet(CeremonyGuestSearchModel searchModel)
         {
             CeremonyGuests = _ceremonyGuestApplication.Search(searchModel);
-            CeremoniesList = new SelectList(_ceremonyApplication.GetCeremonies(),"Id","Title");
+            CeremoniesList = new SelectList(_ceremonyApplication.GetCeremonies(), "Id", "Title");
             GuestsList = new SelectList(_guestApplication.GetGuests(), "Id", "FullName");
         }
         public IActionResult OnGetCreate()

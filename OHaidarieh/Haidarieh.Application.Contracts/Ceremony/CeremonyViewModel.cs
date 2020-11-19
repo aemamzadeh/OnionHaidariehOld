@@ -10,6 +10,7 @@ namespace Haidarieh.Application.Contracts.Ceremony
         public string CeremonyDate { get; set; }
         public bool IsLive { get; set; }
         public string Image { get; set; }
+        public string Slug { get; set; }
         public List<CeremonyOperationViewModel> CeremonyOperations { get; set; }
 
 

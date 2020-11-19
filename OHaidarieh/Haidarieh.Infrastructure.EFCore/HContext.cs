@@ -25,13 +25,14 @@ namespace Haidarieh.Infrastructure.EFCore
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CeremonyGuestMapping());
-            modelBuilder.ApplyConfiguration(new CeremonyMapping());
-            modelBuilder.ApplyConfiguration(new GuestMapping());
-            modelBuilder.ApplyConfiguration(new MultimediaMapping());
-            modelBuilder.ApplyConfiguration(new MemberMapping());
-            modelBuilder.ApplyConfiguration(new SponsorMapping());
-
+            //modelBuilder.ApplyConfiguration(new CeremonyGuestMapping());
+            //modelBuilder.ApplyConfiguration(new CeremonyMapping());
+            //modelBuilder.ApplyConfiguration(new GuestMapping());
+            //modelBuilder.ApplyConfiguration(new MultimediaMapping());
+            //modelBuilder.ApplyConfiguration(new MemberMapping());
+            //modelBuilder.ApplyConfiguration(new SponsorMapping());
+            var assembly = typeof(CeremonyMapping).Assembly;
+            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
 
             base.OnModelCreating(modelBuilder);
         }
