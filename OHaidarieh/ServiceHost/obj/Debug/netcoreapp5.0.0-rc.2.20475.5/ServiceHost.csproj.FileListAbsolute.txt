@@ -216,3 +216,7 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Accounts\Create.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Accounts\Edit.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Accounts\Index.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Accounts\ChangePassword.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Roles\Create.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Roles\Edit.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Roles\Index.cshtml.g.cs

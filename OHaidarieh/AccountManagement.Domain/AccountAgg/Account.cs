@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Domain;
+using AccountManagement.Domain.RoleAgg;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +14,7 @@ namespace AccountManagement.Domain.AccountAgg
         public string Password { get; private set; }
         public string Mobile { get; private set; }
         public long RoleId { get; private set; }
+        public Role Role { get; private set; }
         public string ProfilePhoto { get; private set; }
 
         public Account(string fname, string lname, string username, string password, string mobile, long roleId, string profilePhoto)
@@ -32,7 +34,7 @@ namespace AccountManagement.Domain.AccountAgg
             Username = username;
             Mobile = mobile;
             RoleId = roleId;
-            if (!string.IsNullOrWhiteSpace(ProfilePhoto))
+            if (!string.IsNullOrWhiteSpace(profilePhoto))
                 ProfilePhoto = profilePhoto;
         }
         public void ChangePassword(string password)

@@ -1,6 +1,7 @@
 ﻿using _0_Framework.Infrastructure;
 using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Domain.AccountAgg;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,9 +33,21 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
             }).FirstOrDefault(x => x.Id == Id);
         }
 
+        public ChangePassword GetDetailPassword(long Id)
+        {
+            return _accountContext.Accounts.Select(x => new ChangePassword
+            {
+                Id = x.Id,
+                Fname = x.Fname,
+                Lname = x.Lname,
+                Password=x.Password,
+                Username = x.Username
+
+            }).FirstOrDefault(x => x.Id == Id);
+        }
         public List<AccountViewModel> Search(AccountSearchModel searchModel)
         {
-            var query = _accountContext.Accounts.Select(x => new AccountViewModel
+            var query = _accountContext.Accounts.Include(x=>x.Role).Select(x => new AccountViewModel
             {
                 Id=x.Id,
                 Fname=x.Fname,
@@ -42,8 +55,8 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                 Mobile=x.Mobile,
                 Username=x.Username,
                 ProfilePhoto=x.ProfilePhoto,
-                Role="مدیرسیستم",
-                RoleId=2
+                Role=x.Role.Title,
+                RoleId=x.RoleId
             });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Fname))

@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\Shared\Components\Multimedias\" />
+    <Folder Include="wwwroot\AccountImages\" />
   </ItemGroup>
 
   <ItemGroup>

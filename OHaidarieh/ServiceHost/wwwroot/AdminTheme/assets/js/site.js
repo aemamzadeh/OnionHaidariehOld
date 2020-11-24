@@ -36,7 +36,7 @@ $(document).ready(function () {
         function () {
             window.location.hash = "##";
             $('.persianDateInput').persianDatepicker({
-                format: 'YYYY/MM/DD HH:mm',
+                format: 'YYYY/MM/DD',
                 autoClose: true
             });
         });
@@ -187,7 +187,7 @@ function handleAjaxCall(method, url, data) {
 jQuery.validator.addMethod("maxFileSize",
     function (value, element, params) {
         var size = element.files[0].size;
-        var maxSize = 1 * 1024 * 1024;
+        var maxSize = 3 * 1024 * 1024;
         if (size > maxSize)
             return false;
         else {
@@ -196,72 +196,15 @@ jQuery.validator.addMethod("maxFileSize",
     });
 jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
 
-jQuery.validator.addMethod("validateDropdown",
-    function validateDropdown() {
-        //Get dropdownlist selected value
-        var selectedval = $('#Dropdown').find(":selected").text;
-        //Check if selected value is empty or not
-        if (selectedval == "") {
-            //$("#errorMsgSpan").text("Please select a year");
-            return false;
-        }
-        else {
-            //$("#errorMsgSpan").text(" ");
-            return true;
-        }
-    });
-jQuery.validator.unobtrusive.adapters.addBool("validateDropdown");
-
-
-$(document).ready(function () {
-    $('#submit').on('click', function () {
-        var files = $('#fUpload').prop("files");
-        var fdata = new FormData();
-        for (var i = 0; i < files.length; i++) {
-            fdata.append("files", files[i]);
-        }
-        if (files.length > 0) {
-            $.ajax({
-                type: "POST",
-                url: "/Index?handler=Upload",
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("XSRF-TOKEN",
-                        $('input:hidden[name="__RequestVerificationToken"]').val());
-                },
-                data: fdata,
-                contentType: false,
-                processData: false,
-                success: function (response) {
-                    alert('File Uploaded Successfully.')
-                }
-            });
-        }
-        else {
-            alert('Please select a file.')
-        }
-    })
-});
-
-
-//jQuery.validator.addMethod("fileExtentionLimitation",
+//jQuery.validator.addMethod("maxFileSize",
 //    function (value, element, params) {
-//        var fileFormat = element.files[0].split('.').pop();
-//        var validFormat = ["jpg", "jpeg", "png"];
-//        var result = false;
-//        var i;
-//        for (i = 0; i < validFormat.length; i++) {
-//            if (validFormat[i].toLowerCase() === fileFormat.toLowerCase()) {
-//                result = true;
-//                break;
-//            }
-//        }
+//        var size = element.files[0].size;
+//        var maxSize = 3 * 1024 * 1024;
 //        debugger;
-//        return result;
+//        if (size > maxSize)
+//            return false;
+//        else {
+//            return true;
+//        }
 //    });
-//jQuery.validator.unobtrusive.adapters.addBool("fileExtentionLimitation");
-
-//if (fileFormat === inArray(validFormat))
-//    return true;
-//else {
-//    return false;
-//}
+//jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");

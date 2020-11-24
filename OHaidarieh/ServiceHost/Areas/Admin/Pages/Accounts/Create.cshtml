@@ -38,13 +38,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="RoleId" class="control-label">نقش</label>
-                    @*<select class="form-control" asp-for="RoleId" asp-items='new SelectList(Model.Roles,"Id","Role")'>
-                    <option value="0">انتخاب نقش</option>
-                </select>*@
-                    <select class="form-control" asp-for="RoleId">
-                        <option value="1">مدیر سیستم</option>
-                        <option value="2">کاربر سیستم</option>
-
+                    <select class="form-control" asp-for="RoleId" asp-items='new SelectList(Model.Roles,"Id","Title")'>
+                        <option value="0">انتخاب نقش</option>
                     </select>
                     <span asp-validation-for="RoleId" class="error"></span>
                 </div>

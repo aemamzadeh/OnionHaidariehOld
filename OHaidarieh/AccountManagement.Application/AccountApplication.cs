@@ -41,7 +41,14 @@ namespace AccountManagement.Application
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
-            var ImagePath = $"{ImageFolderName}/{command.ProfilePhoto.FileName}";
+            string ImagePath;
+            if (command.ProfilePhoto != null)
+            {
+                ImagePath = $"{ImageFolderName}/{command.Fname}-{command.Lname}";
+            } else
+            {
+                ImagePath = $"{ImageFolderName}";
+            }
             var filepath = _fileUploader.Upload(command.ProfilePhoto, ImagePath);
             var password = _passwordHasher.Hash(command.Password);
 
@@ -59,11 +66,20 @@ namespace AccountManagement.Application
 
             if (editItem==null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
-            if (_accountRepository.Exist(x => x.Username == command.Username || x.Mobile == command.Mobile && x.Id!=command.Id))
+            if (_accountRepository.Exist(x => (x.Username == command.Username || x.Mobile == command.Mobile) && x.Id!=command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
-            var ImagePath = $"{ImageFolderName}/{command.ProfilePhoto.FileName}";
+            string ImagePath;
+            if (command.ProfilePhoto != null)
+            {
+                ImagePath = $"{ImageFolderName}/{command.Fname}-{command.Lname}";
+            }
+            else
+            {
+                ImagePath = $"{ImageFolderName}";
+            }
+
             var filepath = _fileUploader.Upload(command.ProfilePhoto, ImagePath);
 
             editItem.Edit(command.Fname, command.Lname, command.Username, command.Mobile, command.RoleId, filepath);
@@ -74,6 +90,14 @@ namespace AccountManagement.Application
         public EditAccount GetDetail(long Id)
         {
             return _accountRepository.GetDetail(Id);
+        }
+
+        public ChangePassword GetDetailPassword(long Id)
+        {
+            var item= _accountRepository.GetDetailPassword(Id);
+            item.Password = null;
+            return item;
+
         }
 
         public List<AccountViewModel> Search(AccountSearchModel searchModel)
