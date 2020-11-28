@@ -1,0 +1,71 @@
+﻿<header class="style2">
+    <div class="container">
+        <div class="logo"><a href="index.html" title="لوگو"><img src="/Theme/assets/images/logo.png" alt="لوگو"></a></div>
+        <nav>
+            <div>
+                <a class="srch-btn" asp-page="/Search" title="جستجو"><i class="fa fa-search"></i></a>
+                <a asp-page="/Account/" class="thm-btn brd-rd5" title="ورود کاربران">ورود کاربران</a>
+                <ul>
+                    <li>
+                        <a asp-page="/Index" title="">صفحه اصلی</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a asp-page="" title="">رویداد ها</a>
+                        <ul>
+                            <li><a asp-page="/UpComming/Default" title="">پیش رو</a></li>
+                            <li><a href="blog-detail.html" title="">گذشته</a></li>
+                        </ul>
+                    </li>
+                    <li><a asp-page="/Support" title="">کمک مالی </a></li>
+                    <li><a asp-page="/Services" title="">خدمات ما </a></li>
+                    <li><a asp-page="/About" title="">درباره ما</a></li>
+                    <li><a asp-page="/Contact" title="">تماس با ما</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="rspn-hdr">
+    <div class="rspn-mdbr">
+        <ul class="rspn-scil">
+            <li><a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="index.html#" title="لینکدین" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+        <form class="rspn-srch" method="get" asp-page="/Search">
+            <input type="search" name="value" id="value" placeholder="‌‌ کلید واژه را وارد کنید ... " />
+            <button type="submit"> <i class="fa fa-search"> </i> </button>
+        </form>
+    </div>
+    <div class="lg-mn">
+        <div class="logo"><a asp-page="/Index" title="Logo"> <img src="theme/assets/images/logo.png" alt="logo.png"> </a> </div>
+        <div class="rspn-cnt">
+            <span><i class="fa fa-envelope thm-clr"></i><a href="index.html#" title=""> info@mail.com </a></span>
+            <span><i class="fa fa-phone thm-clr"></i> 123-456-789 </span>
+        </div>
+        <span class="rspn-mnu-btn"> <i class="fa fa-list-ul"></i> </span>
+    </div>
+    <div class="rsnp-mnu">
+        <span class="rspn-mnu-cls"> <i class="fa fa-times"></i> </span>
+        <ul>
+            <li>
+                <a asp-page="/Index" title="">صفحه اصلی</a>
+            </li>
+            <li class="menu-item-has-children">
+                <a asp-page="" title="">رویداد ها</a>
+                <ul>
+                    <li><a href="blog.html" title="">پیش رو</a></li>
+                    <li><a href="blog-detail.html" title="">گذشته</a></li>
+                </ul>
+            </li>
+            <li><a asp-page="/Support" title="">کمک مالی </a></li>
+            <li><a asp-page="/Services" title="">خدمات ما </a></li>
+            <li><a asp-page="/About" title="">درباره ما</a></li>
+            <li><a asp-page="/Contact" title="">تماس با ما</a></li>
+            <li><a asp-page="/Account" title="">ورود کاربران</a></li>
+
+        </ul>
+    </div><!-- Responsive Menu -->
+</div><!-- Responsive Header -->

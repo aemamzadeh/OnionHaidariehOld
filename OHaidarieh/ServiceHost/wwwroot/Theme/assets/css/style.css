@@ -1384,19 +1384,18 @@ header.style1.sticky-active nav > div > ul > li {color: #666;}
   padding: 78px 30px 35px;
   opacity: .92;
 }
-    .testi-itm > i {
-        position: absolute;
-        left: 50%;
-        -webkit-border-radius: 50%;
-        border-radius: 50%;
-        z-index: 1;
-        top: -60px;
-        width: 250px;  //added by Amin
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-    }
+.testi-itm > i {
+  position: absolute;
+  left: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  z-index: 1;
+  top: -60px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 .testi-itm > i img {
   -webkit-border-radius: inherit;
   border-radius: inherit;
@@ -2221,18 +2220,17 @@ footer {
   max-width: 735px;
   width: 100%;
 }
-    .contact-form > form input,
-    .contact-form > form textarea {
-        border-radius: 50px;
-        float: left;
-        width: 100%;
-        font-size: 15px;
-        color: #333;
-        border: 1px solid rgba(0,0,0,.3);
-        padding: 10px 15px;
-        height: 50px;
-        margin-top: 20px;
-    }
+.contact-form > form input, 
+.contact-form > form textarea {
+  float: left;
+  width: 100%;
+  font-size: 15px;
+  color: #333;
+  border: 1px solid rgba(0,0,0,.3);
+  padding: 10px 15px;
+  height: 50px;
+  margin-top: 20px;
+}
 .contact-form > form textarea {height: 155px;}
 .contact-form > form textarea + button {margin-top: 40px;}
 /*===== Blog Page =====*/

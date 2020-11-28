@@ -12,12 +12,14 @@ namespace AccountManagement.Application
         private readonly IAccountRepository _accountRepository;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IFileUploader _fileUploader;
+        private readonly IAuthHelper _authHelper;
 
-        public AccountApplication(IAccountRepository accountRepository, IPasswordHasher passwordHasher, IFileUploader fileUploader)
+        public AccountApplication(IAccountRepository accountRepository, IPasswordHasher passwordHasher, IFileUploader fileUploader, IAuthHelper authHelper)
         {
             _accountRepository = accountRepository;
             _passwordHasher = passwordHasher;
             _fileUploader = fileUploader;
+            _authHelper = authHelper;
         }
 
         public OperationResult ChangePassword(ChangePassword command)
@@ -98,6 +100,26 @@ namespace AccountManagement.Application
             item.Password = null;
             return item;
 
+        }
+
+        public OperationResult Login(Login command)
+        {
+            var operation = new OperationResult();
+            var account = _accountRepository.GetAccount(command.Username);
+            if (account == null)
+                return operation.Failed(ApplicationMessages.AccountIsInvalid);
+            (bool Verified, bool NeedsUpgrade) result = _passwordHasher.Check(account.Password, command.Password);
+            if(!result.Verified)
+                return operation.Failed(ApplicationMessages.AccountIsInvalid);
+            var authViewModel = new AuthViewModel(account.Id, account.Fname, account.Lname, account.Username, account.RoleId);
+            _authHelper.SignIn(authViewModel);
+
+            return operation.Succedded();
+        }
+
+        public void Logout()
+        {
+            _authHelper.SignOut();
         }
 
         public List<AccountViewModel> Search(AccountSearchModel searchModel)

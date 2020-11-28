@@ -43,6 +43,10 @@
         "net5.0": {
           "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[3.1.9, )"

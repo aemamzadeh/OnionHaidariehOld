@@ -58,6 +58,7 @@ namespace Haidarieh.Configuration
 
 
 
+
             services.AddDbContext<HContext>(x => x.UseSqlServer(connectionString));
         }
     }

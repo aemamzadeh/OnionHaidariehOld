@@ -20,7 +20,7 @@ using ServiceHost;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"677744309a55dfeb92f425bdecbbc4c73ebc504b", @"/Pages/Shared/Components/UpComming/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d027006424b9e12b1709732f146fce9f1d78e6a1", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4345c41bd16e78353c9c72df8b0b5549e39f6121", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Shared_Components_UpComming_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<_01_HaidariehQuery.Contracts.Ceremonies.CeremonyQueryModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Ceremony", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
