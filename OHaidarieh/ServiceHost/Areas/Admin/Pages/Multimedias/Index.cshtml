@@ -1,7 +1,5 @@
 ﻿@page
 @model ServiceHost.Areas.Admin.Pages.Multimedias.IndexModel
-
-
 @{
     Layout = "Shared/_AdminLayout";
     ViewData["title"] = "مدیریت فایلهای چندرسانه ای";
@@ -61,26 +59,36 @@
                                 </tr>
                             </thead>
                             <tbody>
+                               
+
                                 @foreach (var item in Model.Multimedias)
                                 {
-                                <tr>
-                                    <td>@item.Id</td>
-                                    <td>
-                                        <img src="~/@item.FileAddress" style="width: 70px; height: 70px" />
-                                    </td>
-                                    <td>@item.Ceremony</td>
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>
+                                            <img src="~/@item.FileAddress" style="width: 70px; height: 70px" />
+                                        </td>
+                                        <td>@item.Title</td>
 
-
-                                    <td>
-                                        <a class="btn btn-warning pull-right m-rl-5"
-                                           href="#showmodal=@Url.Page("./Index","Edit", new { id = item.Id })">
-                                            <i class="fa fa-edit"></i> ویرایش
-                                        </a>
-                                    </td>
-                                </tr>
+                                        <td>
+                                            <a class="btn btn-warning pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index","EditMetadata", new { id = item.Id })">
+                                                <i class="fa fa-edit"></i>ویرایش اطلاعات آلبوم
+                                            </a>
+                                            <a class="btn btn-warning pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index","EditAlbum", new { id = item.Id })">
+                                                <i class="fa fa-edit"></i>ویرایش آلبوم
+                                            </a>
+                                            <a class="btn btn-group pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index","Show", new { ceremonyid = item.CeremonyId })">
+                                                <i class="fa fa-edit"></i> مشاهده
+                                            </a>
+                                        </td>
+                                    </tr>
                                 }
-                            </tbody>
-                        </table>
+                            }
+                                </tbody>
+                            </table>
                     </div>
                 </div>
             </div>

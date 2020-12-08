@@ -19,7 +19,7 @@ namespace AccountManagement.Infrastructure.EFCore.Mapping
             builder.Property(x => x.ProfilePhoto).HasMaxLength(1000);
             builder.Property(x => x.Username).HasMaxLength(500).IsRequired();
             builder.Property(x => x.Password).HasMaxLength(1000).IsRequired();
-            builder.Property(x => x.RoleId);
+            //builder.Property(x => x.RoleId);
 
             builder.HasOne(x => x.Role).WithMany(x => x.Accounts).HasForeignKey(x => x.RoleId);
         }

@@ -1,6 +1,10 @@
 using System.Collections.Generic;
+using System.Linq;
+using _01_HaidariehQuery.Contracts.Ceremonies;
+using _01_HaidariehQuery.Query;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.Multimedia;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,7 +14,8 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
     public class IndexModel : PageModel
     {
         public MultimediaSearchModel SearchModel;
-        public List<MultimediaViewModel> Multimedias;
+        //public IEnumerable<IGrouping<long, MultimediaViewModel>> Multimedias;
+        public List<MultimediaViewModel> Multimedias { get; set; }
         public SelectList Ceremonies;
         private readonly IMultimediaApplication _multimediaApplication;
         private readonly ICeremonyApplication _ceremonyApplication;
@@ -33,21 +38,37 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
             };
             return Partial("./Create", command);
         }
-        public JsonResult OnPostCreate(CreateMultimedia command)
+        public JsonResult OnPostCreate(CreateMultimedia createcommand,List<IFormFile> FileAddress)
         {
-            var result = _multimediaApplication.Create(command);
+            var result = _multimediaApplication.Create(createcommand, FileAddress);
             return new JsonResult(result);
         }
-        public IActionResult OnGetEdit(long id)
+        public IActionResult OnGetEditMetadata(long id)
         {
             var multimedia = _multimediaApplication.GetDetail(id);
             multimedia.Ceremonies = _ceremonyApplication.GetCeremonies();
-            return Partial("./Edit", multimedia);
+            return Partial("./EditMetadata", multimedia);
         }
-        public JsonResult OnPostEdit(EditMultimedia command)
+        public IActionResult OnGetEditAlbum(long id)
         {
-            var result = _multimediaApplication.Edit(command);
+            var multimedia = _multimediaApplication.GetDetail(id);
+            multimedia.Ceremonies = _ceremonyApplication.GetCeremonies();
+            return Partial("./EditAlbum", multimedia);
+        }
+        public JsonResult OnPostEditMetadata(EditMultimedia command)
+        {
+            var result = _multimediaApplication.EditMetadata(command);
             return new JsonResult(result);
+        }
+        public JsonResult OnPostEditAlbum(EditMultimedia command, List<IFormFile> FileAddress)
+        {
+            var result = _multimediaApplication.EditAlbum(command, FileAddress);
+            return new JsonResult(result);
+        }
+        public IActionResult OnGetShow(long ceremonyid)
+        {
+            var multimedias = _multimediaApplication.GetMultimediasWithCeremony(ceremonyid);
+            return Partial("Show", multimedias);
         }
     }
 }

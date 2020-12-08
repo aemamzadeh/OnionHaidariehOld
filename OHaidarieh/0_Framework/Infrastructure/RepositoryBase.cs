@@ -36,7 +36,6 @@ namespace _0_Framework.Infrastructure
         {
             return _context.Set<T>().ToList();
         }
-
         public void SaveChanges()
         {
             _context.SaveChanges();

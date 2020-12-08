@@ -1,4 +1,3 @@
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.csprojAssemblyReference.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.GeneratedMSBuildEditorConfig.editorconfig
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.AssemblyInfoInputs.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.AssemblyInfo.cs
@@ -15,7 +14,11 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\bin\Debug\netco
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.pdb
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Application.Contracts.pdb
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Domain.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.csprojAssemblyReference.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.csproj.CopyComplete
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ref\01_HaidariehQuery.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.runtimeconfig.json
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.runtimeconfig.dev.json
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\01_HaidariehQuery\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\01_HaidariehQuery.genruntimeconfig.cache

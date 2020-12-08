@@ -11,7 +11,7 @@ namespace Haidarieh.Application.Contracts.Multimedia
     {
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Title { get;  set; }
-        [Required(ErrorMessage = ValidationMessages.IsRequired)]
+        //[Required(ErrorMessage = ValidationMessages.IsRequired)]
         public IFormFile FileAddress { get;  set; }
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string FileTitle { get;  set; }

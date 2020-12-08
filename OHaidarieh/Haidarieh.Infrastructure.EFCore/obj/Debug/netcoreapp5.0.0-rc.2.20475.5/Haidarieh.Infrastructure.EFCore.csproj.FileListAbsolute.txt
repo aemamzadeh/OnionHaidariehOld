@@ -1,3 +1,8 @@
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.csprojAssemblyReference.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.AssemblyInfoInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.AssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.csproj.CoreCompileInputs.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.deps.json
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.runtimeconfig.json
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.runtimeconfig.dev.json
@@ -10,11 +15,6 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\b
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Domain.pdb
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\0_Framework.pdb
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Application.Contracts.pdb
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.csprojAssemblyReference.cache
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.GeneratedMSBuildEditorConfig.editorconfig
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.AssemblyInfoInputs.cache
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.AssemblyInfo.cs
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.csproj.CoreCompileInputs.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.csproj.CopyComplete
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Infrastructure.EFCore.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Infrastructure.EFCore\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ref\Haidarieh.Infrastructure.EFCore.dll

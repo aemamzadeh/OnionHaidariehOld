@@ -1,4 +1,6 @@
-﻿namespace Haidarieh.Application.Contracts.Multimedia
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Haidarieh.Application.Contracts.Multimedia
 {
     public class MultimediaViewModel
     {
@@ -7,6 +9,5 @@
         public string FileAddress { get;  set; }
         public long CeremonyId { get;  set; }
         public string Ceremony { get; set; }
-
     }
 }

@@ -205,43 +205,41 @@ namespace _01_HaidariehQuery.Query
             return result;
             }
 
+        //---------------------
+        //public List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias2(string id)
+        //{
+        //    return _hContext.CeremonyGuests.Include(x => x.Multimedias).
+        //                                    ThenInclude(x => x.CeremonyGuest).
+        //                                    ThenInclude(x => x.Guest).
+        //                                    Where(x => x.Status == true && x.Slug == id).Select(x => new CeremonyGuestQueryModel
+        //                                    {
+        //                                        Id = x.Id,
+        //                                        //Ceremony = x.Ceremony.Title,
+        //                                        //CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+        //                                        Guest = x.Guest.FullName,
+        //                                        Slug = x.Slug,
+        //                                        Multimedias = MapMultimedias(x.Multimedias)
+        //                                    }).AsNoTracking().ToList();
+        //}
 
-
-            //---------------------
-            //public List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias2(string id)
-            //{
-            //    return _hContext.CeremonyGuests.Include(x => x.Multimedias).
-            //                                    ThenInclude(x => x.CeremonyGuest).
-            //                                    ThenInclude(x => x.Guest).
-            //                                    Where(x => x.Status == true && x.Slug == id).Select(x => new CeremonyGuestQueryModel
-            //                                    {
-            //                                        Id = x.Id,
-            //                                        //Ceremony = x.Ceremony.Title,
-            //                                        //CeremonyDateFa = x.CeremonyDate.ToFarsi(),
-            //                                        Guest = x.Guest.FullName,
-            //                                        Slug = x.Slug,
-            //                                        Multimedias = MapMultimedias(x.Multimedias)
-            //                                    }).AsNoTracking().ToList();
-            //}
-
-            //public List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias2(long id)
-            //{
-            //    var ceremonyGuest = _hContext.CeremonyGuests.Include(x => x.Guest).
-            //                                    Include(x => x.Multimedias).
-            //                                    ThenInclude(x => x.CeremonyGuest).
-            //                                    ThenInclude(x => x.Ceremony).
-            //                                    Where(x => x.Status == true && x.CeremonyId == id).Select(x => new CeremonyGuestQueryModel
-            //                                    {
-            //                                        Id = x.Id,
-            //                                        Ceremony = x.Ceremony.Title,
-            //                                        CeremonyDateFa = x.CeremonyDate.Date.ToFarsi(),
-            //                                        Guest = x.Guest.FullName,
-            //                                        Slug = x.Slug,
-            //                                        Multimedias = MapMultimedias(x.Multimedias)
-            //                                    }).AsNoTracking().ToList();
-            //    return ceremonyGuest;
-            //}
-        }
+        //public List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias2(long id)
+        //{
+        //    var ceremonyGuest = _hContext.CeremonyGuests.Include(x => x.Guest).
+        //                                    Include(x => x.Multimedias).
+        //                                    ThenInclude(x => x.CeremonyGuest).
+        //                                    ThenInclude(x => x.Ceremony).
+        //                                    Where(x => x.Status == true && x.CeremonyId == id).Select(x => new CeremonyGuestQueryModel
+        //                                    {
+        //                                        Id = x.Id,
+        //                                        Ceremony = x.Ceremony.Title,
+        //                                        CeremonyDateFa = x.CeremonyDate.Date.ToFarsi(),
+        //                                        Guest = x.Guest.FullName,
+        //                                        Slug = x.Slug,
+        //                                        Multimedias = MapMultimedias(x.Multimedias)
+        //                                    }).AsNoTracking().ToList();
+        //    return ceremonyGuest;
+        //}
+    }
     }
 
 

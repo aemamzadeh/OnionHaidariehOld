@@ -36,7 +36,7 @@ namespace AccountManagement.Application
             return operation.Succedded();
         }
 
-        public OperationResult Create(CreateAccount command)
+        public OperationResult Register(RegisterAccount command)
         {
             var operation = new OperationResult();
             if (_accountRepository.Exist(x => x.Username == command.Username || x.Mobile == command.Mobile))

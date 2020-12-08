@@ -7,6 +7,12 @@
         public string Lname { get; set; }
         public string Username { get; set; }
         public long RoleId { get; set; }
+        public string Role { get; set; }
+
+
+        public AuthViewModel()
+        {
+        }
 
         public AuthViewModel(long id, string fname, string lname, string username, long roleId)
         {

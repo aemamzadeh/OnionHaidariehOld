@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using System.Collections.Generic;
+using _0_Framework.Infrastructure;
 
 namespace ServiceHost
 {
@@ -50,44 +52,62 @@ namespace ServiceHost
                     o.LogoutPath = new PathString("/Account");
                     o.AccessDeniedPath = new PathString("/AccessDenied");
                 });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminArea",
+                    builder => builder.RequireRole(new List<string> { Roles.Admin, Roles.Engineer }));
+                options.AddPolicy("Ceremony",
+                    builder => builder.RequireRole(new List<string> { Roles.Engineer }));
+                options.AddPolicy("UserMng",
+                    builder => builder.RequireRole(new List<string> { Roles.Admin }));
+
+            });
+
+            services.AddRazorPages().
+                    AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AuthorizeAreaFolder("Admin", "/", "AdminArea");
+                options.Conventions.AuthorizeAreaFolder("Admin", "/Ceremonies", "Ceremony");
+                options.Conventions.AuthorizeAreaFolder("Admin", "/Accounts", "UserMng");
+                options.Conventions.AuthorizeAreaFolder("Admin", "/Roles", "UserMng");
 
 
-            //services.AddTransient<IFileUploader, MultiFileUploader>();
-            //services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
+
+            });
             services.AddRazorPages();
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        if (env.IsDevelopment())
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-
-            app.UseAuthentication();
-
-            app.UseHttpsRedirection();
-
-            app.UseStaticFiles();
-
-            app.UseCookiePolicy();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapRazorPages();
-            });
+            app.UseDeveloperExceptionPage();
         }
+        else
+        {
+            app.UseExceptionHandler("/Error");
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
+        }
+
+        app.UseAuthentication();
+
+        app.UseHttpsRedirection();
+
+        app.UseStaticFiles();
+
+        app.UseCookiePolicy();
+
+        app.UseRouting();
+
+        app.UseAuthorization();
+
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapRazorPages();
+        });
     }
+}
 }

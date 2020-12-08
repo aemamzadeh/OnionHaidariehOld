@@ -16,6 +16,10 @@ namespace AccountManagement.Domain.AccountAgg
         public long RoleId { get; private set; }
         public Role Role { get; private set; }
         public string ProfilePhoto { get; private set; }
+        protected Account()
+        {
+
+        }
 
         public Account(string fname, string lname, string username, string password, string mobile, long roleId, string profilePhoto)
         {
@@ -24,7 +28,8 @@ namespace AccountManagement.Domain.AccountAgg
             Username = username;
             Password = password;
             Mobile = mobile;
-            RoleId = roleId;
+            if (roleId == 0)
+                RoleId = 1;
             ProfilePhoto = profilePhoto;
         }
         public void Edit(string fname, string lanme, string username, string mobile, long roleId, string profilePhoto)

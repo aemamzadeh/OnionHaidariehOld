@@ -11,5 +11,7 @@ namespace _0_Framework.Application
         void SignIn(AuthViewModel account);
         void SignOut();
         bool IsAuthenticated();
+        string CurrentAccountRole();
+        AuthViewModel CurrentUserInfo();
     }
 }

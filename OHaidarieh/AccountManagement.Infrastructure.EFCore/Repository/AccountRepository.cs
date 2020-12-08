@@ -21,9 +21,9 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
 
         public Account GetAccount(string Username)
         {
-            return _accountContext.Accounts.FirstOrDefault(x => x.Username == Username);
+            return _accountContext.Accounts.FirstOrDefault(x=>x.Username == Username);
         }
-
+        
         public EditAccount GetDetail(long Id)
         {
             return _accountContext.Accounts.Select(x => new EditAccount
@@ -52,7 +52,9 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
         }
         public List<AccountViewModel> Search(AccountSearchModel searchModel)
         {
-            var query = _accountContext.Accounts.Include(x=>x.Role).Select(x => new AccountViewModel
+            var query = _accountContext.Accounts
+                .Include(x=>x.Role)
+                .Select(x => new AccountViewModel
             {
                 Id=x.Id,
                 Fname=x.Fname,
@@ -60,9 +62,9 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                 Mobile=x.Mobile,
                 Username=x.Username,
                 ProfilePhoto=x.ProfilePhoto,
-                Role=x.Role.Title,
-                RoleId=x.RoleId
-            });
+                Role = x.Role.Title,
+                RoleId = x.RoleId
+                });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Fname))
                 query = query.Where(x => x.Fname.Contains(searchModel.Fname));

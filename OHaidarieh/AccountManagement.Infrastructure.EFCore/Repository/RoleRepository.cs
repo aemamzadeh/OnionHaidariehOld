@@ -35,8 +35,6 @@ namespace AccountManagement.Infrastructure.EFCore.Repository
                 Id=x.Id,
                 Title=x.Title
             }).ToList();
-
-            
         }
     }
 }

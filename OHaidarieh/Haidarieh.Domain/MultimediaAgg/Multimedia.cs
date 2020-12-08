@@ -39,5 +39,20 @@ namespace Haidarieh.Domain.MultimediaAgg
             Status = true;
 
         }
+
+        public void EditMetadata(string title , string fileTitle, string fileAlt, long ceremonyId)
+        {
+            Title = title;
+            FileTitle = fileTitle;
+            FileAlt = fileAlt;
+            CeremonyId = ceremonyId;
+            Status = true;
+        }
+        public void EditAlbum(string fileAddress,long ceremonyId)
+        {
+            FileAddress = fileAddress;
+            CeremonyId = ceremonyId;
+            Status = true;
+        }
     }
 }

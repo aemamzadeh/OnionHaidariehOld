@@ -2,8 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _01_HaidariehQuery.Contracts.Ceremonies;
+using _01_HaidariehQuery.Query;
 using Haidarieh.Application.Contracts.Ceremony;
+using Haidarieh.Application.Contracts.Multimedia;
 using Haidarieh.Domain.CeremonyAgg;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -51,5 +55,6 @@ namespace ServiceHost.Areas.Admin.Pages.Ceremonies
             var logs = _ceremonyApplication.GetCeremonyWithOperationsLog();
             return Partial("OperationLog", logs);
         }
+
     }
 }

@@ -23,3 +23,6 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Configuration.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ref\Haidarieh.Configuration.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Configuration.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Configuration.runtimeconfig.json
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Configuration.runtimeconfig.dev.json
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Configuration\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Haidarieh.Configuration.genruntimeconfig.cache
