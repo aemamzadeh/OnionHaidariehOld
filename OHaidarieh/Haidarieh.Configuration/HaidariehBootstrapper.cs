@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Application;
+using _0_Framework.Infrastructure;
 using _01_HaidariehQuery.Contracts.Ceremonies;
 using _01_HaidariehQuery.Contracts.CeremonyGuests;
 using _01_HaidariehQuery.Contracts.Guests;
@@ -13,6 +14,7 @@ using Haidarieh.Application.Contracts.Guest;
 using Haidarieh.Application.Contracts.Member;
 using Haidarieh.Application.Contracts.Multimedia;
 using Haidarieh.Application.Contracts.Sponsor;
+using Haidarieh.Configuration.Permissions;
 using Haidarieh.Domain.CeremonyAgg;
 using Haidarieh.Domain.CeremonyGuestAgg;
 using Haidarieh.Domain.GuestAgg;
@@ -56,8 +58,7 @@ namespace Haidarieh.Configuration
             services.AddTransient<IMultimediaQuery, MultimediaQuery>();
             services.AddTransient<ISponsorQuery, SponsorQuery>();
 
-
-
+            services.AddTransient<IPermissionExposer, HPermissionExposer>();
 
             services.AddDbContext<HContext>(x => x.UseSqlServer(connectionString));
         }

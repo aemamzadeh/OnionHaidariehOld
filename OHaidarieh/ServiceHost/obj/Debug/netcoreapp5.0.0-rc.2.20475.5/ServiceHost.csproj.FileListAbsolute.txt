@@ -222,7 +222,6 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ref\ServiceHost.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.pdb
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.genruntimeconfig.cache
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Microsoft.Bcl.AsyncInterfaces.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe

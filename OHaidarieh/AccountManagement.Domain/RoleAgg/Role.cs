@@ -12,14 +12,23 @@ namespace AccountManagement.Domain.RoleAgg
     {
         public string Title { get; private set; }
         public List<Account> Accounts { get; private set; }
-        public Role(string title)
+        public List<Permission> Permissions { get; private set; }
+
+        public Role()
+        {
+        }
+
+        public Role(string title, List<Permission> permissions)
         {
             Title = title;
             Accounts = new List<Account>();
+            Permissions = permissions;
         }
-        public void Edit(string title)
+        public void Edit(string title, List<Permission> permissions)
         {
             Title = title;
+            Permissions = permissions;
+
         }
     }
 }

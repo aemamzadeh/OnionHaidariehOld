@@ -25,24 +25,5 @@ namespace ServiceHost.Areas.Admin.Pages.Roles
         {
             Roles = _roleApplication.GetRoles();
         }
-        public IActionResult OnGetCreate()
-        {
-            return Partial("Create", new CreateRole());
-        }
-        public JsonResult OnPostCreate(CreateRole command)
-        {
-            var result = _roleApplication.Create(command);
-            return new JsonResult(result);
-        }
-        public IActionResult OnGetEdit(long id)
-        {
-            var role = _roleApplication.GetDetail(id);
-            return Partial("Edit", role);
-        }
-        public JsonResult OnPostEdit(EditRole command)
-        {
-            var result = _roleApplication.Edit(command);
-            return new JsonResult(result);
-        }
     }
 }
