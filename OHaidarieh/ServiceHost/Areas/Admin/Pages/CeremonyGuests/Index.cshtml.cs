@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Application.Email;
+using _0_Framework.Application.Sms;
 using _0_Framework.Infrastructure;
 using Haidarieh.Application;
 using Haidarieh.Application.Contracts.Ceremony;
@@ -22,14 +23,17 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
         private readonly ICeremonyApplication _ceremonyApplication;
         private readonly IGuestApplication _guestApplication;
         private readonly IEmailService _emailService;
+        private readonly ISmsService _smsService;
 
 
-        public IndexModel(ICeremonyGuestApplication ceremonyGuestApplication, ICeremonyApplication ceremonyApplication, IGuestApplication guestApplication, IEmailService emailService)
+
+        public IndexModel(ICeremonyGuestApplication ceremonyGuestApplication, ICeremonyApplication ceremonyApplication, IGuestApplication guestApplication, IEmailService emailService, ISmsService smsService)
         {
             _ceremonyGuestApplication = ceremonyGuestApplication;
             _ceremonyApplication = ceremonyApplication;
             _guestApplication = guestApplication;
             _emailService = emailService;
+            _smsService = smsService;
         }
 
         [NeedPermission(HPermissions.ListCeremonyGuest)]
@@ -58,8 +62,12 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
             var guestInfo = _guestApplication.GetGuestsInfo(guests);
             foreach (var item in guestInfo)
             {
-                _emailService.SendEmail(ceremony.Title, " جناب آقای دعوتنامه شرکت در در مراسم", item.Email);
+                //_emailService.SendEmail(ceremony.Title, " جناب آقای دعوتنامه شرکت در در مراسم", item.Email);
+
+                _smsService.Send(item.Tel, $"شما به مجلس {ceremony.Title} دعوت شده اید. حیدریة النجف الاشرف جناب آقای {item.FullName}");
+
             }
+
 
             return new JsonResult(result);
         }

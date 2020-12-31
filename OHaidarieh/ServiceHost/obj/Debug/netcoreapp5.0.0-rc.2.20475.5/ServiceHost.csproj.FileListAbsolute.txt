@@ -242,3 +242,6 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\MimeKit.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\NETCore.MailKit.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\BouncyCastle.Crypto.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Elasticsearch.Net.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Kavenegar.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Nest.dll

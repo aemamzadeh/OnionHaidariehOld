@@ -13,6 +13,7 @@ using System.Text.Unicode;
 using System.Collections.Generic;
 using _0_Framework.Infrastructure;
 using _0_Framework.Application.Email;
+using _0_Framework.Application.Sms;
 
 namespace ServiceHost
 {
@@ -40,6 +41,8 @@ namespace ServiceHost
             services.AddTransient<IFileUploader, FileUploader>();
             services.AddTransient<IAuthHelper, AuthHelper>();
             services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<ISmsService, SmsService>();
+
 
 
             services.Configure<CookiePolicyOptions>(options =>
