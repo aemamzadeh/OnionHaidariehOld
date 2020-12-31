@@ -12,15 +12,8 @@ namespace ServiceHost.Areas.Admin.Pages.Roles
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
-#nullable restore
-#line 1 "D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\Areas\Admin\Pages\_ViewImports.cshtml"
-using ServiceHost;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"287a2beddb23edcca00df3c8351061d9e25e0ae9", @"/Areas/Admin/Pages/Roles/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b198fbf2f6a80e0739f6ec624c10fdff17ca746e", @"/Areas/Admin/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d02c35ca964bf4496b3bd91f6a8b99307d21ab1", @"/Areas/Admin/Pages/_ViewImports.cshtml")]
     public class Areas_Admin_Pages_Roles_Index : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-success btn-lg"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -73,7 +66,7 @@ using ServiceHost;
 #line hidden
 #nullable disable
             WriteLiteral("</h4>\r\n        <p class=\"pull-left\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "287a2beddb23edcca00df3c8351061d9e25e0ae96019", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "287a2beddb23edcca00df3c8351061d9e25e0ae95822", async() => {
                 WriteLiteral("ایجاد نقش جدید");
             }
             );
@@ -138,7 +131,7 @@ using ServiceHost;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                        <td>\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "287a2beddb23edcca00df3c8351061d9e25e0ae99182", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "287a2beddb23edcca00df3c8351061d9e25e0ae98985", async() => {
                 WriteLiteral("\r\n                                                <i class=\"fa fa-edit\"></i> ویرایش\r\n                                            ");
             }
             );
@@ -180,7 +173,7 @@ using ServiceHost;
             WriteLiteral("                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n");
             DefineSection("Scripts", async() => {
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "287a2beddb23edcca00df3c8351061d9e25e0ae912224", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "287a2beddb23edcca00df3c8351061d9e25e0ae912027", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -194,7 +187,7 @@ using ServiceHost;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "287a2beddb23edcca00df3c8351061d9e25e0ae913324", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "287a2beddb23edcca00df3c8351061d9e25e0ae913127", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

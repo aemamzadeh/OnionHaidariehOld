@@ -15,16 +15,16 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "5.0.0");
 
             modelBuilder.Entity("Haidarieh.Domain.CeremonyAgg.Ceremony", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("BannerFile")
                         .HasColumnType("nvarchar(max)");
@@ -69,7 +69,7 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<long>("CeremonyId")
                         .HasColumnType("bigint");
@@ -94,9 +94,12 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("Coordinator")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
@@ -130,7 +133,7 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("FullName")
                         .IsRequired()
@@ -153,7 +156,7 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<long>("CeremonyId")
                         .HasColumnType("bigint");
@@ -173,8 +176,8 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(255)")
-                        .HasMaxLength(255);
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -188,7 +191,7 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("Bio")
                         .HasColumnType("nvarchar(max)");
@@ -227,7 +230,7 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                             b1.Property<long>("Id")
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("bigint")
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                                .UseIdentityColumn();
 
                             b1.Property<long>("CeremonyId")
                                 .HasColumnType("bigint");
@@ -252,7 +255,11 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
 
                             b1.WithOwner("Ceremony")
                                 .HasForeignKey("CeremonyId");
+
+                            b1.Navigation("Ceremony");
                         });
+
+                    b.Navigation("CeremonyOperations");
                 });
 
             modelBuilder.Entity("Haidarieh.Domain.CeremonyGuestAgg.CeremonyGuest", b =>
@@ -268,6 +275,10 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                         .HasForeignKey("GuestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Ceremony");
+
+                    b.Navigation("Guest");
                 });
 
             modelBuilder.Entity("Haidarieh.Domain.MultimediaAgg.Multimedia", b =>
@@ -277,6 +288,20 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                         .HasForeignKey("CeremonyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Ceremony");
+                });
+
+            modelBuilder.Entity("Haidarieh.Domain.CeremonyAgg.Ceremony", b =>
+                {
+                    b.Navigation("CeremonyGuests");
+
+                    b.Navigation("Multimedias");
+                });
+
+            modelBuilder.Entity("Haidarieh.Domain.GuestAgg.Guest", b =>
+                {
+                    b.Navigation("CeremonyGuests");
                 });
 #pragma warning restore 612, 618
         }

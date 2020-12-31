@@ -20,9 +20,9 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             _hContext = hContext;
         }
 
-        public List<CeremonyGuestViewModel> GetCeremonyGuests()
+        public List<CeremonyGuestViewModel> GetCeremonyGuests(long id=0)
         {
-            return _hContext.CeremonyGuests.Select(x => new CeremonyGuestViewModel
+            return _hContext.CeremonyGuests.Where(x=>x.CeremonyId==id).Select(x => new CeremonyGuestViewModel
             {
                 Id=x.Id,
                 GuestId=x.GuestId,

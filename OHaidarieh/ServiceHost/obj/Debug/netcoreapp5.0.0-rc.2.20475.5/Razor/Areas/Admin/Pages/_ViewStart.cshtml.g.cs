@@ -12,15 +12,8 @@ namespace ServiceHost.Areas.Admin.Pages
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
-#nullable restore
-#line 1 "D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\Areas\Admin\Pages\_ViewImports.cshtml"
-using ServiceHost;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2d47ab5c93609c2e85a602b37aa9393d9e3d1829", @"/Areas/Admin/Pages/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b198fbf2f6a80e0739f6ec624c10fdff17ca746e", @"/Areas/Admin/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d02c35ca964bf4496b3bd91f6a8b99307d21ab1", @"/Areas/Admin/Pages/_ViewImports.cshtml")]
     public class Areas_Admin_Pages__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

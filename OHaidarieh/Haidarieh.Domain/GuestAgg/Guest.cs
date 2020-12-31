@@ -12,6 +12,7 @@ namespace Haidarieh.Domain.GuestAgg
     {
         public string FullName { get; private set; }
         public string Tel { get; private set; }
+        public string Email { get; private set; }
         public string Image { get; private set; }
         public string ImageAlt { get; private set; }
         public string ImageTitle { get; private set; }
@@ -20,11 +21,12 @@ namespace Haidarieh.Domain.GuestAgg
         public bool Status { get; private set; }
         public List<CeremonyGuest> CeremonyGuests { get; private set; }
 
-        public Guest(string fullName, string tel, string image, string imageAlt, 
+        public Guest(string fullName, string tel, string email, string image, string imageAlt, 
             string imageTitle, string guestType, string coordinator)
         {
             FullName = fullName;
             Tel = tel;
+            Email = email;
             Image = image;
             ImageAlt = imageAlt;
             ImageTitle = imageTitle;
@@ -32,12 +34,13 @@ namespace Haidarieh.Domain.GuestAgg
             Coordinator = coordinator;
             CeremonyGuests = new List<CeremonyGuest>();
         }
-        public void Edit(string fullName, string tel, string image, string imageAlt,
+        public void Edit(string fullName, string tel, string email, string image, string imageAlt,
             string imageTitle, string guestType, string coordinator)
         {
             FullName = fullName;
             Tel = tel;
-            if(!string.IsNullOrWhiteSpace(image))
+            Email = email;
+            if (!string.IsNullOrWhiteSpace(image))
                 Image = image;
             ImageAlt = imageAlt;
             ImageTitle = imageTitle;

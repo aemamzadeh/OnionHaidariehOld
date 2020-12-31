@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Infrastructure;
+using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Guest;
 using Haidarieh.Domain.GuestAgg;
 using System;
@@ -22,6 +23,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 FullName = x.FullName,
                 Tel = x.Tel,
+                Email=x.Email,
                 GuestType = x.GuestType,
                 //Image = x.Image,
                 ImageAlt = x.ImageAlt,
@@ -30,18 +32,24 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             }).FirstOrDefault(x => x.Id == id);
         }
 
-        public List<GuestViewModel> GetGuests()
+        public List<GuestViewModel> GetGuests(long id=0)
         {
-            return _hContext.Guests.Select(x => new GuestViewModel
-            {
-                Id=x.Id,
-                GuestType=x.GuestType,
-                FullName=x.FullName,
-                Image=x.Image,
-                Tel=x.Tel,
-                Coordinator=x.Coordinator
-            }).ToList();
+                var guestInfo = _hContext.Guests.Select(x => new GuestViewModel
+                {
+                    Id = x.Id,
+                    GuestType = x.GuestType,
+                    FullName = x.FullName,
+                    Image = x.Image,
+                    Tel = x.Tel,
+                    Email = x.Email,
+                    Coordinator = x.Coordinator
+                });
+            if (id != 0)
+                guestInfo = guestInfo.Where(x => x.Id == id);
+            return guestInfo.ToList();
         }
+
+
 
         public List<GuestViewModel> Search(GuestSearchModel searchModel)
         {

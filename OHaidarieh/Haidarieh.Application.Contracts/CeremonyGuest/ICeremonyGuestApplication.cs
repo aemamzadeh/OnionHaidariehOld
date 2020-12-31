@@ -11,7 +11,7 @@ namespace Haidarieh.Application.Contracts.CeremonyGuest
         OperationResult Edit(EditCeremonyGuest command);
         List<CeremonyGuestViewModel> Search(CeremonyGuestSearchModel searchModel);
         EditCeremonyGuest GetDetail(long Id);
-        List<CeremonyGuestViewModel> GetCeremonyGuests();
+        List<CeremonyGuestViewModel> GetCeremonyGuests(long id=0);
 
     }
 }

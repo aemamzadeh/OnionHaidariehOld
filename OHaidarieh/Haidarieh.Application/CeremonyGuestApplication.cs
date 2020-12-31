@@ -47,9 +47,9 @@ namespace Haidarieh.Application
             return operation.Succedded();
         }
 
-        public List<CeremonyGuestViewModel> GetCeremonyGuests()
+        public List<CeremonyGuestViewModel> GetCeremonyGuests(long id=0)
         {
-            return _ceremonyGuestRepository.GetCeremonyGuests();
+            return _ceremonyGuestRepository.GetCeremonyGuests(id);
         }
 
         public EditCeremonyGuest GetDetail(long Id)

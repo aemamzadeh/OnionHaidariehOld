@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _0_Framework.Infrastructure;
 using Haidarieh.Application.Contracts.Member;
 using Haidarieh.Application.Contracts.Multimedia;
+using Haidarieh.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -20,6 +22,7 @@ namespace ServiceHost.Areas.Admin.Pages.Members
             _memberApplication = memberApplication;
         }
 
+        [NeedPermission(HPermissions.ListMember)]
         public void OnGet(MemberSearchModel searchModel)
         {
             Members = _memberApplication.Search(searchModel);
@@ -28,6 +31,8 @@ namespace ServiceHost.Areas.Admin.Pages.Members
         {
             return Partial("./Create", new CreateMember());
         }
+
+        [NeedPermission(HPermissions.CreateMember)]
         public JsonResult OnPostCreate(CreateMember command)
         {
             var result = _memberApplication.Create(command);
@@ -38,6 +43,8 @@ namespace ServiceHost.Areas.Admin.Pages.Members
             var member = _memberApplication.GetDetail(id);
             return Partial("./Edit", member);
         }
+
+        [NeedPermission(HPermissions.EditMember)]
         public JsonResult OnPostEdit(EditMember command)
         {
             var result = _memberApplication.Edit(command);

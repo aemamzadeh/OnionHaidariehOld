@@ -1,8 +1,10 @@
 ﻿using _0_Framework.Application;
 using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Domain.AccountAgg;
+using AccountManagement.Domain.RoleAgg;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AccountManagement.Application
 {
@@ -13,13 +15,16 @@ namespace AccountManagement.Application
         private readonly IPasswordHasher _passwordHasher;
         private readonly IFileUploader _fileUploader;
         private readonly IAuthHelper _authHelper;
+        private readonly IRoleRepository _roleRepository;
 
-        public AccountApplication(IAccountRepository accountRepository, IPasswordHasher passwordHasher, IFileUploader fileUploader, IAuthHelper authHelper)
+
+        public AccountApplication(IAccountRepository accountRepository, IPasswordHasher passwordHasher, IFileUploader fileUploader, IAuthHelper authHelper, IRoleRepository roleRepository)
         {
             _accountRepository = accountRepository;
             _passwordHasher = passwordHasher;
             _fileUploader = fileUploader;
             _authHelper = authHelper;
+            _roleRepository=roleRepository;
         }
 
         public OperationResult ChangePassword(ChangePassword command)
@@ -108,10 +113,13 @@ namespace AccountManagement.Application
             var account = _accountRepository.GetAccount(command.Username);
             if (account == null)
                 return operation.Failed(ApplicationMessages.AccountIsInvalid);
-            (bool Verified, bool NeedsUpgrade) result = _passwordHasher.Check(account.Password, command.Password);
+            var result = _passwordHasher.Check(account.Password, command.Password);
             if(!result.Verified)
                 return operation.Failed(ApplicationMessages.AccountIsInvalid);
-            var authViewModel = new AuthViewModel(account.Id, account.Fname, account.Lname, account.Username, account.RoleId);
+
+            var permissions = _roleRepository.Get(account.RoleId).Permissions.Select(x => x.Code).ToList();
+
+            var authViewModel = new AuthViewModel(account.Id, account.Fname, account.Lname, account.Username, account.RoleId,permissions);
             _authHelper.SignIn(authViewModel);
 
             return operation.Succedded();

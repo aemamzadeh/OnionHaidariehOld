@@ -13,6 +13,7 @@ namespace Haidarieh.Infrastructure.EFCore.Mapping
             builder.HasKey(x=>x.Id);
             builder.Property(x => x.FullName);
             builder.Property(x => x.Tel);
+            builder.Property(x => x.Email);
             builder.Property(x => x.Coordinator);
             builder.Property(x => x.GuestType);
             builder.Property(x => x.Image);

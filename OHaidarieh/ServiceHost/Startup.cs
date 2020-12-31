@@ -12,6 +12,7 @@ using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using System.Collections.Generic;
 using _0_Framework.Infrastructure;
+using _0_Framework.Application.Email;
 
 namespace ServiceHost
 {
@@ -38,6 +39,8 @@ namespace ServiceHost
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IFileUploader, FileUploader>();
             services.AddTransient<IAuthHelper, AuthHelper>();
+            services.AddTransient<IEmailService, EmailService>();
+
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -57,14 +60,15 @@ namespace ServiceHost
                 options.AddPolicy("AdminArea",
                     builder => builder.RequireRole(new List<string> { Roles.Admin, Roles.Engineer }));
                 options.AddPolicy("Ceremony",
-                    builder => builder.RequireRole(new List<string> { Roles.Engineer }));
+                    builder => builder.RequireRole(new List<string> { Roles.Admin, Roles.Engineer }));
                 options.AddPolicy("UserMng",
                     builder => builder.RequireRole(new List<string> { Roles.Admin }));
 
             });
 
-            services.AddRazorPages().
-                    AddRazorPagesOptions(options =>
+            services.AddRazorPages()
+                    .AddMvcOptions(options=>options.Filters.Add<SecurityPageFilter>())
+                    .AddRazorPagesOptions(options =>
             {
                 options.Conventions.AuthorizeAreaFolder("Admin", "/", "AdminArea");
                 options.Conventions.AuthorizeAreaFolder("Admin", "/Ceremonies", "Ceremony");
@@ -74,7 +78,7 @@ namespace ServiceHost
 
 
             });
-            services.AddRazorPages();
+            //services.AddRazorPages();
 
         }
 
@@ -107,6 +111,7 @@ namespace ServiceHost
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapRazorPages();
+            endpoints.MapControllers();
         });
     }
 }

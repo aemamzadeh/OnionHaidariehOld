@@ -9,6 +9,7 @@ namespace Haidarieh.Application.Contracts.Guest
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string FullName { get;  set; }
         public string Tel { get;  set; }
+        public string Email { get; set; }
         [FileExtentionLimitation(new string[] { ".jpg", ".jpeg", ".png" }, ErrorMessage = ValidationMessages.InvalidFileFormat)]
         [MaxFileSize(1024 * 1024, ErrorMessage = ValidationMessages.MaxFileSize)]
         public IFormFile Image { get;  set; }

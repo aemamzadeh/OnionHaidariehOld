@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Application;
+using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Guest;
 using Haidarieh.Domain.GuestAgg;
 using System;
@@ -28,7 +29,7 @@ namespace Haidarieh.Application
             var ImagePath = $"{ImageFolderName}/{command.FullName}";
             var imageFileName = _fileUploader.Upload(command.Image, ImagePath); 
             
-            var guest = new Guest(command.FullName, command.Tel, imageFileName, command.ImageAlt,
+            var guest = new Guest(command.FullName, command.Tel, command.Email, imageFileName, command.ImageAlt,
                 command.ImageTitle, command.GuestType, command.Coordinator);
             _guestRepository.Create(guest);
             _guestRepository.SaveChanges();
@@ -49,7 +50,7 @@ namespace Haidarieh.Application
             var ImagePath = $"{ImageFolderName}/{command.FullName}";
             var imageFileName = _fileUploader.Upload(command.Image, ImagePath);
 
-            editItem.Edit(command.FullName, command.Tel, imageFileName, command.ImageAlt,
+            editItem.Edit(command.FullName, command.Tel, command.Email, imageFileName, command.ImageAlt,
                 command.ImageTitle, command.GuestType, command.Coordinator);
             _guestRepository.SaveChanges();
             return operation.Succedded();
@@ -60,7 +61,20 @@ namespace Haidarieh.Application
             return _guestRepository.GetDetail(Id);
         }
 
-        public List<GuestViewModel> GetGuests()
+        public List<EditGuest> GetGuestsInfo(List<CeremonyGuestViewModel> guests = null)
+        {
+            var guestInfoList = new List<EditGuest>();
+            foreach (var item in guests)
+            {
+                var guestInfo = GetDetail(item.GuestId);
+                guestInfoList.Add(guestInfo);
+
+            }
+            return guestInfoList;
+        }
+
+
+        public List<GuestViewModel> GetGuests(long id=0)
         {
             return _guestRepository.GetGuests();
         }

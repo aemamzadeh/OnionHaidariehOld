@@ -16,28 +16,57 @@ namespace Haidarieh.Configuration.Permissions
                 {
                     "Ceremony", new List<PermissionDto>
                     {
-                        new PermissionDto(10,"ListCeremony"),
-                        new PermissionDto(11,"SearchCeremony"),
-                        new PermissionDto(12,"CreateCeremony"),
-                        new PermissionDto(13,"EditCeremony"),
+                        new PermissionDto(HPermissions.ListCeremony,"ListCeremony"),
+                        new PermissionDto(HPermissions.SearchCeremony,"SearchCeremony"),
+                        new PermissionDto(HPermissions.CreateCeremony,"CreateCeremony"),
+                        new PermissionDto(HPermissions.EditCeremony,"EditCeremony"),
+                        new PermissionDto(HPermissions.LogCeremony,"LogCeremony"),
+
                     }
                 },
                 {
                     "CeremonyGuest", new List<PermissionDto>
                     {
-                        new PermissionDto(20,"ListCeremonyGuest"),
-                        new PermissionDto(21,"SearchCeremonyGuest"),
-                        new PermissionDto(22,"CreateCeremonyGuest"),
-                        new PermissionDto(23,"EditCeremonyGuest"),
+                        new PermissionDto(HPermissions.ListCeremonyGuest,"ListCeremonyGuest"),
+                        new PermissionDto(HPermissions.SearchCeremonyGuest,"SearchCeremonyGuest"),
+                        new PermissionDto(HPermissions.CreateCeremonyGuest,"CreateCeremonyGuest"),
+                        new PermissionDto(HPermissions.EditCeremonyGuest,"EditCeremonyGuest"),
                     }
                 },
                 {
                     "Guest", new List<PermissionDto>
                     {
-                        new PermissionDto(30,"ListGuest"),
-                        new PermissionDto(31,"SearchGuest"),
-                        new PermissionDto(32,"CreateGuest"),
-                        new PermissionDto(33,"EditGuest"),
+                        new PermissionDto(HPermissions.ListGuest,"ListGuest"),
+                        new PermissionDto(HPermissions.SearchGuest,"SearchGuest"),
+                        new PermissionDto(HPermissions.CreateGuest,"CreateGuest"),
+                        new PermissionDto(HPermissions.EditGuest,"EditGuest"),
+                    }
+                },
+                {
+                    "Member", new List<PermissionDto>
+                    {
+                        new PermissionDto(HPermissions.ListMember,"ListMember"),
+                        new PermissionDto(HPermissions.SearchMember,"SearchMember"),
+                        new PermissionDto(HPermissions.CreateMember,"CreateMember"),
+                        new PermissionDto(HPermissions.EditMember,"EditMember"),
+                    }
+                },
+                {
+                    "Multimedia", new List<PermissionDto>
+                    {
+                        new PermissionDto(HPermissions.ListMultimedia,"ListMultimedia"),
+                        new PermissionDto(HPermissions.SearchMultimedia,"SearchMultimedia"),
+                        new PermissionDto(HPermissions.CreateMultimedia,"CreateMultimedia"),
+                        new PermissionDto(HPermissions.EditMultimedia,"EditMultimedia"),
+                    }
+                },
+                {
+                    "Sponsor", new List<PermissionDto>
+                    {
+                        new PermissionDto(HPermissions.ListSponsor,"ListSponsor"),
+                        new PermissionDto(HPermissions.SearchSponsor,"SearchSponsor"),
+                        new PermissionDto(HPermissions.CreateSponsor,"CreateSponsor"),
+                        new PermissionDto(HPermissions.EditSponsor,"EditSponsor"),
                     }
                 },
             };

@@ -10,6 +10,6 @@ namespace Haidarieh.Domain.GuestAgg
     {
         EditGuest GetDetail(long Id);
         List<GuestViewModel> Search(GuestSearchModel searchModel);
-        List<GuestViewModel> GetGuests();
+        List<GuestViewModel> GetGuests(long id=0);
     }
 }

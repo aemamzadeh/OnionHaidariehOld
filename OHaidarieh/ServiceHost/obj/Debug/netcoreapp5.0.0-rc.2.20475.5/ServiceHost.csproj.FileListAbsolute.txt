@@ -237,3 +237,8 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Multimedias\EditAlbum.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Multimedias\EditMetadata.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\MailKit.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\MimeKit.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\NETCore.MailKit.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\BouncyCastle.Crypto.dll

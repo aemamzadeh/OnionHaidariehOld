@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using _0_Framework.Infrastructure;
 using _01_HaidariehQuery.Contracts.Ceremonies;
 using _01_HaidariehQuery.Query;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.Multimedia;
+using Haidarieh.Configuration.Permissions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -25,6 +27,8 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
             _multimediaApplication = multimediaApplication;
             _ceremonyApplication = ceremonyApplication;
         }
+
+        [NeedPermission(HPermissions.ListMultimedia)]
         public void OnGet(MultimediaSearchModel searchModel)
         {
             Multimedias=_multimediaApplication.Search(searchModel);
@@ -38,6 +42,8 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
             };
             return Partial("./Create", command);
         }
+
+        [NeedPermission(HPermissions.CreateMultimedia)]
         public JsonResult OnPostCreate(CreateMultimedia createcommand,List<IFormFile> FileAddress)
         {
             var result = _multimediaApplication.Create(createcommand, FileAddress);
@@ -49,17 +55,22 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
             multimedia.Ceremonies = _ceremonyApplication.GetCeremonies();
             return Partial("./EditMetadata", multimedia);
         }
+
         public IActionResult OnGetEditAlbum(long id)
         {
             var multimedia = _multimediaApplication.GetDetail(id);
             multimedia.Ceremonies = _ceremonyApplication.GetCeremonies();
             return Partial("./EditAlbum", multimedia);
         }
+
+        [NeedPermission(HPermissions.EditMultimedia)]
         public JsonResult OnPostEditMetadata(EditMultimedia command)
         {
             var result = _multimediaApplication.EditMetadata(command);
             return new JsonResult(result);
         }
+
+        [NeedPermission(HPermissions.EditMultimedia)]
         public JsonResult OnPostEditAlbum(EditMultimedia command, List<IFormFile> FileAddress)
         {
             var result = _multimediaApplication.EditAlbum(command, FileAddress);
