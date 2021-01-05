@@ -17,23 +17,23 @@
     <div class="modal-body">
         <div class="row">
             @*<div class="col-md-12">
-                    <div class="form-group">
-                        <label asp-for="Title" class="control-label">مراسم</label>
-                        <select type="text" class="form-control" asp-for="Title" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
-                            <option value="0">انتخاب مراسم</option>
-                        </select>
-                        <span asp-validation-for="CeremonyId" class="error"></span>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label asp-for="GuestId" class="control-label">میهمان</label>
-                        <select type="text" class="form-control" asp-for="GuestId" asp-items='new SelectList(Model.Guests,"Id","FullName")'>
-                            <option value="0">انتخاب میهمان</option>
-                        </select>
-                        <span asp-validation-for="GuestId" class="error"></span>
-                    </div>
-                </div>*@
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">مراسم</label>
+                <select type="text" class="form-control" asp-for="Title" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
+                    <option value="0">انتخاب مراسم</option>
+                </select>
+                <span asp-validation-for="CeremonyId" class="error"></span>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="GuestId" class="control-label">میهمان</label>
+                <select type="text" class="form-control" asp-for="GuestId" asp-items='new SelectList(Model.Guests,"Id","FullName")'>
+                    <option value="0">انتخاب میهمان</option>
+                </select>
+                <span asp-validation-for="GuestId" class="error"></span>
+            </div>
+        </div>*@
 
             <div class="col-md-12">
                 <div class="form-group">
@@ -51,8 +51,9 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="IsLive" class="control-label">وضعیت پخش</label>
-                    <input type="text" class="form-control" asp-for="IsLive">
+                    <label asp-for="IsLive" class="control-label">وضعیت پخش زنده </label><br />
+                    <input type="radio" class="radio-inline" name="IsLive" asp-for="IsLive" value="1" checked="checked">دارد
+                    <input type="radio" class="radio-inline" name="IsLive" asp-for="IsLive" value="0">ندارد
                     <span asp-validation-for="IsLive" class="error"></span>
                 </div>
             </div>
@@ -102,7 +103,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label asp-for="MetaDescription" class="control-label">شرح</label>
-                    <textarea class="form-control autogrow" asp-for="MetaDescription" 
+                    <textarea class="form-control autogrow" asp-for="MetaDescription"
                               style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
                     <span asp-validation-for="MetaDescription" class="error"></span>
                 </div>

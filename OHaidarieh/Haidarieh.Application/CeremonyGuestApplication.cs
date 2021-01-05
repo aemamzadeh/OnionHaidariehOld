@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Application;
+using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Domain.CeremonyGuestAgg;
 using System;
@@ -57,7 +58,7 @@ namespace Haidarieh.Application
             return _ceremonyGuestRepository.GetDetail(Id);
         }
 
-        public List<CeremonyGuestViewModel> Search(CeremonyGuestSearchModel searchModel)
+        public List<CeremonyViewModel> Search(CeremonyGuestSearchModel searchModel)
         {
             return _ceremonyGuestRepository.Search(searchModel);
         }

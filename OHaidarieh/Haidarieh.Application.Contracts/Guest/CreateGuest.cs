@@ -18,7 +18,8 @@ namespace Haidarieh.Application.Contracts.Guest
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string ImageTitle { get;  set; }
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        public string GuestType { get;  set; }
+        public long GuestType { get;  set; }
+        public string GuestTypeS { get; set; }
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Coordinator { get;  set; }
     }

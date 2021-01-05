@@ -37,7 +37,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 var guestInfo = _hContext.Guests.Select(x => new GuestViewModel
                 {
                     Id = x.Id,
-                    GuestType = x.GuestType,
+                    GuestType = GuestTypes.GetGuestType(x.GuestType),
                     FullName = x.FullName,
                     Image = x.Image,
                     Tel = x.Tel,
@@ -58,7 +58,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 FullName = x.FullName,
                 Tel = x.Tel,
-                GuestType = x.GuestType,
+                GuestType = GuestTypes.GetGuestType(x.GuestType),
                 Image = x.Image,
                 Coordinator = x.Coordinator
             });

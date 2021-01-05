@@ -16,13 +16,13 @@ namespace Haidarieh.Domain.GuestAgg
         public string Image { get; private set; }
         public string ImageAlt { get; private set; }
         public string ImageTitle { get; private set; }
-        public string GuestType { get; private set; }
+        public long GuestType { get; private set; }
         public string Coordinator { get; private set; }
         public bool Status { get; private set; }
         public List<CeremonyGuest> CeremonyGuests { get; private set; }
 
         public Guest(string fullName, string tel, string email, string image, string imageAlt, 
-            string imageTitle, string guestType, string coordinator)
+            string imageTitle, long guestType, string coordinator)
         {
             FullName = fullName;
             Tel = tel;
@@ -35,7 +35,7 @@ namespace Haidarieh.Domain.GuestAgg
             CeremonyGuests = new List<CeremonyGuest>();
         }
         public void Edit(string fullName, string tel, string email, string image, string imageAlt,
-            string imageTitle, string guestType, string coordinator)
+            string imageTitle, long guestType, string coordinator)
         {
             FullName = fullName;
             Tel = tel;

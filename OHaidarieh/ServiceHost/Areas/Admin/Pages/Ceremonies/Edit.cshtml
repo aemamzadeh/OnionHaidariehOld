@@ -31,8 +31,9 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="IsLive" class="control-label">وضعیت پخش</label>
-                    <input type="text" class="form-control" asp-for="IsLive">
+                    <label asp-for="IsLive" class="control-label">وضعیت پخش زنده </label><br />
+                    <input type="radio" class="radio-inline" name="IsLive" asp-for="IsLive" value="True">دارد
+                    <input type="radio" class="radio-inline" name="IsLive" asp-for="IsLive" value="False">ندارد
                     <span asp-validation-for="IsLive" class="error"></span>
                 </div>
             </div>

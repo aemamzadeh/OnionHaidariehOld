@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Haidarieh.Application.Contracts.Guest;
+using System;
+using System.Collections.Generic;
 
 namespace Haidarieh.Application.Contracts.CeremonyGuest
 {
@@ -10,6 +12,8 @@ namespace Haidarieh.Application.Contracts.CeremonyGuest
         public float Satisfication { get; set; }
         public string CeremonyDate { get; set; }
         public string Guest { get; set; }
+        public string GuestType { get; set; }
+        public long GuestTypeL { get; set; }
         public string Ceremony { get; set; }
     }
 }

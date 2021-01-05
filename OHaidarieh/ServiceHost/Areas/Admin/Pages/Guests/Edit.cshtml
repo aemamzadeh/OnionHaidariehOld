@@ -21,10 +21,14 @@
                     <input type="text" class="form-control" asp-for="FullName" onchange="makeSlug('Name', 'Slug')">
                     <span asp-validation-for="FullName" class="error"></span>
                 </div>
-            </div><div class="col-md-6">
+            </div>
+            <div class="col-md-12">
                 <div class="form-group">
-                    <label asp-for="GuestType" class="control-label">نوع میهمان</label>
-                    <input type="text" class="form-control" asp-for="GuestType">
+                    <label asp-for="GuestType" class="control-label">نوع میهمان </label><br />
+                    <input type="radio" class="radio-inline" name="GuestType" asp-for="GuestType" value="1">قاری
+                    <input type="radio" class="radio-inline" name="GuestType" asp-for="GuestType" value="2">خطیب
+                    <input type="radio" class="radio-inline" name="GuestType" asp-for="GuestType" value="3">مداح
+                    <input type="radio" class="radio-inline" name="GuestType" asp-for="GuestType" value="4">مجری
                     <span asp-validation-for="GuestType" class="error"></span>
                 </div>
             </div>

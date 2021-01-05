@@ -25,17 +25,22 @@
                         {
                             @if (itm.GuestType == "1")
                             {
-                                <h3>سخنران:<span> @itm.Guest </span></h3>
+                                <h3>قاری:<span> @itm.Guest </span></h3>
 
                             }
                             else if (itm.GuestType == "2")
                             {
-                                <h3>مداح:<span> @itm.Guest </span></h3>
+                                <h3>خطیب:<span> @itm.Guest </span></h3>
 
                             }
                             else if (itm.GuestType == "3")
                             {
-                                <h3>قاری:<span> @itm.Guest </span></h3>
+                                <h3>مداح:<span> @itm.Guest </span></h3>
+
+                            }
+                            else if (itm.GuestType == "4")
+                            {
+                                <h3>مجری:<span> @itm.Guest </span></h3>
 
                             }
                         }

@@ -2,6 +2,7 @@
 using _01_HaidariehQuery.Contracts.Ceremonies;
 using _01_HaidariehQuery.Contracts.CeremonyGuests;
 using _01_HaidariehQuery.Contracts.Multimedias;
+using Haidarieh.Application.Contracts.Guest;
 using Haidarieh.Domain.CeremonyGuestAgg;
 using Haidarieh.Domain.GuestAgg;
 using Haidarieh.Domain.MultimediaAgg;
@@ -151,8 +152,8 @@ namespace _01_HaidariehQuery.Query
                 CeremonyId=x.CeremonyId,
                 GuestId=x.GuestId,
                 Guest=x.Guest.FullName,
-                GuestType=x.Guest.GuestType
-                
+                GuestType=GuestTypes.GetGuestType(x.Guest.GuestType)
+
             }).ToList();
         }
 

@@ -4,7 +4,7 @@
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h4 class="modal-title">ویرایش مراسم</h4>
+    <h4 class="modal-title">@Model.Title ویرایش مراسم</h4>
 </div>
 
 <form asp-page="./Index" asp-page-handler="Edit"
@@ -18,37 +18,92 @@
             <div class="col-md-12">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label asp-for="CeremonyId" class="control-label">مراسم</label>
-                        <select type="text" class="form-control" asp-for="CeremonyId" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
-                            <option value="0">انتخاب مراسم</option>
-                        </select>
-                        <span asp-validation-for="CeremonyId" class="error"></span>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label asp-for="GuestId" class="control-label">میهمان</label>
-                        <select type="text" class="form-control" asp-for="GuestId" asp-items='new SelectList(Model.Guests,"Id","FullName")'>
-                            <option value="0">انتخاب میهمان</option>
-                        </select>
-                        <span asp-validation-for="GuestId" class="error"></span>
+                        <label asp-for="Title" class="control-label">مراسم</label>
+                        <input readonly type="text" class="form-control" asp-for="Title">
+                        <span asp-validation-for="Title" class="error"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="Satisfication" class="control-label">میزان رضایتمندی</label>
-                        <input type="text" class="form-control" asp-for="Satisfication">
-                        <span asp-validation-for="Satisfication" class="error"></span>
+                        <label asp-for="CeremonyDate" class="control-label">تاریخ برگزاری</label>
+                        <input readonly type="text" class="form-control" asp-for="CeremonyDate">
+                        <span asp-validation-for="CeremonyDate" class="error"></span>
                     </div>
                 </div>
-            </div>
-            <input type="hidden" asp-for="Id" value="@Model.Id" />
 
+                @foreach (var item in Model.Guests)
+                {
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label asp-for="@item.Guest" class="control-label">میهمان</label>
+                            <input type="text" class="form-control" asp-for="@item.Guest">
+                            <span asp-validation-for="@item.Guest" class="error"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="@item.GuestType" class="control-label">نوع میهمان</label>
+                            <input type="text" class="form-control" asp-for="@item.GuestType">
+                            <span asp-validation-for="@item.GuestType" class="error"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label asp-for="Satisfication" class="control-label">میزان رضایتمندی</label>
+                            <input type="text" class="form-control" asp-for="Satisfication">
+                            <span asp-validation-for="Satisfication" class="error"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <input type="button" class="form-control btn add-on">
+                        </div>
+                    </div>
+                    <input type="hidden" asp-for="Id" value="@Model.Id" />
+                }
+            </div>
         </div>
-</div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
-        <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+            <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
+        </div>
     </div>
 </form>
+
+<script type="text/javascript">
+
+    // Change event of countries dropdown list
+    $('#guest').change(function () {
+        $('#gType').remove();
+        debugger;
+        $.getJSON('/getguesttype', { GuestType: $('#guest').val() }, function (data) {
+            $.each(data, function () {
+                $('#gtype').append('<option value=' +
+                    this.GuestType + '</option > ');
+            });
+        }).fail(function () {
+            alert('Cannot retrieve cities!');
+        });
+    });
+
+
+
+
+        ////Bind City dropdownlist
+        //$("#guest").change(function () {
+        //    var guestId = $("#guest").val();
+        //    var url = "/FillGuestType";
+
+        //    $.getJSON(url, { GuestId: guestId }, function (data) {
+        //        var item = "";
+        //        $.each(data, function (i, guest) {
+        //            item += '<option value="' + guest.value + '">' + guest.text + '</option>'
+        //        });
+        //        $("#guest").html(item);
+        //    });
+        //});
+
+</script>
+
+
 

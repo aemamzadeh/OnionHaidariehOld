@@ -25,6 +25,7 @@ namespace ServiceHost.Areas.Admin.Pages.Guests
         public void OnGet(GuestSearchModel searchModel)
         {
             Guests = _guestApplication.Search(searchModel);
+            
         }
         public IActionResult OnGetCreate()
         {

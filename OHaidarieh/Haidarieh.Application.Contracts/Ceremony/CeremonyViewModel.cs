@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Haidarieh.Application.Contracts.CeremonyGuest;
+using System;
 using System.Collections.Generic;
 
 namespace Haidarieh.Application.Contracts.Ceremony
@@ -12,6 +13,8 @@ namespace Haidarieh.Application.Contracts.Ceremony
         public string Image { get; set; }
         public string Slug { get; set; }
         public List<CeremonyOperationViewModel> CeremonyOperations { get; set; }
+        public List<CeremonyGuestViewModel> CeremonyGuests { get; set; }
+
 
 
     }

@@ -25,7 +25,7 @@ namespace ServiceHost.Pages
         {
             var result = _accountApplication.Login(command);
             if (result.IsSuccedded)
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Index", new { area = "Admin" }); 
             Message = result.Message;
             return RedirectToPage("/Account");
 
