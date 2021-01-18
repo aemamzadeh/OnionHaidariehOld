@@ -10,11 +10,11 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
     {
         public long GuestId { get; private set; }
         public long CeremonyId { get; private set; }
-        public float Satisfication { get; private set; }
+        public int Satisfication { get; private set; }
         public Guest Guest { get;  private set; }
         public Ceremony Ceremony { get;  private set; }
 
-        public CeremonyGuest(long guestId, long ceremonyId, float satisfication)
+        public CeremonyGuest(long guestId, long ceremonyId, int satisfication)
         {
             GuestId = guestId;
             CeremonyId = ceremonyId;
@@ -23,7 +23,7 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
 
         }
 
-        public void Edit(long guestId, long ceremonyId, float satisfication)
+        public void Edit(long guestId, long ceremonyId, int satisfication)
         {
             GuestId = guestId;
             CeremonyId = ceremonyId;

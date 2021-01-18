@@ -24,9 +24,11 @@ namespace Haidarieh.Application
             var operation = new OperationResult();
             if (_guestRepository.Exist(x => x.FullName == command.FullName))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
+            
+            var slug = command.FullName.Slugify();
 
             var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
-            var ImagePath = $"{ImageFolderName}/{command.FullName}";
+            var ImagePath = $"{ImageFolderName}/{slug}";
             var imageFileName = _fileUploader.Upload(command.Image, ImagePath); 
             
             var guest = new Guest(command.FullName, command.Tel, command.Email, imageFileName, command.ImageAlt,
@@ -46,8 +48,10 @@ namespace Haidarieh.Application
             if(_guestRepository.Exist(x=>x.FullName==command.FullName && x.Id!=command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
+            var slug = command.FullName.Slugify();
+
             var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
-            var ImagePath = $"{ImageFolderName}/{command.FullName}";
+            var ImagePath = $"{ImageFolderName}/{slug}";
             var imageFileName = _fileUploader.Upload(command.Image, ImagePath);
 
             editItem.Edit(command.FullName, command.Tel, command.Email, imageFileName, command.ImageAlt,

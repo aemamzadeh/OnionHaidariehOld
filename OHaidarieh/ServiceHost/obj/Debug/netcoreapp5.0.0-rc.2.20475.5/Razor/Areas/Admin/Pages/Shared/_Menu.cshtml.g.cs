@@ -12,8 +12,15 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 5 "D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\Areas\Admin\Pages\_ViewImports.cshtml"
+using Kendo.Mvc.UI;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8117e12b79ccd94126a9b33d7bc197fd91f885c", @"/Areas/Admin/Pages/Shared/_Menu.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d02c35ca964bf4496b3bd91f6a8b99307d21ab1", @"/Areas/Admin/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2e9465e45476a0bbde244c866a8adeceab68abc1", @"/Areas/Admin/Pages/_ViewImports.cshtml")]
     public class Areas_Admin_Pages_Shared__Menu : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-page", "/Account", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -77,7 +84,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
                         <li><a href=""javascript:void(0)""><i class=""md md-settings""></i> Settings</a></li>
                         <li><a href=""javascript:void(0)""><i class=""md md-lock""></i> Lock screen</a></li>
                         <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c8256", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c8454", async() => {
                 WriteLiteral("<i class=\"md md-settings-power\"></i> خروج");
             }
             );
@@ -103,7 +110,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n            </div>\r\n        </div>\r\n        <!--- Divider -->\r\n        <div id=\"sidebar-menu\">\r\n            <ul>\r\n                <li>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c10214", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c10412", async() => {
                 WriteLiteral("<i class=\"md md-home\"></i><span> داشبورد </span>");
             }
             );
@@ -132,7 +139,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
                         <a href=""#"" class=""waves-effect""><i class=""md md-mail""></i><span>  مراسمات </span><span class=""pull-right""><i class=""md md-add""></i></span></a>
                         <ul class=""list-unstyled"">
                             <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c12120", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c12318", async() => {
                 WriteLiteral("مراسم");
             }
             );
@@ -160,7 +167,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
                     <a class=""waves-effect""><i class=""md md-mail""></i><span>  میهمانان مراسمات </span><span class=""pull-right""><i class=""md md-add""></i></span></a>
                     <ul class=""list-unstyled"">
                         <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c13862", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c14060", async() => {
                 WriteLiteral("میهمانان هر مراسم");
             }
             );
@@ -182,7 +189,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
                     <a class=""waves-effect""><i class=""md md-mail""></i><span> اهدا کنندگان </span><span class=""pull-right""><i class=""md md-add""></i></span></a>
                     <ul class=""list-unstyled"">
                         <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c15367", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c15565", async() => {
                 WriteLiteral("اهدا کننده");
             }
             );
@@ -205,7 +212,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
                     <a class=""waves-effect""><i class=""md md-mail""></i><span> میهمانان </span><span class=""pull-right""><i class=""md md-add""></i></span></a>
                     <ul class=""list-unstyled"">
                         <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c16863", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c17061", async() => {
                 WriteLiteral("میهمان");
             }
             );
@@ -228,7 +235,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
                     <a class=""waves-effect""><i class=""md md-mail""></i><span> فایهای چندرسانه ای </span><span class=""pull-right""><i class=""md md-add""></i></span></a>
                     <ul class=""list-unstyled"">
                         <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c18365", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c18563", async() => {
                 WriteLiteral("چندرسانه ای");
             }
             );
@@ -251,7 +258,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
                     <a class=""waves-effect""><i class=""md md-mail""></i><span> اعضاء </span><span class=""pull-right""><i class=""md md-add""></i></span></a>
                     <ul class=""list-unstyled"">
                         <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c19859", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c20057", async() => {
                 WriteLiteral("عضویت");
             }
             );
@@ -279,7 +286,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
                         <a class=""waves-effect""><i class=""md md-mail""></i><span> مدیریت کاربران </span><span class=""pull-right""><i class=""md md-add""></i></span></a>
                         <ul class=""list-unstyled"">
                             <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c21666", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c21864", async() => {
                 WriteLiteral("تعریف کاربران");
             }
             );
@@ -295,7 +302,7 @@ namespace ServiceHost.Areas.Admin.Pages.Shared
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                            <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c22866", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8117e12b79ccd94126a9b33d7bc197fd91f885c23064", async() => {
                 WriteLiteral("تعریف نقشها");
             }
             );

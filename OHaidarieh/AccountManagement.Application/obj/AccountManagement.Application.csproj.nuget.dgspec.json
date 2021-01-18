@@ -43,6 +43,10 @@
         "net5.0": {
           "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
           "dependencies": {
+            "Kendo.for.AspNet.Core": {
+              "target": "Package",
+              "version": "[2019.1.115, )"
+            },
             "Microsoft.AspNetCore.Authentication.Cookies": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -141,6 +145,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "dependencies": {
+            "Kendo.for.AspNet.Core": {
+              "target": "Package",
+              "version": "[2019.1.115, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -202,6 +212,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "dependencies": {
+            "Kendo.for.AspNet.Core": {
+              "target": "Package",
+              "version": "[2019.1.115, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -266,6 +282,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "dependencies": {
+            "Kendo.for.AspNet.Core": {
+              "target": "Package",
+              "version": "[2019.1.115, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

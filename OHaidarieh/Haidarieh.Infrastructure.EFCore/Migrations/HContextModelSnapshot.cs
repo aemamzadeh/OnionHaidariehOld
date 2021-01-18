@@ -17,7 +17,7 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("Haidarieh.Domain.CeremonyAgg.Ceremony", b =>
                 {
@@ -77,8 +77,8 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                     b.Property<long>("GuestId")
                         .HasColumnType("bigint");
 
-                    b.Property<float>("Satisfication")
-                        .HasColumnType("real");
+                    b.Property<int>("Satisfication")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

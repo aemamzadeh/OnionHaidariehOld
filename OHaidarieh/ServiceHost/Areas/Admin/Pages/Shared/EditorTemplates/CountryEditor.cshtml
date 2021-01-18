@@ -1,0 +1,9 @@
+﻿@model string
+@(Html.Kendo().DropDownListFor(m => m)
+            .DataValueField("GuestId")
+            .DataTextField("Guest")
+            .HtmlAttributes(new { data_bind = "value: Guest" })
+            .Template(@"<div class='dropdown-country-wrap'><img src='" + @Url.Content("~/#:GuestPic#") + "' alt='#: Guest#' title='#: Guest#' width='20' /><span>#: Guest #</span></div>")
+            .BindTo((System.Collections.IEnumerable)ViewData["guests"])
+            .AutoWidth(true)
+)

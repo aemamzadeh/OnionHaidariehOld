@@ -57,7 +57,9 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                         CeremonyId = item.CeremonyId,
                         GuestId = item.GuestId,
                         GuestType = GuestTypes.GetGuestType(item.Guest.GuestType),
-                        Guest = item.Guest.FullName
+                        Guest = item.Guest.FullName,
+                        GuestPic=item.Guest.Image,
+                        Satisfication=item.Satisfication
                     };
                     guests.Add(gst);
                 }

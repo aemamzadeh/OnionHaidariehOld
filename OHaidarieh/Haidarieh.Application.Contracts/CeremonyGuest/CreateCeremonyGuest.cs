@@ -18,7 +18,7 @@ namespace Haidarieh.Application.Contracts.CeremonyGuest
         public string GuestType { get; set; }
         public string CeremonyDate { get; set; }
         public string Title { get; set; }
-        public float Satisfication { get; set; }
+        public int Satisfication { get; set; }
         public List<CeremonyViewModel> Ceremonies { get; set; }
         public List<CeremonyGuestViewModel> Guests { get; set; }
 

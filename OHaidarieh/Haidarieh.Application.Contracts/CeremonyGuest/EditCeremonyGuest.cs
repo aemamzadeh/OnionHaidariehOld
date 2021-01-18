@@ -1,7 +1,9 @@
-﻿namespace Haidarieh.Application.Contracts.CeremonyGuest
+﻿using Haidarieh.Application.Contracts.Guest;
+
+namespace Haidarieh.Application.Contracts.CeremonyGuest
 {
     public class EditCeremonyGuest : CreateCeremonyGuest
     {
-        public long Id { get; set; }
+        public long Id { get; set; }        
     }
 }

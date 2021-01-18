@@ -6,6 +6,8 @@ using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Guest;
 using Haidarieh.Configuration.Permissions;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -16,7 +18,7 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
     {
         public CeremonyGuestSearchModel SearchModel;
         public List<CeremonyViewModel> CeremonyGuests;
-        //public List<EditCeremonyGuest> ceremonyGuest;
+        public EditCeremonyGuest ceremonyGuest;
         public SelectList CeremoniesList;
         public SelectList GuestsList;
         private readonly ICeremonyGuestApplication _ceremonyGuestApplication;
@@ -64,10 +66,12 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
 
             return new JsonResult(result);
         }
+
         public IActionResult OnGetEdit(long ceremonyId)
         {
-            var ceremonyGuest = _ceremonyGuestApplication.GetDetail(ceremonyId);
-            //ceremonyGuest.Guests = _guestApplication.GetGuests(ceremonyId);
+            ceremonyGuest = _ceremonyGuestApplication.GetDetail(ceremonyId);
+            ViewData["guests"] = _guestApplication.GetGuests();
+            //ceremonyGuest.Guests = _guestApplication.GetGuests();
             //ceremonyGuest.Ceremonies = _ceremonyApplication.GetCeremonies();
             return Partial("./Edit", ceremonyGuest);
         }

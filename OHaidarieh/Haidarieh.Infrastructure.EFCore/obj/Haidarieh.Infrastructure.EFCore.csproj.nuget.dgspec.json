@@ -43,6 +43,10 @@
         "net5.0": {
           "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
           "dependencies": {
+            "Kendo.for.AspNet.Core": {
+              "target": "Package",
+              "version": "[2019.1.115, )"
+            },
             "Microsoft.AspNetCore.Authentication.Cookies": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -142,6 +146,10 @@
         "net5.0": {
           "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
           "dependencies": {
+            "Kendo.for.AspNet.Core": {
+              "target": "Package",
+              "version": "[2019.1.115, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[3.1.9, )"
@@ -223,6 +231,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "dependencies": {
+            "Kendo.for.AspNet.Core": {
+              "target": "Package",
+              "version": "[2019.1.115, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -292,6 +306,10 @@
             "Kavenegar": {
               "target": "Package",
               "version": "[1.2.4, )"
+            },
+            "Kendo.for.AspNet.Core": {
+              "target": "Package",
+              "version": "[2019.1.115, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

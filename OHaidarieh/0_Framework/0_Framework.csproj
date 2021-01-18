@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="kavenegar" Version="1.2.4" />
+    <PackageReference Include="Kendo.for.AspNet.Core" Version="2019.1.115" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="3.1.9" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />

@@ -17,11 +17,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
+    <PackageReference Include="Kendo.for.AspNet.Core" Version="2019.1.115" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.8.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.8.0" />
+    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2020.3.1118" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
   </ItemGroup>
 
@@ -40,6 +44,12 @@
 
   <ItemGroup>
     <None Include="Pages\Contact.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R3 2020\Bin45\Telerik.Web.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
