@@ -223,7 +223,6 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.AssemblyInfoInputs.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.AssemblyInfo.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.csproj.CoreCompileInputs.cache
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.MvcApplicationPartsAssemblyInfo.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.RazorAssemblyInfo.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.RazorAssemblyInfo.cs
@@ -304,4 +303,11 @@ D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.pdb
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.genruntimeconfig.cache
 D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Shared\EditorTemplates\GuestEditor.cshtml.g.cs
-D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\Razor\Areas\Admin\Pages\Shared\EditorTemplates\CountryEditor.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\System.Web.Razor.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\System.Web.Helpers.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\System.Web.WebPages.Deployment.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\System.Web.WebPages.Razor.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\System.Web.WebPages.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\Microsoft.Web.Infrastructure.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\obj\Debug\netcoreapp5.0.0-rc.2.20475.5\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\ServiceHost\bin\Debug\netcoreapp5.0.0-rc.2.20475.5\System.Web.Mvc.dll

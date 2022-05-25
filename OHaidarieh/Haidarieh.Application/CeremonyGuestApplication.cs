@@ -32,17 +32,21 @@ namespace Haidarieh.Application
             return operation.Succedded();
         }
 
-        public OperationResult Edit(EditCeremonyGuest command)
+        public OperationResult Edit(List<EditCeremonyGuest> command)
         {
             var operation = new OperationResult();
             operation.IsSuccedded = false;
-            var editItem = _ceremonyGuestRepository.Get(command.Id);
-            if (editItem == null)
-                return operation.Failed(ApplicationMessages.RecordNotFound);
-            if (_ceremonyGuestRepository.Exist(x => x.GuestId == command.GuestId && x.CeremonyId == command.CeremonyId && x.Id != command.Id))
-                return operation.Failed(ApplicationMessages.DuplicatedRecord);
+            foreach (var item in command)
+            {
+                var editItem = _ceremonyGuestRepository.Get(item.Id);
+                if (editItem == null)
+                    return operation.Failed(ApplicationMessages.RecordNotFound);
+                if (_ceremonyGuestRepository.Exist(x => x.GuestId == item.GuestId && x.CeremonyId == item.CeremonyId && x.Id != item.Id))
+                    return operation.Failed(ApplicationMessages.DuplicatedRecord);
+                editItem.Edit(item.GuestId, item.CeremonyId, item.Satisfication);
 
-            editItem.Edit(command.GuestId, command.CeremonyId, command.Satisfication);
+            }
+
             _ceremonyGuestRepository.SaveChanges();
 
             return operation.Succedded();
@@ -56,6 +60,11 @@ namespace Haidarieh.Application
         public EditCeremonyGuest GetDetail(long Id)
         {
             return _ceremonyGuestRepository.GetDetail(Id);
+        }
+
+        public List<CeremonyGuestViewModel> GetGuests()
+        {
+            return _ceremonyGuestRepository.GetGuests();
         }
 
         public List<CeremonyViewModel> Search(CeremonyGuestSearchModel searchModel)

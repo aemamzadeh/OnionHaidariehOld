@@ -1,6 +1,46 @@
-﻿@(Html.Kendo().DropDownList()
-    .Name("Guest") // The name of the widget has to be the same as the name of the property.
-    .DataValueField("GuestId") // The value of the drop-down is taken from the EmployeeID property.
-    .DataTextField("FullName") // The text of the items is taken from the EmployeeName property.
-    .BindTo((System.Collections.IEnumerable)ViewData["guests"]) // A list of all employees which is populated in the controller.
-)
+﻿@model string
+
+    <script>
+    function onChange(e) {
+        let dropDownListDataSourceData = e.sender.dataSource.data();
+        let imageName = dropDownListDataSourceData.filter(data => data.fullName === e.sender.value())[0].image;
+       
+
+        $("#grid").data("kendoGrid").dataItem($(e.sender.element).closest("tr")).set("GuestPic", imageName);
+
+    }
+
+    </script>
+
+@*@model ServiceHost.Areas.Admin.Pages.CeremonyGuests.IndexModel*@
+@(Html.Kendo().DropDownListFor(m=>m)
+                .DataValueField("fullName")
+                .DataTextField("fullName")
+                .DataSource(ds => ds
+                .Custom()
+                .Transport(transport => transport
+                   .Read(r => r.Url("CeremonyGuests/Index?handler=GuestName")
+                    ))
+                   .ServerFiltering(false)
+                )
+                .Template("<div class='product-photo' style='background-image: url(" + @Url.Content("~/#:image#") + ");'></div><div class='product-name'>#:fullName#</div>")
+                .ValueTemplate("<div class='product-photo' style='background-image: url(" + @Url.Content("~/#:image#") + ");'></div><div class='product-name'>#:fullName#</div>")
+                .Events(ev =>
+                {
+                    ev.Change("onChange");
+                })
+                .AutoWidth(true)
+
+    //" + @Url.Content("~/#:GuestPic#") + ");'></div><div class='product-name'>#:Guest#</div>"
+
+    //.DataSource(source =>
+    //{
+    //    source.Read(read =>
+    //    {
+    //        read.Action("GetGuestName", "Guest");
+    //    });
+    //})
+    //.HtmlAttributes(new { data_bind = "value: Guest" })
+    //.BindTo((System.Collections.IEnumerable)ViewData["guests"])
+    //.AutoWidth(true)
+    )

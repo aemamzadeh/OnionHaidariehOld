@@ -17,5 +17,7 @@ namespace Haidarieh.Application.Contracts.CeremonyGuest
         public string GuestType { get; set; }
         public long GuestTypeL { get; set; }
         public string Ceremony { get; set; }
+        //public List<TelViewModel> AllGuests { get; set; }
+
     }
 }

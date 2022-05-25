@@ -1,0 +1,17 @@
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\net5.0\Haidarieh.Domain.deps.json
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\net5.0\Haidarieh.Domain.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\net5.0\ref\Haidarieh.Domain.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\net5.0\Haidarieh.Domain.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\net5.0\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\net5.0\Haidarieh.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\net5.0\0_Framework.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\bin\Debug\net5.0\Haidarieh.Application.Contracts.pdb
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\net5.0\Haidarieh.Domain.csproj.AssemblyReference.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\net5.0\Haidarieh.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\net5.0\Haidarieh.Domain.AssemblyInfoInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\net5.0\Haidarieh.Domain.AssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\net5.0\Haidarieh.Domain.csproj.CoreCompileInputs.cache
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\net5.0\Haidarieh.Domain.csproj.CopyComplete
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\net5.0\Haidarieh.Domain.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\net5.0\ref\Haidarieh.Domain.dll
+D:\NetCoreProjects\repos\OHaidarieh\OHaidarieh\Haidarieh.Domain\obj\Debug\net5.0\Haidarieh.Domain.pdb

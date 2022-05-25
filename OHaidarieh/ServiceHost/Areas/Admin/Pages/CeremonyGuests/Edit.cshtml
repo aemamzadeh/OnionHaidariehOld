@@ -1,15 +1,41 @@
 ﻿@model Haidarieh.Application.Contracts.CeremonyGuest.EditCeremonyGuest
 @using Kendo.Mvc.UI
 
-@{
-}
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+
+<script>
+    function returnFalse() {
+        return false;
+    }
+    function onDataBound(e) {
+        var grid = this;
+        grid.table.find("tr").each(function () {
+            var dataItem = grid.dataItem(this);
+            var themeColor = dataItem.Discontinued ? 'success' : 'error';
+            var text = dataItem.Discontinued ? 'available' : 'not available';
+
+            $(this).find('script').each(function () {
+                eval($(this).html());
+            });
+
+            $(this).find(".badgeTemplate").kendoBadge({
+                themeColor: themeColor,
+                text: text,
+            });
+            kendo.bind($(this), dataItem);
+        });
+    }
+
+</script>
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h4 class="modal-title">@Model.Title ویرایش مراسم</h4>
+    @*<h4 class="modal-title">@Model.Title ویرایش مراسم</h4>*@
 </div>
 
-<form asp-page="./Index" asp-page-handler="Edit"
+<form asp-page="./Index" asp-page-handler="EditGuest"
       method="post"
       data-ajax="true"
       data-callback=""
@@ -35,58 +61,19 @@
             </div>
         </div>
     </div>
+
+
+    @*<input type="hidden" asp-for="CeremonyId" value="@Model.Id">*@
+
+    @*<div class="modal-footer">
+            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+            <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
+        </div>*@
 </form>
 
-@(Html.Kendo().Grid(Model.Guests)
-                .Name("grid")
-                .Columns(columns =>
-                {
-                    columns.Bound(c => c.GuestId).Width(40).Title("کد");
-                    columns.Bound(c => c.Guest).Width(140).Title("میهمان").EditorTemplateName("GuestEditor").ClientTemplate(
-                        @"<div class='product-photo'
-                    style='background-image: url(" + @Url.Content("~/#:GuestPic#") + ");'></div><div class='product-name'>#:Guest#</div>").Width(300);
-                    //.EditorTemplateName("Country").ClientTemplate(
-                    //@"<div class='k-text-center'><img class='product-photo' src='" + @Url.Content("~/#:GuestPic#") + "' alt='#: Guest#' title='#: Guest#' width='100' /></div>").Width(220);
-                    columns.Bound(c => c.GuestType).Title("نوع میهمان").Width(190);
-                    columns.Bound(c => c.Satisfication).Title("رضایتمندی").Width(150).Editable("returnFalse").ClientTemplate(Html.Kendo().Rating()
-                        .Name("rating_#=GuestId#")
-                        .Min(1)
-                        .Max(5)
-                        .Label(false)
-                        .HtmlAttributes(new { data_bind = "value: Satisfication" })
-                        .Selection("continuous")
-                        .ToClientTemplate().Value);
-                })
-                .Events(ev => ev.DataBound("onDataBound"))
-                .DataSource(dataSource => dataSource
-                    .Ajax()
-                    .Read(read => read.Action("ceremonyGuest", "Grid"))
-                )
-                    .Events(ev => ev.DataBound("onDataBound"))
-                    .Editable(e => e.Mode(GridEditMode.InCell))
-            )
+
+
 <script type="text/javascript">
-    function returnFalse() {
-        return false;
-    }
-    function onDataBound(e) {
-        var grid = this;
-        grid.table.find("tr").each(function () {
-            var dataItem = grid.dataItem(this);
-            var themeColor = dataItem.Discontinued ? 'success' : 'error';
-            var text = dataItem.Discontinued ? 'available' : 'not available';
-
-            $(this).find('script').each(function () {
-                eval($(this).html());
-            });
-
-            $(this).find(".badgeTemplate").kendoBadge({
-                themeColor: themeColor,
-                text: text,
-            });
-            kendo.bind($(this), dataItem);
-        });
-    }
 
     function error_handler(e) {
         if (e.errors) {
@@ -101,9 +88,68 @@
             alert(message);
         }
     }
+
+    $('.persianDateInput').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        autoClose: true,
+        initialValueType: "persian",
+        initialValue: true
+    });
+
+    function forgeryToken() {
+        return kendo.antiForgeryTokens();
+    }
+
+    function forgeryTokenUpdate(CeremonyId) {
+        return {
+            __RequestVerificationToken: kendo.antiForgeryTokens().__RequestVerificationToken,
+            ceremonyId: CeremonyId,
+        }
+    }
 </script>
 
+@(Html.Kendo().Grid<Haidarieh.Application.Contracts.CeremonyGuest.CeremonyGuestViewModel>()
+                .Name("grid")
+                .AutoBind(true)
+                 .Columns(columns =>
+                 {
+                     columns.Bound(c => c.GuestId).Width(40).Title("کد");
+                     columns.Bound(c => c.Guest).Width(140).Title("میهمان").EditorTemplateName("GuestEditor")
+                     //.HtmlAttributes(new { data_bind = "value: Model.Guest" })
+                     //.BindTo((System.Collections.IEnumerable)Model.ceremonyGuest.AllGuests)
+                     //.AutoWidth(true)
 
+                     //@"<div class='k-text-center'><img src='" + @Url.Content("~/content/web/country-flags/#:data.Country.CountryNameShort#.png") + "' alt='#: data.Country.CountryNameLong#' title='#: data.Country.CountryNameLong#' width='30' /></div>").Width(120);
+
+
+                     .ClientTemplate(
+                             @"<div class='product-photo'
+                     style='background-image: url(" + @Url.Content("~/#:GuestPic#") + ");'></div><div class='product-name'>#:Guest#</div>").Width(300);
+                     //.ClientTemplate(
+                     //@"<div class='k-text-center'><img class='product-photo' src='" + @Url.Content("~/#:GuestPic#") + "' alt='#:Guest#' title='#: Guest#' width='100' /></div>").Width(220);
+
+                     columns.Bound(c => c.GuestType).Title("نوع میهمان").Width(190);
+                     columns.Bound(c => c.Satisfication).Title("رضایتمندی").Width(150).Editable("returnFalse").ClientTemplate(Html.Kendo().Rating()
+                         .Name("rating_#=GuestId#")
+                         .Min(1)
+                         .Max(5)
+                         .Label(false)
+                         .HtmlAttributes(new { data_bind = "value: Satisfication" })
+                         .Selection("continuous")
+                         .ToClientTemplate().Value);
+                 })
+
+                .Events(ev => ev.DataBound("onDataBound"))
+                .Editable(e => e.Mode(GridEditMode.InCell))
+                .DataSource(dataSource => dataSource.Ajax()
+                .Read(r => r.Url("./CeremonyGuests/Index?handler=Read").Data("forgeryTokenUpdate(" + Model.CeremonyId + ")"))
+                .Update(u => u.Url("/Index?handler=Update"))
+                .Model(m => m.Id(id => id.CeremonyId))
+
+
+                )
+                .Events(ev => ev.DataBound("onDataBound"))
+                .Editable(e => e.Mode(GridEditMode.InCell)))
 
 
 
@@ -229,4 +275,79 @@
         margin-left: 0;
         width: 100%;
     }
+
+    .dropdown-header {
+        border-width: 0 0 1px 0;
+        text-transform: uppercase;
+    }
+
+    .dropdown-header > span {
+        display: inline-block;
+        padding: 10px;
+    }
+
+        .dropdown-header > span:first-child {
+            width: 50px;
+        }
+
+    .selected-value {
+        display: inline-block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        background-size: 100%;
+        margin-right: 5px;
+        border-radius: 50%;
+    }
+
+    #customers-list .k-item {
+        line-height: 1em;
+        min-width: 300px;
+    }
+
+    /* Material Theme padding adjustment*/
+
+    .k-material #customers-list .k-item,
+    .k-material #customers-list .k-item.k-state-hover,
+    .k-materialblack #customers-list .k-item,
+    .k-materialblack #customers-list .k-item.k-state-hover {
+        padding-left: 5px;
+        border-left: 0;
+    }
+
+    #customers-list .k-item > span {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: top;
+        margin: 20px 10px 10px 5px;
+    }
+
+        #customers-list .k-item > span:first-child {
+            -moz-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+            -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+            box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+    #customers-list h3 {
+        font-size: 1.2em;
+        font-weight: normal;
+        margin: 0 0 1px 0;
+        padding: 0;
+    }
+
+    #customers-list p {
+        margin: 0;
+        padding: 0;
+        font-size: .8em;
+    }
+
+
 </style>

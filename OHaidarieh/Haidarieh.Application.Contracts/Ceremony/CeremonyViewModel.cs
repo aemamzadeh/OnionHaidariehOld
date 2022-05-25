@@ -1,4 +1,5 @@
 ﻿using Haidarieh.Application.Contracts.CeremonyGuest;
+using Haidarieh.Application.Contracts.Guest;
 using System;
 using System.Collections.Generic;
 

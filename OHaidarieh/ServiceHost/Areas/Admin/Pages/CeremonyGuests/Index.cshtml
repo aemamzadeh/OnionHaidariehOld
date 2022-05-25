@@ -66,29 +66,30 @@
                             <tbody>
                                 @foreach (var item in Model.CeremonyGuests)
                                 {
-                                    <tr>
-                                        <td>@item.Id</td>
-                                        <td>@item.CeremonyDate</td>
-                                        <td>@item.Title</td>
-                                        <td >
-                                            @foreach (var itm in item.CeremonyGuests)
-                                            {
-                                                <p>@itm.GuestType:@itm.Guest</p><br />
-                                            }
-                                        </td>
-                                        <td>
-                                            @foreach (var itm in item.CeremonyGuests)
-                                            {
-                                                <p>@itm.Satisfication</p><br />
-                                            }
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-warning pull-right m-rl-5"
-                                               href="#showmodal=@Url.Page("./Index","Edit", new { ceremonyId = item.Id })">
-                                                <i class="fa fa-edit"></i> ویرایش
-                                            </a>
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.CeremonyDate</td>
+                                    <td>@item.Title</td>
+                                    <td>
+                                        @foreach (var itm in item.CeremonyGuests)
+                                        {
+                                            <p>@itm.GuestType:@itm.Guest</p><br />
+                                        }
+                                    </td>
+                                    <td>
+                                        @foreach (var itm in item.CeremonyGuests)
+                                        {
+                                            <p>@itm.Satisfication</p><br />
+                                        }
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-warning pull-right m-rl-5"
+                                           href="#showmodal=@Url.Page("./Index","Edit", new { ceremonyId = item.Id })">
+                                            <i class="fa fa-edit"></i> ویرایش
+                                        </a>
+                                    </td>
+                                  
+                                </tr>
                                 }
                             </tbody>
                         </table>

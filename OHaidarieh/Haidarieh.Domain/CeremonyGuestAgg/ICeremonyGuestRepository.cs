@@ -13,5 +13,6 @@ namespace Haidarieh.Domain.CeremonyGuestAgg
         //Dictionary<long, List<CeremonyGuestViewModel>> Search(CeremonyGuestSearchModel searchModel);
         List<CeremonyViewModel> Search(CeremonyGuestSearchModel searchModel);
         List<CeremonyGuestViewModel> GetCeremonyGuests(long id=0);
+        List<CeremonyGuestViewModel> GetGuests();
     }
 }

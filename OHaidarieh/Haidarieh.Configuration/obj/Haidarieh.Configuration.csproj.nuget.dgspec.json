@@ -29,7 +29,7 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+            "targetAlias": "net5.0",
             "projectReferences": {
               "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Infrastructure.EFCore\\Haidarieh.Infrastructure.EFCore.csproj": {
                 "projectPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Infrastructure.EFCore\\Haidarieh.Infrastructure.EFCore.csproj"
@@ -45,7 +45,7 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "targetAlias": "net5.0",
           "dependencies": {
             "Kendo.for.AspNet.Core": {
               "target": "Package",
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -100,7 +100,7 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -112,7 +112,7 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "targetAlias": "net5.0",
           "dependencies": {
             "Kendo.for.AspNet.Core": {
               "target": "Package",
@@ -170,7 +170,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -199,7 +199,7 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+            "targetAlias": "net5.0",
             "projectReferences": {
               "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\0_Framework\\0_Framework.csproj": {
                 "projectPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\0_Framework\\0_Framework.csproj"
@@ -215,7 +215,7 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "targetAlias": "net5.0",
           "dependencies": {
             "Kendo.for.AspNet.Core": {
               "target": "Package",
@@ -253,7 +253,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -282,7 +282,7 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+            "targetAlias": "net5.0",
             "projectReferences": {
               "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\0_Framework\\0_Framework.csproj": {
                 "projectPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\0_Framework\\0_Framework.csproj"
@@ -304,7 +304,7 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "targetAlias": "net5.0",
           "dependencies": {
             "Kendo.for.AspNet.Core": {
               "target": "Package",
@@ -326,7 +326,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -355,7 +355,7 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+            "targetAlias": "net5.0",
             "projectReferences": {
               "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\01_HaidariehQuery\\01_HaidariehQuery.csproj": {
                 "projectPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\01_HaidariehQuery\\01_HaidariehQuery.csproj"
@@ -377,7 +377,7 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "targetAlias": "net5.0",
           "dependencies": {
             "Kendo.for.AspNet.Core": {
               "target": "Package",
@@ -399,7 +399,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -428,7 +428,7 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+            "targetAlias": "net5.0",
             "projectReferences": {
               "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\0_Framework\\0_Framework.csproj": {
                 "projectPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\0_Framework\\0_Framework.csproj"
@@ -447,7 +447,7 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "targetAlias": "net5.0",
           "dependencies": {
             "Kendo.for.AspNet.Core": {
               "target": "Package",
@@ -469,7 +469,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -498,7 +498,7 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+            "targetAlias": "net5.0",
             "projectReferences": {
               "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Domain\\Haidarieh.Domain.csproj": {
                 "projectPath": "D:\\NetCoreProjects\\repos\\OHaidarieh\\OHaidarieh\\Haidarieh.Domain\\Haidarieh.Domain.csproj"
@@ -514,7 +514,7 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "netcoreapp5.0.0-rc.2.20475.5",
+          "targetAlias": "net5.0",
           "dependencies": {
             "EntityFramework": {
               "target": "Package",
@@ -562,7 +562,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
